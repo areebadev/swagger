@@ -1,12 +1,10 @@
 {
 "swagger": "2.0",
 "info": {
-  "name": "Verto Issuing APIs",
 "description": "App that manages issuing",
 "version": "0.0.1-SNAPSHOT",
 "title": "Verto-issuing",
-"termsOfService": "Terms of Service",
-"license": {}
+"termsOfService": "Terms of Service"
 },
 "host": "10.43.20.67:8080",
 "basePath": "/",
