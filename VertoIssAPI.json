@@ -6,7 +6,7 @@
 "title": "Verto-issuing",
 "termsOfService": "Terms of Service"
 },
-"host": "10.43.20.67:8080",
+"host": "https://api-oci.areeba.com/api-documentation/#/",
 "basePath": "/",
 "tags": [
 {
