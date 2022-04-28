@@ -1,3 +1,13 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "ASIA HAWALA APIs",
+      "version": "0.2.11",
+      "title": "ASIA HAWALA APIs",
+      "termsOfService": "Terms of Service"
+    },
+    "host": "api-oci.areeba.com",
+    "basePath": "/",
 "definitions": {
         "RestCommonResponseDTO«AccountHolderRequestDTO»": {
             "type": "object",
@@ -4571,4 +4581,5 @@
               "title": "ZakyRequestDTO"
             }
           
+      }
       }
