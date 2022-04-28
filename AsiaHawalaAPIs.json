@@ -685,7 +685,7 @@
         "JWT": { "type": "apiKey", "name": "Authorization", "in": "header" }
     },
     "definitions": {
-        "RestCommonResponseDTO«AccountHolderRequestDTO»": {
+        "RestCommonResponseDTO": {
             "type": "object",
             "properties": {
               "data": { "$ref": "#/definitions/AccountHolderResponseDTO" },
@@ -696,7 +696,7 @@
               "title": { "type": "string" },
               "valid": { "type": "boolean" }
             },
-            "title": "RestCommonResponseDTO«AccountHolderRequestDTO»"
+            "title": "AccountHolderRequestDTO"
           },
         "AccountHolderResponseDTO": {
             "type": "object",
@@ -732,7 +732,7 @@
             },
             "title": "AccountHolderResponseDTO"
           },
-        "RestCommonResponseDTO«AccountHolderResponseDTO»": {
+        "AccountHolderResponseDTO": {
             "type": "object",
             "properties": {
               "data": { "$ref": "#/definitions/AccountHolderResponseDTO" },
@@ -743,7 +743,7 @@
               "title": { "type": "string" },
               "valid": { "type": "boolean" }
             },
-            "title": "RestCommonResponseDTO«AccountHolderResponseDTO»"
+            "title": "AccountHolderResponseDTO"
           },
         "AccountHolderRequestDTO": {
             "type": "object",
@@ -971,7 +971,7 @@
           },
           "title": "Pageable"
         },
-        "Page«CycleConfigurationResponseDTO»": {
+        "CycleConfigurationResponseDTO": {
           "type": "object",
           "properties": {
             "content": {
@@ -989,9 +989,9 @@
             "totalElements": { "type": "integer", "format": "int64" },
             "totalPages": { "type": "integer", "format": "int32" }
           },
-          "title": "Page«CycleConfigurationResponseDTO»"
+          "title": "CycleConfigurationResponseDTO"
         },
-        "Page«CycleConfigurationTraceResponseDTO»": {
+        "CycleConfigurationTraceResponseDTO": {
           "type": "object",
           "properties": {
             "content": {
@@ -1011,9 +1011,9 @@
             "totalElements": { "type": "integer", "format": "int64" },
             "totalPages": { "type": "integer", "format": "int32" }
           },
-          "title": "Page«CycleConfigurationTraceResponseDTO»"
+          "title": "CycleConfigurationTraceResponseDTO"
         },
-        "Page«MonthlyCycleLogResponseDTO»": {
+        "MonthlyCycleLogResponseDTO": {
           "type": "object",
           "properties": {
             "content": {
@@ -1031,9 +1031,9 @@
             "totalElements": { "type": "integer", "format": "int64" },
             "totalPages": { "type": "integer", "format": "int32" }
           },
-          "title": "Page«MonthlyCycleLogResponseDTO»"
+          "title": "MonthlyCycleLogResponseDTO"
         },
-        "Page«ReloadingResponseDTO»": {
+        "ReloadingResponseDTO": {
           "type": "object",
           "properties": {
             "content": {
@@ -1051,9 +1051,9 @@
             "totalElements": { "type": "integer", "format": "int64" },
             "totalPages": { "type": "integer", "format": "int32" }
           },
-          "title": "Page«ReloadingResponseDTO»"
+          "title": "ReloadingResponseDTO"
         },
-        "Page«TranfinResponseDTO»": {
+        "TranfinResponseDTO": {
           "type": "object",
           "properties": {
             "content": {
@@ -1071,9 +1071,9 @@
             "totalElements": { "type": "integer", "format": "int64" },
             "totalPages": { "type": "integer", "format": "int32" }
           },
-          "title": "Page«TranfinResponseDTO»"
+          "title": "TranfinResponseDTO"
         },
-        "Page«TranlogResponseDTO»": {
+        "TranlogResponseDTO": {
           "type": "object",
           "properties": {
             "content": {
@@ -1091,7 +1091,7 @@
             "totalElements": { "type": "integer", "format": "int64" },
             "totalPages": { "type": "integer", "format": "int32" }
           },
-          "title": "Page«TranlogResponseDTO»"
+          "title": "TranlogResponseDTO"
         },
         "PcimodeRequestDTO": {
           "type": "object",
@@ -1125,7 +1125,7 @@
           "title": "ReloadingResponseDTO"
         },
         "ReloadingService": { "type": "object", "title": "ReloadingService" },
-        "RestCommonResponseDTO«CycleConfigurationResponseDTO»": {
+        "CycleConfigurationResponseDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/CycleConfigurationResponseDTO" },
@@ -1136,9 +1136,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«CycleConfigurationResponseDTO»"
+          "title": "CycleConfigurationResponseDTO"
         },
-        "RestCommonResponseDTO«CycleConfigurationTraceResponseDTO»": {
+        "CycleConfigurationTraceResponseDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/CycleConfigurationTraceResponseDTO" },
@@ -1149,9 +1149,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«CycleConfigurationTraceResponseDTO»"
+          "title": "CycleConfigurationTraceResponseDTO"
         },
-        "RestCommonResponseDTO«CyclesConfigurationRequestDTO»": {
+        "CyclesConfigurationRequestDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/CycleConfigurationResponseDTO" },
@@ -1162,9 +1162,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«CyclesConfigurationRequestDTO»"
+          "title": "CyclesConfigurationRequestDTO"
         },
-        "RestCommonResponseDTO«List«CycleConfigurationResponseDTO»»": {
+        "CycleConfigurationResponseDTO": {
           "type": "object",
           "properties": {
             "data": {
@@ -1178,9 +1178,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«List«CycleConfigurationResponseDTO»»"
+          "title": "CycleConfigurationResponseDTO"
         },
-        "RestCommonResponseDTO«List«CycleConfigurationTraceResponseDTO»»": {
+        "CycleConfigurationTraceResponseDTO": {
           "type": "object",
           "properties": {
             "data": {
@@ -1196,9 +1196,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«List«CycleConfigurationTraceResponseDTO»»"
+          "title": "CycleConfigurationTraceResponseDTO"
         },
-        "RestCommonResponseDTO«List«MonthlyCycleLogResponseDTO»»": {
+        "MonthlyCycleLogResponseDTO": {
           "type": "object",
           "properties": {
             "data": {
@@ -1212,9 +1212,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«List«MonthlyCycleLogResponseDTO»»"
+          "title": "MonthlyCycleLogResponseDTO"
         },
-        "RestCommonResponseDTO«List«ReloadingResponseDTO»»": {
+        "ReloadingResponseDTO": {
           "type": "object",
           "properties": {
             "data": {
@@ -1228,9 +1228,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«List«ReloadingResponseDTO»»"
+          "title": "ReloadingResponseDTO"
         },
-        "RestCommonResponseDTO«List«TranfinResponseDTO»»": {
+        "TranfinResponseDTO": {
           "type": "object",
           "properties": {
             "data": {
@@ -1244,9 +1244,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«List«TranfinResponseDTO»»"
+          "title": "TranfinResponseDTO"
         },
-        "RestCommonResponseDTO«List«TranlogResponseDTO»»": {
+        "TranlogResponseDTO": {
           "type": "object",
           "properties": {
             "data": {
@@ -1260,9 +1260,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«List«TranlogResponseDTO»»"
+          "title": "TranlogResponseDTO"
         },
-        "RestCommonResponseDTO«MonthlyCycleLogRequestDTO»": {
+        "MonthlyCycleLogRequestDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/MonthlyCycleLogResponseDTO" },
@@ -1273,9 +1273,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«MonthlyCycleLogRequestDTO»"
+          "title": "MonthlyCycleLogRequestDTO"
         },
-        "RestCommonResponseDTO«MonthlyCycleLogResponseDTO»": {
+        "MonthlyCycleLogResponseDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/MonthlyCycleLogResponseDTO" },
@@ -1286,9 +1286,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«MonthlyCycleLogResponseDTO»"
+          "title": "MonthlyCycleLogResponseDTO"
         },
-        "RestCommonResponseDTO«ReloadingRequestDTO»": {
+        "ReloadingRequestDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/ReloadingResponseDTO" },
@@ -1299,9 +1299,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«ReloadingRequestDTO»"
+          "title": "ReloadingRequestDTO"
         },
-        "RestCommonResponseDTO«ReloadingResponseDTO»": {
+        "ReloadingResponseDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/ReloadingResponseDTO" },
@@ -1312,9 +1312,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«ReloadingResponseDTO»"
+          "title": "ReloadingResponseDTO"
         },
-        "RestCommonResponseDTO«TranfinRequestDTO»": {
+        "TranfinRequestDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/TranfinResponseDTO" },
@@ -1325,9 +1325,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«TranfinRequestDTO»"
+          "title": "TranfinRequestDTO"
         },
-        "RestCommonResponseDTO«TranfinResponseDTO»": {
+        "TranfinResponseDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/TranfinResponseDTO" },
@@ -1338,9 +1338,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«TranfinResponseDTO»"
+          "title": "TranfinResponseDTO"
         },
-        "RestCommonResponseDTO«TranlogRequestDTO»": {
+        "TranlogRequestDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/TranlogResponseDTO" },
@@ -1351,9 +1351,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«TranlogRequestDTO»"
+          "title": "TranlogRequestDTO"
         },
-        "RestCommonResponseDTO«TranlogResponseDTO»": {
+        "TranlogResponseDTO": {
           "type": "object",
           "properties": {
             "data": { "$ref": "#/definitions/TranlogResponseDTO" },
@@ -1364,9 +1364,9 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«TranlogResponseDTO»"
+          "title": "TranlogResponseDTO"
         },
-        "RestCommonResponseDTO«string»": {
+        "string": {
           "type": "object",
           "properties": {
             "data": { "type": "string" },
@@ -1377,7 +1377,7 @@
             "title": { "type": "string" },
             "valid": { "type": "boolean" }
           },
-          "title": "RestCommonResponseDTO«string»"
+          "title": "string"
         },
         "SearchCriteria": {
           "type": "object",
@@ -2509,7 +2509,7 @@
               "type": "object",
               "title": "InterestProfileService"
             },
-            "Page«AccountAndBucketDiscrepanciesResponseDTO»": {
+            "AccountAndBucketDiscrepanciesResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2529,9 +2529,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountAndBucketDiscrepanciesResponseDTO»"
+              "title": "AccountAndBucketDiscrepanciesResponseDTO"
             },
-            "Page«AccountCardResponseDTO»": {
+            "AccountCardResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2549,9 +2549,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountCardResponseDTO»"
+              "title": "AccountCardResponseDTO"
             },
-            "Page«AccountResponseDTO»": {
+            "AccountResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2569,9 +2569,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountResponseDTO»"
+              "title": "AccountResponseDTO"
             },
-            "Page«AccountStatusResponseDTO»": {
+            "AccountStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2589,9 +2589,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountStatusResponseDTO»"
+              "title": "AccountStatusResponseDTO"
             },
-            "Page«AccountStructureResponseDTO»": {
+            "AccountStructureResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2609,9 +2609,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountStructureResponseDTO»"
+              "title": "AccountStructureResponseDTO"
             },
-            "Page«AccountSubTypeResponseDTO»": {
+            "AccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2629,9 +2629,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountSubTypeResponseDTO»"
+              "title": "AccountSubTypeResponseDTO"
             },
-            "Page«AccountTypeResponseDTO»": {
+            "AccountTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2649,9 +2649,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AccountTypeResponseDTO»"
+              "title": "AccountTypeResponseDTO"
             },
-            "Page«AuthorizationReleaseDateLogsResponseDTO»": {
+            "AuthorizationReleaseDateLogsResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2671,9 +2671,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«AuthorizationReleaseDateLogsResponseDTO»"
+              "title": "AuthorizationReleaseDateLogsResponseDTO"
             },
-            "Page«BatchProductionDetailResponseDTO»": {
+            "BatchProductionDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2691,9 +2691,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«BatchProductionDetailResponseDTO»"
+              "title": "BatchProductionDetailResponseDTO"
             },
-            "Page«BatchProductionResponseDTO»": {
+            "BatchProductionResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2711,9 +2711,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«BatchProductionResponseDTO»"
+              "title": "BatchProductionResponseDTO"
             },
-            "Page«BinResponseDTO»": {
+            "BinResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2731,9 +2731,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«BinResponseDTO»"
+              "title": "BinResponseDTO"
             },
-            "Page«BucketEntryResponseDTO»": {
+            "BucketEntryResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2751,9 +2751,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«BucketEntryResponseDTO»"
+              "title": "BucketEntryResponseDTO"
             },
-            "Page«BucketResponseDTO»": {
+            "BucketResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2771,9 +2771,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«BucketResponseDTO»"
+              "title": "BucketResponseDTO"
             },
-            "Page«CardActivityDetailResponseDTO»": {
+            "CardActivityDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2791,9 +2791,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«CardActivityDetailResponseDTO»"
+              "title": "CardActivityDetailResponseDTO"
             },
-            "Page«CardActivityResponseDTO»": {
+            "CardActivityResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2811,9 +2811,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«CardActivityResponseDTO»"
+              "title": "CardActivityResponseDTO"
             },
-            "Page«CardPlanResponseDTO»": {
+            "CardPlanResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2831,9 +2831,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«CardPlanResponseDTO»"
+              "title": "CardPlanResponseDTO"
             },
-            "Page«FILevelResponseDTO»": {
+            "FILevelResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2851,9 +2851,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FILevelResponseDTO»"
+              "title": "FILevelResponseDTO"
             },
-            "Page«FiAccountBucketDTO»": {
+            "FiAccountBucketDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2871,9 +2871,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiAccountBucketDTO»"
+              "title": "FiAccountBucketDTO"
             },
-            "Page«FiAccountSubTypeResponseDTO»": {
+            "FiAccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2891,9 +2891,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiAccountSubTypeResponseDTO»"
+              "title": "FiAccountSubTypeResponseDTO"
             },
-            "Page«FiBucketLevelResponseDTO»": {
+            "FiBucketLevelResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2911,9 +2911,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiBucketLevelResponseDTO»"
+              "title": "FiBucketLevelResponseDTO"
             },
-            "Page«FiBucketResponseDTO»": {
+            "FiBucketResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2931,9 +2931,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiBucketResponseDTO»"
+              "title": "FiBucketResponseDTO"
             },
-            "Page«FiCardActivitiesResponseDTO»": {
+            "FiCardActivitiesResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2951,9 +2951,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiCardActivitiesResponseDTO»"
+              "title": "FiCardActivitiesResponseDTO"
             },
-            "Page«FiCronResponseDTO»": {
+            "FiCronResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2971,9 +2971,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiCronResponseDTO»"
+              "title": "FiCronResponseDTO"
             },
-            "Page«FiEmbossingReqResponseDTO»": {
+            "FiEmbossingReqResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -2991,9 +2991,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«FiEmbossingReqResponseDTO»"
+              "title": "FiEmbossingReqResponseDTO"
             },
-            "Page«InterestProfileResponseDTO»": {
+            "InterestProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3011,9 +3011,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«InterestProfileResponseDTO»"
+              "title": "InterestProfileResponseDTO"
             },
-            "Page«PaymentToolResponseDTO»": {
+            "PaymentToolResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3031,9 +3031,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«PaymentToolResponseDTO»"
+              "title": "PaymentToolResponseDTO"
             },
-            "Page«PaymentToolStatusResponseDTO»": {
+            "PaymentToolStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3051,9 +3051,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«PaymentToolStatusResponseDTO»"
+              "title": "PaymentToolStatusResponseDTO"
             },
-            "Page«PhysicalStatusResponseDTO»": {
+            "PhysicalStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3071,9 +3071,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«PhysicalStatusResponseDTO»"
+              "title": "PhysicalStatusResponseDTO"
             },
-            "Page«ProductResponseDTO»": {
+            "ProductResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3091,9 +3091,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«ProductResponseDTO»"
+              "title": "ProductResponseDTO"
             },
-            "Page«ProfileResponseDTO»": {
+            "ProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3111,9 +3111,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«ProfileResponseDTO»"
+              "title": "ProfileResponseDTO"
             },
-            "Page«ServiceCodeResponseDTO»": {
+            "ServiceCodeResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3131,9 +3131,9 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«ServiceCodeResponseDTO»"
+              "title": "ServiceCodeResponseDTO"
             },
-            "Page«StatusWorkflowResponseDTO»": {
+            "StatusWorkflowResponseDTO": {
               "type": "object",
               "properties": {
                 "content": {
@@ -3151,7 +3151,7 @@
                 "totalElements": { "type": "integer", "format": "int64" },
                 "totalPages": { "type": "integer", "format": "int32" }
               },
-              "title": "Page«StatusWorkflowResponseDTO»"
+              "title": "StatusWorkflowResponseDTO"
             },
             "PaymentToolClosingRequestDTO": {
               "type": "object",
@@ -3395,7 +3395,7 @@
               },
               "title": "RestCommonResponseDTO"
             },
-            "RestCommonResponseDTO«AccountAndBucketDiscrepanciesResponseDTO»": {
+            "AccountAndBucketDiscrepanciesResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -3408,9 +3408,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountAndBucketDiscrepanciesResponseDTO»"
+              "title": "AccountAndBucketDiscrepanciesResponseDTO"
             },
-            "RestCommonResponseDTO«AccountCardResponseDTO»": {
+            "AccountCardResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountCardResponseDTO" },
@@ -3421,9 +3421,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountCardResponseDTO»"
+              "title": "AccountCardResponseDTO"
             },
-            "RestCommonResponseDTO«AccountRequestDTO»": {
+            "AccountRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountResponseDTO" },
@@ -3434,9 +3434,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountRequestDTO»"
+              "title": "AccountRequestDTO"
             },
-            "RestCommonResponseDTO«AccountResponseDTO»": {
+            "AccountResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountResponseDTO" },
@@ -3447,9 +3447,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountResponseDTO»"
+              "title": "AccountResponseDTO"
             },
-            "RestCommonResponseDTO«AccountStatusRequestDTO»": {
+            "AccountStatusRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountStatusResponseDTO" },
@@ -3460,9 +3460,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountStatusRequestDTO»"
+              "title": "AccountStatusRequestDTO"
             },
-            "RestCommonResponseDTO«AccountStatusResponseDTO»": {
+            "AccountStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountStatusResponseDTO" },
@@ -3473,9 +3473,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountStatusResponseDTO»"
+              "title": "AccountStatusResponseDTO"
             },
-            "RestCommonResponseDTO«AccountStructureRequestDTO»": {
+            "AccountStructureRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountStructureResponseDTO" },
@@ -3486,9 +3486,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountStructureRequestDTO»"
+              "title": "AccountStructureRequestDTO"
             },
-            "RestCommonResponseDTO«AccountStructureResponseDTO»": {
+            "AccountStructureResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountStructureResponseDTO" },
@@ -3499,9 +3499,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountStructureResponseDTO»"
+              "title": "AccountStructureResponseDTO"
             },
-            "RestCommonResponseDTO«AccountSubTypeRequestDTO»": {
+            "AccountSubTypeRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountSubTypeResponseDTO" },
@@ -3512,9 +3512,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountSubTypeRequestDTO»"
+              "title": "AccountSubTypeRequestDTO"
             },
-            "RestCommonResponseDTO«AccountSubTypeResponseDTO»": {
+            "AccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountSubTypeResponseDTO" },
@@ -3525,9 +3525,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountSubTypeResponseDTO»"
+              "title": "AccountSubTypeResponseDTO"
             },
-            "RestCommonResponseDTO«AccountTypeRequestDTO»": {
+            "AccountTypeRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountTypeResponseDTO" },
@@ -3538,9 +3538,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountTypeRequestDTO»"
+              "title": "AccountTypeRequestDTO"
             },
-            "RestCommonResponseDTO«AccountTypeResponseDTO»": {
+            "AccountTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountTypeResponseDTO" },
@@ -3551,9 +3551,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AccountTypeResponseDTO»"
+              "title": "AccountTypeResponseDTO"
             },
-            "RestCommonResponseDTO«Array«string»»": {
+            "Arraystring": {
               "type": "object",
               "properties": {
                 "data": { "type": "array", "items": { "type": "string" } },
@@ -3564,9 +3564,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Array«string»»"
+              "title": "Arraystring"
             },
-            "RestCommonResponseDTO«AuthorizationReleaseDateLogsResponseDTO»": {
+            "AuthorizationReleaseDateLogsResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -3579,9 +3579,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«AuthorizationReleaseDateLogsResponseDTO»"
+              "title": "AuthorizationReleaseDateLogsResponseDTO"
             },
-            "RestCommonResponseDTO«BatchProductionDetailResponseDTO»": {
+            "BatchProductionDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BatchProductionDetailResponseDTO" },
@@ -3592,9 +3592,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BatchProductionDetailResponseDTO»"
+              "title": "BatchProductionDetailResponseDTO"
             },
-            "RestCommonResponseDTO«BatchProductionResponseDTO»": {
+            "BatchProductionResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BatchProductionResponseDTO" },
@@ -3605,9 +3605,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BatchProductionResponseDTO»"
+              "title": "BatchProductionResponseDTO"
             },
-            "RestCommonResponseDTO«BinRequestDTO»": {
+            "BinRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BinResponseDTO" },
@@ -3618,9 +3618,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BinRequestDTO»"
+              "title": "BinRequestDTO"
             },
-            "RestCommonResponseDTO«BinResponseDTO»": {
+            "BinResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BinResponseDTO" },
@@ -3631,9 +3631,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BinResponseDTO»"
+              "title": "BinResponseDTO"
             },
-            "RestCommonResponseDTO«BucketEntryRequestDTO»": {
+            "BucketEntryRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BucketEntryResponseDTO" },
@@ -3644,9 +3644,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BucketEntryRequestDTO»"
+              "title": "BucketEntryRequestDTO"
             },
-            "RestCommonResponseDTO«BucketEntryResponseDTO»": {
+            "BucketEntryResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BucketEntryResponseDTO" },
@@ -3657,9 +3657,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BucketEntryResponseDTO»"
+              "title": "BucketEntryResponseDTO"
             },
-            "RestCommonResponseDTO«BucketRequestDTO»": {
+            "BucketRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BucketResponseDTO" },
@@ -3670,9 +3670,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BucketRequestDTO»"
+              "title": "BucketRequestDTO"
             },
-            "RestCommonResponseDTO«BucketResponseDTO»": {
+            "BucketResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BucketResponseDTO" },
@@ -3683,9 +3683,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«BucketResponseDTO»"
+              "title": "BucketResponseDTO"
             },
-            "RestCommonResponseDTO«CardActivityDetailResponseDTO»": {
+            "CardActivityDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardActivityDetailResponseDTO" },
@@ -3696,9 +3696,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«CardActivityDetailResponseDTO»"
+              "title": "CardActivityDetailResponseDTO"
             },
-            "RestCommonResponseDTO«CardActivityRequestDTO»": {
+            "CardActivityRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardActivityResponseDTO" },
@@ -3709,9 +3709,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«CardActivityRequestDTO»"
+              "title": "CardActivityRequestDTO"
             },
-            "RestCommonResponseDTO«CardActivityResponseDTO»": {
+            "CardActivityResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardActivityResponseDTO" },
@@ -3722,9 +3722,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«CardActivityResponseDTO»"
+              "title": "CardActivityResponseDTO"
             },
-            "RestCommonResponseDTO«CardPlanRequestDTO»": {
+            "CardPlanRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardPlanResponseDTO" },
@@ -3735,9 +3735,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«CardPlanRequestDTO»"
+              "title": "CardPlanRequestDTO"
             },
-            "RestCommonResponseDTO«CardPlanResponseDTO»": {
+            "CardPlanResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardPlanResponseDTO" },
@@ -3748,9 +3748,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«CardPlanResponseDTO»"
+              "title": "CardPlanResponseDTO"
             },
-            "RestCommonResponseDTO«FILevelRequestDTO»": {
+            "FILevelRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FILevelResponseDTO" },
@@ -3761,9 +3761,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FILevelRequestDTO»"
+              "title": "FILevelRequestDTO"
             },
-            "RestCommonResponseDTO«FILevelResponseDTO»": {
+            "FILevelResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FILevelResponseDTO" },
@@ -3774,9 +3774,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FILevelResponseDTO»"
+              "title": "FILevelResponseDTO"
             },
-            "RestCommonResponseDTO«FiAccountBucketDTO»": {
+            "FiAccountBucketDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiAccountBucketDTO" },
@@ -3787,9 +3787,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiAccountBucketDTO»"
+              "title": "FiAccountBucketDTO"
             },
-            "RestCommonResponseDTO«FiAccountSubTypeRequestDTO»": {
+            "FiAccountSubTypeRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiAccountSubTypeResponseDTO" },
@@ -3800,9 +3800,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiAccountSubTypeRequestDTO»"
+              "title": "FiAccountSubTypeRequestDTO"
             },
-            "RestCommonResponseDTO«FiAccountSubTypeResponseDTO»": {
+            "FiAccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiAccountSubTypeResponseDTO" },
@@ -3813,9 +3813,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiAccountSubTypeResponseDTO»"
+              "title": "FiAccountSubTypeResponseDTO"
             },
-            "RestCommonResponseDTO«FiBucketLevelRequestDTO»": {
+            "FiBucketLevelRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiBucketLevelResponseDTO" },
@@ -3826,9 +3826,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiBucketLevelRequestDTO»"
+              "title": "FiBucketLevelRequestDTO"
             },
-            "RestCommonResponseDTO«FiBucketLevelResponseDTO»": {
+            "FiBucketLevelResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiBucketLevelResponseDTO" },
@@ -3839,9 +3839,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiBucketLevelResponseDTO»"
+              "title": "FiBucketLevelResponseDTO"
             },
-            "RestCommonResponseDTO«FiBucketResponseDTO»": {
+            "FiBucketResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiBucketResponseDTO" },
@@ -3852,9 +3852,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiBucketResponseDTO»"
+              "title": "FiBucketResponseDTO"
             },
-            "RestCommonResponseDTO«FiCardActivitiesRequestDTO»": {
+            "FiCardActivitiesRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiCardActivitiesResponseDTO" },
@@ -3865,9 +3865,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiCardActivitiesRequestDTO»"
+              "title": "FiCardActivitiesRequestDTO"
             },
-            "RestCommonResponseDTO«FiCardActivitiesResponseDTO»": {
+            "FiCardActivitiesResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiCardActivitiesResponseDTO" },
@@ -3878,9 +3878,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiCardActivitiesResponseDTO»"
+              "title": "FiCardActivitiesResponseDTO"
             },
-            "RestCommonResponseDTO«FiCronRequestDTO»": {
+            "FiCronRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiCronResponseDTO" },
@@ -3891,9 +3891,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiCronRequestDTO»"
+              "title": "FiCronRequestDTO"
             },
-            "RestCommonResponseDTO«FiCronResponseDTO»": {
+            "FiCronResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiCronResponseDTO" },
@@ -3904,9 +3904,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiCronResponseDTO»"
+              "title": "FiCronResponseDTO"
             },
-            "RestCommonResponseDTO«FiEmbossingReqRequestDTO»": {
+            "FiEmbossingReqRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiEmbossingReqResponseDTO" },
@@ -3917,9 +3917,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiEmbossingReqRequestDTO»"
+              "title": "FiEmbossingReqRequestDTO"
             },
-            "RestCommonResponseDTO«FiEmbossingReqResponseDTO»": {
+            "FiEmbossingReqResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiEmbossingReqResponseDTO" },
@@ -3930,9 +3930,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«FiEmbossingReqResponseDTO»"
+              "title": "FiEmbossingReqResponseDTO"
             },
-            "RestCommonResponseDTO«InterestProfileRequestDTO»": {
+            "InterestProfileRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/InterestProfileResponseDTO" },
@@ -3943,9 +3943,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«InterestProfileRequestDTO»"
+              "title": "InterestProfileRequestDTO"
             },
-            "RestCommonResponseDTO«InterestProfileResponseDTO»": {
+            "InterestProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/InterestProfileResponseDTO" },
@@ -3956,9 +3956,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«InterestProfileResponseDTO»"
+              "title": "InterestProfileResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountAndBucketDiscrepanciesResponseDTO»»": {
+            "AccountAndBucketDiscrepanciesResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -3974,9 +3974,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountAndBucketDiscrepanciesResponseDTO»»"
+              "title": "AccountAndBucketDiscrepanciesResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountCardResponseDTO»»": {
+            "AccountCardResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -3990,9 +3990,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountCardResponseDTO»»"
+              "title": "AccountCardResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountResponseDTO»»": {
+            "AccountResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4006,9 +4006,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountResponseDTO»»"
+              "title": "AccountResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountStatusResponseDTO»»": {
+            "AccountStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4022,9 +4022,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountStatusResponseDTO»»"
+              "title": "AccountStatusResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountStructureResponseDTO»»": {
+            "AccountStructureResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4038,9 +4038,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountStructureResponseDTO»»"
+              "title": "AccountStructureResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountSubTypeResponseDTO»»": {
+            "AccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4054,9 +4054,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountSubTypeResponseDTO»»"
+              "title": "AccountSubTypeResponseDTO"
             },
-            "RestCommonResponseDTO«List«AccountTypeResponseDTO»»": {
+            "AccountTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4070,9 +4070,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AccountTypeResponseDTO»»"
+              "title": "AccountTypeResponseDTO"
             },
-            "RestCommonResponseDTO«List«AuthorizationReleaseDateLogsResponseDTO»»": {
+            "AuthorizationReleaseDateLogsResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4088,9 +4088,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«AuthorizationReleaseDateLogsResponseDTO»»"
+              "title": "AuthorizationReleaseDateLogsResponseDTO"
             },
-            "RestCommonResponseDTO«List«BatchProductionDetailResponseDTO»»": {
+            "BatchProductionDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4104,9 +4104,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«BatchProductionDetailResponseDTO»»"
+              "title": "BatchProductionDetailResponseDTO"
             },
-            "RestCommonResponseDTO«List«BatchProductionResponseDTO»»": {
+            "BatchProductionResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4120,9 +4120,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«BatchProductionResponseDTO»»"
+              "title": "BatchProductionResponseDTO"
             },
-            "RestCommonResponseDTO«List«BinResponseDTO»»": {
+            "BinResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4136,9 +4136,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«BinResponseDTO»»"
+              "title": "BinResponseDTO"
             },
-            "RestCommonResponseDTO«List«BucketEntryResponseDTO»»": {
+            "BucketEntryResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4152,9 +4152,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«BucketEntryResponseDTO»»"
+              "title": "BucketEntryResponseDTO"
             },
-            "RestCommonResponseDTO«List«BucketResponseDTO»»": {
+            "BucketResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4168,9 +4168,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«BucketResponseDTO»»"
+              "title": "BucketResponseDTO"
             },
-            "RestCommonResponseDTO«List«CardActivityDetailResponseDTO»»": {
+            "CardActivityDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4184,9 +4184,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«CardActivityDetailResponseDTO»»"
+              "title": "CardActivityDetailResponseDTO"
             },
-            "RestCommonResponseDTO«List«CardActivityResponseDTO»»": {
+            "CardActivityResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4200,9 +4200,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«CardActivityResponseDTO»»"
+              "title": "CardActivityResponseDTO"
             },
-            "RestCommonResponseDTO«List«CardPlanResponseDTO»»": {
+            "CardPlanResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4216,9 +4216,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«CardPlanResponseDTO»»"
+              "title": "CardPlanResponseDTO"
             },
-            "RestCommonResponseDTO«List«FILevelResponseDTO»»": {
+            "FILevelResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4232,9 +4232,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FILevelResponseDTO»»"
+              "title": "FILevelResponseDTO"
             },
-            "RestCommonResponseDTO«List«FiAccountBucketDTO»»": {
+            "FiAccountBucketDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4248,9 +4248,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiAccountBucketDTO»»"
+              "title": "FiAccountBucketDTO"
             },
-            "RestCommonResponseDTO«List«FiAccountSubTypeResponseDTO»»": {
+            "FiAccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4264,9 +4264,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiAccountSubTypeResponseDTO»»"
+              "title": "FiAccountSubTypeResponseDTO"
             },
-            "RestCommonResponseDTO«List«FiBucketLevelResponseDTO»»": {
+            "FiBucketLevelResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4280,9 +4280,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiBucketLevelResponseDTO»»"
+              "title": "FiBucketLevelResponseDTO"
             },
-            "RestCommonResponseDTO«List«FiBucketResponseDTO»»": {
+            "FiBucketResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4296,9 +4296,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiBucketResponseDTO»»"
+              "title": "FiBucketResponseDTO"
             },
-            "RestCommonResponseDTO«List«FiCardActivitiesResponseDTO»»": {
+            "FiCardActivitiesResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4312,9 +4312,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiCardActivitiesResponseDTO»»"
+              "title": "FiCardActivitiesResponseDTO"
             },
-            "RestCommonResponseDTO«List«FiCronResponseDTO»»": {
+            "FiCronResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4328,9 +4328,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiCronResponseDTO»»"
+              "title": "FiCronResponseDTO"
             },
-            "RestCommonResponseDTO«List«FiEmbossingReqResponseDTO»»": {
+            "FiEmbossingReqResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4344,9 +4344,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«FiEmbossingReqResponseDTO»»"
+              "title": "FiEmbossingReqResponseDTO"
             },
-            "RestCommonResponseDTO«List«InterestProfileResponseDTO»»": {
+            "InterestProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4360,9 +4360,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«InterestProfileResponseDTO»»"
+              "title": "InterestProfileResponseDTO"
             },
-            "RestCommonResponseDTO«List«PaymentToolResponseDTO»»": {
+            "PaymentToolResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4376,9 +4376,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«PaymentToolResponseDTO»»"
+              "title": "PaymentToolResponseDTO"
             },
-            "RestCommonResponseDTO«List«PaymentToolStatusResponseDTO»»": {
+            "PaymentToolStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4392,9 +4392,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«PaymentToolStatusResponseDTO»»"
+              "title": "PaymentToolStatusResponseDTO"
             },
-            "RestCommonResponseDTO«List«PhysicalStatusResponseDTO»»": {
+            "PhysicalStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4408,9 +4408,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«PhysicalStatusResponseDTO»»"
+              "title": "PhysicalStatusResponseDTO"
             },
-            "RestCommonResponseDTO«List«ProductResponseDTO»»": {
+            "ProductResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4424,9 +4424,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«ProductResponseDTO»»"
+              "title": "ProductResponseDTO"
             },
-            "RestCommonResponseDTO«List«ProfileResponseDTO»»": {
+            "ProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4440,9 +4440,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«ProfileResponseDTO»»"
+              "title": "ProfileResponseDTO"
             },
-            "RestCommonResponseDTO«List«ServiceCodeResponseDTO»»": {
+            "ServiceCodeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4456,9 +4456,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«ServiceCodeResponseDTO»»"
+              "title": "ServiceCodeResponseDTO"
             },
-            "RestCommonResponseDTO«List«StatusWorkflowResponseDTO»»": {
+            "StatusWorkflowResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4472,9 +4472,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«StatusWorkflowResponseDTO»»"
+              "title": "StatusWorkflowResponseDTO"
             },
-            "RestCommonResponseDTO«List«string»»": {
+            "string": {
               "type": "object",
               "properties": {
                 "data": { "type": "array", "items": { "type": "string" } },
@@ -4485,9 +4485,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«string»»"
+              "title": "string"
             },
-            "RestCommonResponseDTO«List«uuid»»": {
+            "uuid": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4501,11 +4501,11 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«List«uuid»»"
+              "title": "uuid"
             },
             
            
-            "RestCommonResponseDTO«Page«AccountStatusResponseDTO»»": {
+            "AccountStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountStatusResponseDTO" },
@@ -4516,9 +4516,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«AccountStatusResponseDTO»»"
+              "title": "AccountStatusResponseDTO"
             },
-            "RestCommonResponseDTO«Page«AccountStructureResponseDTO»»": {
+            "AccountStructureResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountStructureResponseDTO" },
@@ -4529,9 +4529,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«AccountStructureResponseDTO»»"
+              "title": "AccountStructureResponseDTO"
             },
-            "RestCommonResponseDTO«Page«AccountSubTypeResponseDTO»»": {
+            "AccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountSubTypeResponseDTO" },
@@ -4542,9 +4542,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«AccountSubTypeResponseDTO»»"
+              "title": "AccountSubTypeResponseDTO"
             },
-            "RestCommonResponseDTO«Page«AccountTypeResponseDTO»»": {
+            "AccountTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/AccountTypeResponseDTO" },
@@ -4555,9 +4555,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«AccountTypeResponseDTO»»"
+              "title": "AccountTypeResponseDTO"
             },
-            "RestCommonResponseDTO«Page«AuthorizationReleaseDateLogsResponseDTO»»": {
+            "AuthorizationReleaseDateLogsResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4570,9 +4570,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«AuthorizationReleaseDateLogsResponseDTO»»"
+              "title": "AuthorizationReleaseDateLogsResponseDTO"
             },
-            "RestCommonResponseDTO«Page«BatchProductionDetailResponseDTO»»": {
+            "BatchProductionDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "data": {
@@ -4585,9 +4585,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«BatchProductionDetailResponseDTO»»"
+              "title": "BatchProductionDetailResponseDTO"
             },
-            "RestCommonResponseDTO«Page«BatchProductionResponseDTO»»": {
+            "BatchProductionResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BatchProductionResponseDTO" },
@@ -4598,9 +4598,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«BatchProductionResponseDTO»»"
+              "title": "BatchProductionResponseDTO"
             },
-            "RestCommonResponseDTO«Page«BinResponseDTO»»": {
+            "BinResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BinResponseDTO" },
@@ -4611,9 +4611,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«BinResponseDTO»»"
+              "title": "BinResponseDTO"
             },
-            "RestCommonResponseDTO«Page«BucketEntryResponseDTO»»": {
+            "BucketEntryResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BucketEntryResponseDTO" },
@@ -4624,9 +4624,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«BucketEntryResponseDTO»»"
+              "title": "BucketEntryResponseDTO"
             },
-            "RestCommonResponseDTO«Page«BucketResponseDTO»»": {
+            "BucketResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/BucketResponseDTO" },
@@ -4637,9 +4637,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«BucketResponseDTO»»"
+              "title": "BucketResponseDTO"
             },
-            "RestCommonResponseDTO«Page«CardActivityDetailResponseDTO»»": {
+            "CardActivityDetailResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardActivityDetailResponseDTO" },
@@ -4650,9 +4650,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«CardActivityDetailResponseDTO»»"
+              "title": "CardActivityDetailResponseDTO"
             },
-            "RestCommonResponseDTO«Page«CardActivityResponseDTO»»": {
+            "CardActivityResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardActivityResponseDTO" },
@@ -4663,9 +4663,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«CardActivityResponseDTO»»"
+              "title": "CardActivityResponseDTO"
             },
-            "RestCommonResponseDTO«Page«CardPlanResponseDTO»»": {
+            "CardPlanResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/CardPlanResponseDTO" },
@@ -4676,9 +4676,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«CardPlanResponseDTO»»"
+              "title": "CardPlanResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FILevelResponseDTO»»": {
+            "FILevelResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FILevelResponseDTO" },
@@ -4689,9 +4689,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FILevelResponseDTO»»"
+              "title": "FILevelResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FiAccountBucketDTO»»": {
+            "FiAccountBucketDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiAccountBucketDTO" },
@@ -4702,9 +4702,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiAccountBucketDTO»»"
+              "title": "FiAccountBucketDTO"
             },
-            "RestCommonResponseDTO«Page«FiAccountSubTypeResponseDTO»»": {
+            "FiAccountSubTypeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiAccountSubTypeResponseDTO" },
@@ -4715,9 +4715,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiAccountSubTypeResponseDTO»»"
+              "title": "FiAccountSubTypeResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FiBucketLevelResponseDTO»»": {
+            "FiBucketLevelResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiBucketLevelResponseDTO" },
@@ -4728,9 +4728,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiBucketLevelResponseDTO»»"
+              "title": "FiBucketLevelResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FiBucketResponseDTO»»": {
+            "FiBucketResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiBucketResponseDTO" },
@@ -4741,9 +4741,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiBucketResponseDTO»»"
+              "title": "FiBucketResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FiCardActivitiesResponseDTO»»": {
+            "FiCardActivitiesResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiCardActivitiesResponseDTO" },
@@ -4754,9 +4754,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiCardActivitiesResponseDTO»»"
+              "title": "FiCardActivitiesResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FiCronResponseDTO»»": {
+            "FiCronResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiCronResponseDTO" },
@@ -4767,9 +4767,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiCronResponseDTO»»"
+              "title": "FiCronResponseDTO"
             },
-            "RestCommonResponseDTO«Page«FiEmbossingReqResponseDTO»»": {
+            "FiEmbossingReqResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/FiEmbossingReqResponseDTO" },
@@ -4780,9 +4780,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«FiEmbossingReqResponseDTO»»"
+              "title": "FiEmbossingReqResponseDTO"
             },
-            "RestCommonResponseDTO«Page«InterestProfileResponseDTO»»": {
+            "InterestProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/InterestProfileResponseDTO" },
@@ -4793,9 +4793,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«InterestProfileResponseDTO»»"
+              "title": "InterestProfileResponseDTO"
             },
-            "RestCommonResponseDTO«Page«PaymentToolResponseDTO»»": {
+            "PaymentToolResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PaymentToolResponseDTO" },
@@ -4806,9 +4806,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«PaymentToolResponseDTO»»"
+              "title": "PaymentToolResponseDTO"
             },
-            "RestCommonResponseDTO«Page«PaymentToolStatusResponseDTO»»": {
+            "PaymentToolStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PaymentToolStatusResponseDTO" },
@@ -4819,9 +4819,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«PaymentToolStatusResponseDTO»»"
+              "title": "PaymentToolStatusResponseDTO"
             },
-            "RestCommonResponseDTO«Page«PhysicalStatusResponseDTO»»": {
+            "PhysicalStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PhysicalStatusResponseDTO" },
@@ -4832,9 +4832,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«PhysicalStatusResponseDTO»»"
+              "title": "PhysicalStatusResponseDTO"
             },
-            "RestCommonResponseDTO«Page«ProductResponseDTO»»": {
+            "ProductResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ProductResponseDTO" },
@@ -4845,9 +4845,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«ProductResponseDTO»»"
+              "title": "ProductResponseDTO"
             },
-            "RestCommonResponseDTO«Page«ProfileResponseDTO»»": {
+            "ProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ProfileResponseDTO" },
@@ -4858,9 +4858,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«ProfileResponseDTO»»"
+              "title": "ProfileResponseDTO"
             },
-            "RestCommonResponseDTO«Page«ServiceCodeResponseDTO»»": {
+            "ServiceCodeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ServiceCodeResponseDTO" },
@@ -4871,9 +4871,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«ServiceCodeResponseDTO»»"
+              "title": "ServiceCodeResponseDTO"
             },
-            "RestCommonResponseDTO«Page«StatusWorkflowResponseDTO»»": {
+            "StatusWorkflowResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/StatusWorkflowResponseDTO" },
@@ -4884,9 +4884,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«Page«StatusWorkflowResponseDTO»»"
+              "title": "StatusWorkflowResponseDTO"
             },
-            "RestCommonResponseDTO«PaymentToolPinResponseDTO»": {
+            "PaymentToolPinResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PaymentToolPinResponseDTO" },
@@ -4897,9 +4897,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«PaymentToolPinResponseDTO»"
+              "title": "PaymentToolPinResponseDTO"
             },
-            "RestCommonResponseDTO«PaymentToolRequestDTO»": {
+            "PaymentToolRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PaymentToolResponseDTO" },
@@ -4910,9 +4910,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«PaymentToolRequestDTO»"
+              "title": "PaymentToolRequestDTO"
             },
-            "RestCommonResponseDTO«PaymentToolResponseDTO»": {
+            "PaymentToolResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PaymentToolResponseDTO" },
@@ -4923,9 +4923,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«PaymentToolResponseDTO»"
+              "title": "PaymentToolResponseDTO"
             },
-            "RestCommonResponseDTO«PaymentToolStatusResponseDTO»": {
+            "PaymentToolStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PaymentToolStatusResponseDTO" },
@@ -4936,9 +4936,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«PaymentToolStatusResponseDTO»"
+              "title": "PaymentToolStatusResponseDTO"
             },
-            "RestCommonResponseDTO«PhysicalStatusRequestDTO»": {
+            "PhysicalStatusRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PhysicalStatusResponseDTO" },
@@ -4949,9 +4949,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«PhysicalStatusRequestDTO»"
+              "title": "PhysicalStatusRequestDTO"
             },
-            "RestCommonResponseDTO«PhysicalStatusResponseDTO»": {
+            "PhysicalStatusResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/PhysicalStatusResponseDTO" },
@@ -4962,9 +4962,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«PhysicalStatusResponseDTO»"
+              "title": "PhysicalStatusResponseDTO"
             },
-            "RestCommonResponseDTO«ProductRequestDTO»": {
+            "ProductRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ProductResponseDTO" },
@@ -4975,9 +4975,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«ProductRequestDTO»"
+              "title": "ProductRequestDTO"
             },
-            "RestCommonResponseDTO«ProductResponseDTO»": {
+            "ProductResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ProductResponseDTO" },
@@ -4988,9 +4988,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«ProductResponseDTO»"
+              "title": "ProductResponseDTO"
             },
-            "RestCommonResponseDTO«ProfileRequestDTO»": {
+            "ProfileRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ProfileResponseDTO" },
@@ -5001,9 +5001,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«ProfileRequestDTO»"
+              "title": "ProfileRequestDTO"
             },
-            "RestCommonResponseDTO«ProfileResponseDTO»": {
+            "ProfileResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ProfileResponseDTO" },
@@ -5014,9 +5014,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«ProfileResponseDTO»"
+              "title": "ProfileResponseDTO"
             },
-            "RestCommonResponseDTO«ServiceCodeRequestDTO»": {
+            "ServiceCodeRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ServiceCodeResponseDTO" },
@@ -5027,9 +5027,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«ServiceCodeRequestDTO»"
+              "title": "ServiceCodeRequestDTO"
             },
-            "RestCommonResponseDTO«ServiceCodeResponseDTO»": {
+            "ServiceCodeResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/ServiceCodeResponseDTO" },
@@ -5040,9 +5040,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«ServiceCodeResponseDTO»"
+              "title": "ServiceCodeResponseDTO"
             },
-            "RestCommonResponseDTO«StatusWorkflowRequestDTO»": {
+            "StatusWorkflowRequestDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/StatusWorkflowResponseDTO" },
@@ -5053,9 +5053,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«StatusWorkflowRequestDTO»"
+              "title": "StatusWorkflowRequestDTO"
             },
-            "RestCommonResponseDTO«StatusWorkflowResponseDTO»": {
+            "StatusWorkflowResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "$ref": "#/definitions/StatusWorkflowResponseDTO" },
@@ -5066,9 +5066,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«StatusWorkflowResponseDTO»"
+              "title": "StatusWorkflowResponseDTO"
             },
-            "RestCommonResponseDTO«boolean»": {
+            "StatusWorkflowResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "type": "boolean" },
@@ -5079,9 +5079,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«boolean»"
+              "title": "StatusWorkflowResponseDTO"
             },
-            "RestCommonResponseDTO«double»": {
+            "StatusWorkflowResponseDTO": {
               "type": "object",
               "properties": {
                 "data": { "type": "number", "format": "double" },
@@ -5092,9 +5092,9 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«double»"
+              "title": "StatusWorkflowResponseDTO"
             },
-            "RestCommonResponseDTO«uuid»": {
+            "uuid": {
               "type": "object",
               "properties": {
                 "data": { "type": "string", "format": "uuid" },
@@ -5105,7 +5105,7 @@
                 "title": { "type": "string" },
                 "valid": { "type": "boolean" }
               },
-              "title": "RestCommonResponseDTO«uuid»"
+              "title": "uuid"
             },
             "ServiceCodeRequestDTO": {
               "type": "object",
