@@ -651,7 +651,7 @@
       },
       "/processing/tranlog/find-by-criteria": {
         "post": {
-          "tags": ["tranlog-controller"],
+          "tags": ["Authorization Log"],
           "summary": "Find all authorizations by specific criteria",
           "operationId": "findByCriteriaUsingPOST_5",
           "consumes": ["application/json"],
