@@ -6,7 +6,7 @@
       "title": "ASIA HAWALA APIs",
       "termsOfService": "Terms of Service"
     },
-    "host": "",
+    "host": "api-oci.areeba.com/issuing",
     "basePath": "/",
     "paths": {
       "/issuing/access-token": {
@@ -776,7 +776,7 @@
         "AccessTokenRequestDTO": {
           "type": "object",
           "properties": {
-            "password": { "type": "string","description": "bla bla" },
+            "password": { "type": "string","description": "" },
             "username": { "type": "string" }
           },
           "title": "AccessTokenRequestDTO"
