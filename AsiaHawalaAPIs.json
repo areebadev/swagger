@@ -28,14 +28,13 @@
           "responses": {
             "200": {
               "description": "OK",
-              "schema": { "$ref": "#/definitions/RestCommonResponseDTO«string»" }
+              "schema": { "$ref": "#/definitions/RestCommonResponseDTO" }
             },
             "201": { "description": "Created" },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
           "deprecated": false
         }
       },
@@ -43,7 +42,7 @@
         "post": {
           "tags": ["Client"],
           "summary": "Create a new Client",
-          "operationId": "saveNewUsingPOST",
+          "operationId": "saveNewUsingPOST_CL",
           "consumes": ["application/json"],
           "produces": ["*/*"],
           "parameters": [
@@ -59,7 +58,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountHolderResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -67,7 +66,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -82,7 +81,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of the instance that will be retrieved",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             }
@@ -91,14 +90,14 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountHolderResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         },
         "put": {
@@ -112,7 +111,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of Client that should be updated",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             },
@@ -128,7 +127,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountHolderResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -136,7 +135,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         },
         "delete": {
@@ -149,7 +148,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of Client that should be deleted",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             }
@@ -158,14 +157,14 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountHolderRequestDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "204": { "description": "No Content" },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -189,7 +188,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -197,7 +196,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -212,7 +211,7 @@
               "name": "id",
               "in": "path",
               "description": "Get Account Details by Id",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             }
@@ -221,20 +220,20 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         },
         "put": {
           "tags": ["Account"],
           "summary": "Update an existing Account",
-          "operationId": "updateUsingPUT",
+          "operationId": "updateUsingPUT_ACC",
           "consumes": ["application/json"],
           "produces": ["*/*"],
           "parameters": [
@@ -242,7 +241,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of Account that should be updated",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             },
@@ -258,7 +257,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -266,20 +265,20 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         },
         "delete": {
           "tags": ["Account"],
           "summary": "Delete an existing Account",
-          "operationId": "deleteUsingDELETE",
+          "operationId": "deleteUsingDELETE_ACC",
           "produces": ["*/*"],
           "parameters": [
             {
               "name": "id",
               "in": "path",
               "description": "Id of Account that should be deleted",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             }
@@ -288,14 +287,14 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«AccountRequestDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "204": { "description": "No Content" },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -319,7 +318,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«PaymentToolResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -327,7 +326,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -342,7 +341,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of the Card that will be retrieved",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             }
@@ -351,14 +350,14 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«PaymentToolResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         },
         "put": {
@@ -372,7 +371,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of Card that should be updated",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             },
@@ -388,7 +387,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«PaymentToolResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -396,7 +395,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         },
         "delete": {
@@ -409,7 +408,7 @@
               "name": "id",
               "in": "path",
               "description": "Id of Card that should be deleted",
-              "required": false,
+              "required": true,
               "type": "string",
               "format": "uuid"
             }
@@ -418,14 +417,14 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«PaymentToolRequestDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "204": { "description": "No Content" },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -454,13 +453,13 @@
           "responses": {
             "200": {
               "description": "OK",
-              "schema": { "$ref": "#/definitions/RestCommonResponseDTO«string»" }
+              "schema": { "$ref": "#/definitions/RestCommonResponseDTO" }
             },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -484,7 +483,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«List«string»»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -492,7 +491,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -519,7 +518,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«List«string»»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -527,7 +526,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -550,14 +549,14 @@
           "responses": {
             "200": {
               "description": "OK",
-              "schema": { "$ref": "#/definitions/RestCommonResponseDTO«string»" }
+              "schema": { "$ref": "#/definitions/RestCommonResponseDTO" }
             },
             "201": { "description": "Created" },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -569,7 +568,7 @@
           "produces": ["*/*"],
           "parameters": [
             {
-              "name": "Card Number",
+              "name": "pan",
               "in": "path",
               "description": "Card Number",
               "required": true,
@@ -579,13 +578,13 @@
           "responses": {
             "200": {
               "description": "OK",
-              "schema": { "$ref": "#/definitions/RestCommonResponseDTO«double»" }
+              "schema": { "$ref": "#/definitions/RestCommonResponseDTO" }
             },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -597,7 +596,7 @@
           "produces": ["*/*"],
           "parameters": [
             {
-              "name": "Card Number",
+              "name": "pan",
               "in": "path",
               "description": "Card Number",
               "required": true,
@@ -607,13 +606,13 @@
           "responses": {
             "200": {
               "description": "OK",
-              "schema": { "$ref": "#/definitions/RestCommonResponseDTO«double»" }
+              "schema": { "$ref": "#/definitions/RestCommonResponseDTO" }
             },
             "401": { "description": "Unauthorized" },
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
@@ -637,7 +636,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«ReloadingResponseDTO»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -645,13 +644,13 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       },
       "/processing/tranlog/find-by-criteria": {
         "post": {
-          "tags": ["Authorization Log"],
+          "tags": ["tranlog-controller"],
           "summary": "Find all authorizations by specific criteria",
           "operationId": "findByCriteriaUsingPOST_5",
           "consumes": ["application/json"],
@@ -669,7 +668,7 @@
             "200": {
               "description": "OK",
               "schema": {
-                "$ref": "#/definitions/RestCommonResponseDTO«Page«TranlogResponseDTO»»"
+                "$ref": "#/definitions/RestCommonResponseDTO"
               }
             },
             "201": { "description": "Created" },
@@ -677,7 +676,7 @@
             "403": { "description": "Forbidden" },
             "404": { "description": "Not Found" }
           },
-          "security": [{ "JWT": ["global"] }],
+          
           "deprecated": false
         }
       }                 
@@ -776,7 +775,7 @@
         "AccessTokenRequestDTO": {
           "type": "object",
           "properties": {
-            "password": { "type": "string","description": "" },
+            "password": { "type": "string","description": "bla bla" },
             "username": { "type": "string" }
           },
           "title": "AccessTokenRequestDTO"
@@ -1288,86 +1287,6 @@
             "valid": { "type": "boolean" }
           },
           "title": "RestCommonResponseDTO«MonthlyCycleLogResponseDTO»"
-        },
-        "RestCommonResponseDTO«Page«CycleConfigurationResponseDTO»»": {
-          "type": "object",
-          "properties": {
-            "data": { "$ref": "#/definitions/Page«CycleConfigurationResponseDTO»" },
-            "devMessage": { "type": "string" },
-            "errorCode": { "type": "integer", "format": "int32" },
-            "message": { "type": "string" },
-             
-            "title": { "type": "string" },
-            "valid": { "type": "boolean" }
-          },
-          "title": "RestCommonResponseDTO«Page«CycleConfigurationResponseDTO»»"
-        },
-        "RestCommonResponseDTO«Page«CycleConfigurationTraceResponseDTO»»": {
-          "type": "object",
-          "properties": {
-            "data": {
-              "$ref": "#/definitions/Page«CycleConfigurationTraceResponseDTO»"
-            },
-            "devMessage": { "type": "string" },
-            "errorCode": { "type": "integer", "format": "int32" },
-            "message": { "type": "string" },
-             
-            "title": { "type": "string" },
-            "valid": { "type": "boolean" }
-          },
-          "title": "RestCommonResponseDTO«Page«CycleConfigurationTraceResponseDTO»»"
-        },
-        "RestCommonResponseDTO«Page«MonthlyCycleLogResponseDTO»»": {
-          "type": "object",
-          "properties": {
-            "data": { "$ref": "#/definitions/Page«MonthlyCycleLogResponseDTO»" },
-            "devMessage": { "type": "string" },
-            "errorCode": { "type": "integer", "format": "int32" },
-            "message": { "type": "string" },
-             
-            "title": { "type": "string" },
-            "valid": { "type": "boolean" }
-          },
-          "title": "RestCommonResponseDTO«Page«MonthlyCycleLogResponseDTO»»"
-        },
-        "RestCommonResponseDTO«Page«ReloadingResponseDTO»»": {
-          "type": "object",
-          "properties": {
-            "data": { "$ref": "#/definitions/Page«ReloadingResponseDTO»" },
-            "devMessage": { "type": "string" },
-            "errorCode": { "type": "integer", "format": "int32" },
-            "message": { "type": "string" },
-             
-            "title": { "type": "string" },
-            "valid": { "type": "boolean" }
-          },
-          "title": "RestCommonResponseDTO«Page«ReloadingResponseDTO»»"
-        },
-        "RestCommonResponseDTO«Page«TranfinResponseDTO»»": {
-          "type": "object",
-          "properties": {
-            "data": { "$ref": "#/definitions/Page«TranfinResponseDTO»" },
-            "devMessage": { "type": "string" },
-            "errorCode": { "type": "integer", "format": "int32" },
-            "message": { "type": "string" },
-             
-            "title": { "type": "string" },
-            "valid": { "type": "boolean" }
-          },
-          "title": "RestCommonResponseDTO«Page«TranfinResponseDTO»»"
-        },
-        "RestCommonResponseDTO«Page«TranlogResponseDTO»»": {
-          "type": "object",
-          "properties": {
-            "data": { "$ref": "#/definitions/Page«TranlogResponseDTO»" },
-            "devMessage": { "type": "string" },
-            "errorCode": { "type": "integer", "format": "int32" },
-            "message": { "type": "string" },
-             
-            "title": { "type": "string" },
-            "valid": { "type": "boolean" }
-          },
-          "title": "RestCommonResponseDTO«Page«TranlogResponseDTO»»"
         },
         "RestCommonResponseDTO«ReloadingRequestDTO»": {
           "type": "object",
@@ -4584,51 +4503,12 @@
               },
               "title": "RestCommonResponseDTO«List«uuid»»"
             },
-            "RestCommonResponseDTO«Page«AccountAndBucketDiscrepanciesResponseDTO»»": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "$ref": "#/definitions/Page«AccountAndBucketDiscrepanciesResponseDTO»"
-                },
-                "devMessage": { "type": "string" },
-                "errorCode": { "type": "integer", "format": "int32" },
-                "message": { "type": "string" },
-                 
-                "title": { "type": "string" },
-                "valid": { "type": "boolean" }
-              },
-              "title": "RestCommonResponseDTO«Page«AccountAndBucketDiscrepanciesResponseDTO»»"
-            },
-            "RestCommonResponseDTO«Page«AccountCardResponseDTO»»": {
-              "type": "object",
-              "properties": {
-                "data": { "$ref": "#/definitions/Page«AccountCardResponseDTO»" },
-                "devMessage": { "type": "string" },
-                "errorCode": { "type": "integer", "format": "int32" },
-                "message": { "type": "string" },
-                 
-                "title": { "type": "string" },
-                "valid": { "type": "boolean" }
-              },
-              "title": "RestCommonResponseDTO«Page«AccountCardResponseDTO»»"
-            },
-            "RestCommonResponseDTO«Page«AccountResponseDTO»»": {
-              "type": "object",
-              "properties": {
-                "data": { "$ref": "#/definitions/Page«AccountResponseDTO»" },
-                "devMessage": { "type": "string" },
-                "errorCode": { "type": "integer", "format": "int32" },
-                "message": { "type": "string" },
-                 
-                "title": { "type": "string" },
-                "valid": { "type": "boolean" }
-              },
-              "title": "RestCommonResponseDTO«Page«AccountResponseDTO»»"
-            },
+            
+           
             "RestCommonResponseDTO«Page«AccountStatusResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«AccountStatusResponseDTO»" },
+                "data": { "$ref": "#/definitions/AccountStatusResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4641,7 +4521,7 @@
             "RestCommonResponseDTO«Page«AccountStructureResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«AccountStructureResponseDTO»" },
+                "data": { "$ref": "#/definitions/AccountStructureResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4654,7 +4534,7 @@
             "RestCommonResponseDTO«Page«AccountSubTypeResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«AccountSubTypeResponseDTO»" },
+                "data": { "$ref": "#/definitions/AccountSubTypeResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4667,7 +4547,7 @@
             "RestCommonResponseDTO«Page«AccountTypeResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«AccountTypeResponseDTO»" },
+                "data": { "$ref": "#/definitions/AccountTypeResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4681,7 +4561,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "$ref": "#/definitions/Page«AuthorizationReleaseDateLogsResponseDTO»"
+                  "$ref": "#/definitions/AuthorizationReleaseDateLogsResponseDTO"
                 },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
@@ -4696,7 +4576,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "$ref": "#/definitions/Page«BatchProductionDetailResponseDTO»"
+                  "$ref": "#/definitions/BatchProductionDetailResponseDTO"
                 },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
@@ -4710,7 +4590,7 @@
             "RestCommonResponseDTO«Page«BatchProductionResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«BatchProductionResponseDTO»" },
+                "data": { "$ref": "#/definitions/BatchProductionResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4723,7 +4603,7 @@
             "RestCommonResponseDTO«Page«BinResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«BinResponseDTO»" },
+                "data": { "$ref": "#/definitions/BinResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4736,7 +4616,7 @@
             "RestCommonResponseDTO«Page«BucketEntryResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«BucketEntryResponseDTO»" },
+                "data": { "$ref": "#/definitions/BucketEntryResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4749,7 +4629,7 @@
             "RestCommonResponseDTO«Page«BucketResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«BucketResponseDTO»" },
+                "data": { "$ref": "#/definitions/BucketResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4762,7 +4642,7 @@
             "RestCommonResponseDTO«Page«CardActivityDetailResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«CardActivityDetailResponseDTO»" },
+                "data": { "$ref": "#/definitions/CardActivityDetailResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4775,7 +4655,7 @@
             "RestCommonResponseDTO«Page«CardActivityResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«CardActivityResponseDTO»" },
+                "data": { "$ref": "#/definitions/CardActivityResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4788,7 +4668,7 @@
             "RestCommonResponseDTO«Page«CardPlanResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«CardPlanResponseDTO»" },
+                "data": { "$ref": "#/definitions/CardPlanResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4801,7 +4681,7 @@
             "RestCommonResponseDTO«Page«FILevelResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FILevelResponseDTO»" },
+                "data": { "$ref": "#/definitions/FILevelResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4814,7 +4694,7 @@
             "RestCommonResponseDTO«Page«FiAccountBucketDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiAccountBucketDTO»" },
+                "data": { "$ref": "#/definitions/FiAccountBucketDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4827,7 +4707,7 @@
             "RestCommonResponseDTO«Page«FiAccountSubTypeResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiAccountSubTypeResponseDTO»" },
+                "data": { "$ref": "#/definitions/FiAccountSubTypeResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4840,7 +4720,7 @@
             "RestCommonResponseDTO«Page«FiBucketLevelResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiBucketLevelResponseDTO»" },
+                "data": { "$ref": "#/definitions/FiBucketLevelResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4853,7 +4733,7 @@
             "RestCommonResponseDTO«Page«FiBucketResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiBucketResponseDTO»" },
+                "data": { "$ref": "#/definitions/FiBucketResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4866,7 +4746,7 @@
             "RestCommonResponseDTO«Page«FiCardActivitiesResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiCardActivitiesResponseDTO»" },
+                "data": { "$ref": "#/definitions/FiCardActivitiesResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4879,7 +4759,7 @@
             "RestCommonResponseDTO«Page«FiCronResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiCronResponseDTO»" },
+                "data": { "$ref": "#/definitions/FiCronResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4892,7 +4772,7 @@
             "RestCommonResponseDTO«Page«FiEmbossingReqResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«FiEmbossingReqResponseDTO»" },
+                "data": { "$ref": "#/definitions/FiEmbossingReqResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4905,7 +4785,7 @@
             "RestCommonResponseDTO«Page«InterestProfileResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«InterestProfileResponseDTO»" },
+                "data": { "$ref": "#/definitions/InterestProfileResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4918,7 +4798,7 @@
             "RestCommonResponseDTO«Page«PaymentToolResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«PaymentToolResponseDTO»" },
+                "data": { "$ref": "#/definitions/PaymentToolResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4931,7 +4811,7 @@
             "RestCommonResponseDTO«Page«PaymentToolStatusResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«PaymentToolStatusResponseDTO»" },
+                "data": { "$ref": "#/definitions/PaymentToolStatusResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4944,7 +4824,7 @@
             "RestCommonResponseDTO«Page«PhysicalStatusResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«PhysicalStatusResponseDTO»" },
+                "data": { "$ref": "#/definitions/PhysicalStatusResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4957,7 +4837,7 @@
             "RestCommonResponseDTO«Page«ProductResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«ProductResponseDTO»" },
+                "data": { "$ref": "#/definitions/ProductResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4970,7 +4850,7 @@
             "RestCommonResponseDTO«Page«ProfileResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«ProfileResponseDTO»" },
+                "data": { "$ref": "#/definitions/ProfileResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4983,7 +4863,7 @@
             "RestCommonResponseDTO«Page«ServiceCodeResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«ServiceCodeResponseDTO»" },
+                "data": { "$ref": "#/definitions/ServiceCodeResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
@@ -4996,7 +4876,7 @@
             "RestCommonResponseDTO«Page«StatusWorkflowResponseDTO»»": {
               "type": "object",
               "properties": {
-                "data": { "$ref": "#/definitions/Page«StatusWorkflowResponseDTO»" },
+                "data": { "$ref": "#/definitions/StatusWorkflowResponseDTO" },
                 "devMessage": { "type": "string" },
                 "errorCode": { "type": "integer", "format": "int32" },
                 "message": { "type": "string" },
