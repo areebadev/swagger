@@ -6,7 +6,7 @@
       "title": "ASIA HAWALA APIs",
       "termsOfService": "Terms of Service"
     },
-    "host": "api-oci.areeba.com/issuing",
+    "host": "https://api-oci.areeba.com/issuing",
     "basePath": "/",
     "paths": {
       "/issuing/access-token": {
