@@ -37,7 +37,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«string»"
+"$ref": "#/definitions/RestCommonResponseDTOstring"
 }
 },
 "201": {
@@ -53,13 +53,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -91,7 +84,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountHolderResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountHolderResponseDTO"
 }
 },
 "201": {
@@ -107,13 +100,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -132,7 +118,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of the instance that will be retrieved",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 }
@@ -141,7 +127,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountHolderResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountHolderResponseDTO"
 }
 },
 "401": {
@@ -154,13 +140,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 },
 "put": {
@@ -180,7 +159,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of instance that should be updated",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 },
@@ -198,7 +177,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountHolderResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountHolderResponseDTO"
 }
 },
 "201": {
@@ -214,13 +193,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 },
 "delete": {
@@ -237,7 +209,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of instance that should be deleted",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 }
@@ -246,7 +218,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountHolderRequestDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountHolderRequestDTO"
 }
 },
 "204": {
@@ -259,13 +231,6 @@
 "description": "Forbidden"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -275,7 +240,7 @@
 "Account"
 ],
 "summary": "Create a new Account",
-"operationId": "saveNewUsingPOST",
+"operationId": "saveNewUsingPOST_1",
 "consumes": [
 "application/json"
 ],
@@ -297,7 +262,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountResponseDTO"
 }
 },
 "201": {
@@ -313,13 +278,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -338,7 +296,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of the Account that will be retrieved",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 }
@@ -347,7 +305,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountResponseDTO"
 }
 },
 "401": {
@@ -360,13 +318,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 },
 "put": {
@@ -374,7 +325,7 @@
 "Account"
 ],
 "summary": "Update an existing Account",
-"operationId": "updateUsingPUT",
+"operationId": "updateUsingPUT_1",
 "consumes": [
 "application/json"
 ],
@@ -386,7 +337,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of Account that should be updated",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 },
@@ -404,7 +355,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountResponseDTO"
 }
 },
 "201": {
@@ -420,13 +371,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 },
 "delete": {
@@ -434,7 +378,7 @@
 "Account"
 ],
 "summary": "Delete an existing Account",
-"operationId": "deleteUsingDELETE",
+"operationId": "deleteUsingDELETE_1",
 "produces": [
 "*/*"
 ],
@@ -443,7 +387,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of Account that should be deleted",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 }
@@ -452,7 +396,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«AccountRequestDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOAccountRequestDTO"
 }
 },
 "204": {
@@ -465,13 +409,6 @@
 "description": "Forbidden"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -503,7 +440,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«PaymentToolResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOPaymentToolResponseDTO"
 }
 },
 "201": {
@@ -519,13 +456,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -544,7 +474,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of the Card that will be retrieved",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 }
@@ -553,7 +483,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«PaymentToolResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOPaymentToolResponseDTO"
 }
 },
 "401": {
@@ -566,13 +496,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 },
 "put": {
@@ -592,7 +515,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of Card that should be updated",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 },
@@ -610,7 +533,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«PaymentToolResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOPaymentToolResponseDTO"
 }
 },
 "201": {
@@ -626,13 +549,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 },
 "delete": {
@@ -649,7 +565,7 @@
 "name": "id",
 "in": "path",
 "description": "Id of Card that should be deleted",
-"required": false,
+"required": true,
 "type": "string",
 "format": "uuid"
 }
@@ -658,7 +574,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«PaymentToolRequestDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOPaymentToolRequestDTO"
 }
 },
 "204": {
@@ -671,13 +587,6 @@
 "description": "Forbidden"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -711,7 +620,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«string»"
+"$ref": "#/definitions/RestCommonResponseDTOstring"
 }
 },
 "401": {
@@ -724,13 +633,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -765,7 +667,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«List«string»»"
+"$ref": "#/definitions/RestCommonResponseDTOListstring"
 }
 },
 "201": {
@@ -781,13 +683,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -822,7 +717,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«List«string»»"
+"$ref": "#/definitions/RestCommonResponseDTOListstring"
 }
 },
 "201": {
@@ -838,13 +733,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -879,7 +767,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«string»"
+"$ref": "#/definitions/RestCommonResponseDTOstring"
 }
 },
 "201": {
@@ -895,13 +783,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -928,7 +809,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«double»"
+"$ref": "#/definitions/RestCommonResponseDTOdouble"
 }
 },
 "401": {
@@ -941,13 +822,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -974,7 +848,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«double»"
+"$ref": "#/definitions/RestCommonResponseDTOdouble"
 }
 },
 "401": {
@@ -987,13 +861,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -1025,7 +892,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«ReloadingResponseDTO»"
+"$ref": "#/definitions/RestCommonResponseDTOReloadingResponseDTO"
 }
 },
 "201": {
@@ -1041,13 +908,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 },
@@ -1079,7 +939,7 @@
 "200": {
 "description": "OK",
 "schema": {
-"$ref": "#/definitions/RestCommonResponseDTO«Page«TranlogResponseDTO»»"
+"$ref": "#/definitions/RestCommonResponseDTOPageTranlogResponseDTO"
 }
 },
 "201": {
@@ -1095,13 +955,6 @@
 "description": "Not Found"
 }
 },
-"security": [
-{
-"JWT": [
-"global"
-]
-}
-],
 "deprecated": false
 }
 }
@@ -1114,7 +967,7 @@
 }
 },
 "definitions": {
-"RestCommonResponseDTO«AccountHolderRequestDTO»": {
+"RestCommonResponseDTOAccountHolderRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -1137,7 +990,7 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountHolderRequestDTO»"
+"title": "RestCommonResponseDTOAccountHolderRequestDTO"
 },
 "AccountHolderResponseDTO": {
 "type": "object",
@@ -1235,7 +1088,7 @@
 },
 "title": "AccountHolderResponseDTO"
 },
-"RestCommonResponseDTO«AccountHolderResponseDTO»": {
+"RestCommonResponseDTOAccountHolderResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -1258,7 +1111,7 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountHolderResponseDTO»"
+"title": "RestCommonResponseDTOAccountHolderResponseDTO"
 },
 "AccountHolderRequestDTO": {
 "type": "object",
@@ -1741,7 +1594,7 @@
 },
 "title": "Pageable"
 },
-"Page«CycleConfigurationResponseDTO»": {
+"PageCycleConfigurationResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -1786,9 +1639,9 @@
 "format": "int32"
 }
 },
-"title": "Page«CycleConfigurationResponseDTO»"
+"title": "PageCycleConfigurationResponseDTO"
 },
-"Page«CycleConfigurationTraceResponseDTO»": {
+"PageCycleConfigurationTraceResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -1833,9 +1686,9 @@
 "format": "int32"
 }
 },
-"title": "Page«CycleConfigurationTraceResponseDTO»"
+"title": "PageCycleConfigurationTraceResponseDTO"
 },
-"Page«MonthlyCycleLogResponseDTO»": {
+"PageMonthlyCycleLogResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -1880,9 +1733,9 @@
 "format": "int32"
 }
 },
-"title": "Page«MonthlyCycleLogResponseDTO»"
+"title": "PageMonthlyCycleLogResponseDTO"
 },
-"Page«ReloadingResponseDTO»": {
+"PageReloadingResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -1927,9 +1780,9 @@
 "format": "int32"
 }
 },
-"title": "Page«ReloadingResponseDTO»"
+"title": "PageReloadingResponseDTO"
 },
-"Page«TranfinResponseDTO»": {
+"PageTranfinResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -1974,9 +1827,9 @@
 "format": "int32"
 }
 },
-"title": "Page«TranfinResponseDTO»"
+"title": "PageTranfinResponseDTO"
 },
-"Page«TranlogResponseDTO»": {
+"PageTranlogResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -2021,7 +1874,7 @@
 "format": "int32"
 }
 },
-"title": "Page«TranlogResponseDTO»"
+"title": "PageTranlogResponseDTO"
 },
 "PcimodeRequestDTO": {
 "type": "object",
@@ -2084,7 +1937,7 @@
 "type": "object",
 "title": "ReloadingService"
 },
-"RestCommonResponseDTO«CycleConfigurationResponseDTO»": {
+"RestCommonResponseDTOCycleConfigurationResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2107,9 +1960,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CycleConfigurationResponseDTO»"
+"title": "RestCommonResponseDTOCycleConfigurationResponseDTO"
 },
-"RestCommonResponseDTO«CycleConfigurationTraceResponseDTO»": {
+"RestCommonResponseDTOCycleConfigurationTraceResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2132,9 +1985,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CycleConfigurationTraceResponseDTO»"
+"title": "RestCommonResponseDTOCycleConfigurationTraceResponseDTO"
 },
-"RestCommonResponseDTO«CyclesConfigurationRequestDTO»": {
+"RestCommonResponseDTOCyclesConfigurationRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2157,9 +2010,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CyclesConfigurationRequestDTO»"
+"title": "RestCommonResponseDTOCyclesConfigurationRequestDTO"
 },
-"RestCommonResponseDTO«List«CycleConfigurationResponseDTO»»": {
+"RestCommonResponseDTOListCycleConfigurationResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2185,9 +2038,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«CycleConfigurationResponseDTO»»"
+"title": "RestCommonResponseDTOListCycleConfigurationResponseDTO"
 },
-"RestCommonResponseDTO«List«CycleConfigurationTraceResponseDTO»»": {
+"RestCommonResponseDTOListCycleConfigurationTraceResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2213,9 +2066,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«CycleConfigurationTraceResponseDTO»»"
+"title": "RestCommonResponseDTOListCycleConfigurationTraceResponseDTO"
 },
-"RestCommonResponseDTO«List«MonthlyCycleLogResponseDTO»»": {
+"RestCommonResponseDTOListMonthlyCycleLogResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2241,9 +2094,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«MonthlyCycleLogResponseDTO»»"
+"title": "RestCommonResponseDTOListMonthlyCycleLogResponseDTO"
 },
-"RestCommonResponseDTO«List«ReloadingResponseDTO»»": {
+"RestCommonResponseDTOListReloadingResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2269,9 +2122,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«ReloadingResponseDTO»»"
+"title": "RestCommonResponseDTOListReloadingResponseDTO"
 },
-"RestCommonResponseDTO«List«TranfinResponseDTO»»": {
+"RestCommonResponseDTOListTranfinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2297,9 +2150,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«TranfinResponseDTO»»"
+"title": "RestCommonResponseDTOListTranfinResponseDTO"
 },
-"RestCommonResponseDTO«List«TranlogResponseDTO»»": {
+"RestCommonResponseDTOListTranlogResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2325,9 +2178,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«TranlogResponseDTO»»"
+"title": "RestCommonResponseDTOListTranlogResponseDTO"
 },
-"RestCommonResponseDTO«MonthlyCycleLogRequestDTO»": {
+"RestCommonResponseDTOMonthlyCycleLogRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2350,9 +2203,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«MonthlyCycleLogRequestDTO»"
+"title": "RestCommonResponseDTOMonthlyCycleLogRequestDTO"
 },
-"RestCommonResponseDTO«MonthlyCycleLogResponseDTO»": {
+"RestCommonResponseDTOMonthlyCycleLogResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2375,13 +2228,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«MonthlyCycleLogResponseDTO»"
+"title": "RestCommonResponseDTOMonthlyCycleLogResponseDTO"
 },
-"RestCommonResponseDTO«Page«CycleConfigurationResponseDTO»»": {
+"RestCommonResponseDTOPageCycleConfigurationResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«CycleConfigurationResponseDTO»"
+"$ref": "#/definitions/PageCycleConfigurationResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -2400,13 +2253,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«CycleConfigurationResponseDTO»»"
+"title": "RestCommonResponseDTOPageCycleConfigurationResponseDTO"
 },
-"RestCommonResponseDTO«Page«CycleConfigurationTraceResponseDTO»»": {
+"RestCommonResponseDTOPageCycleConfigurationTraceResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«CycleConfigurationTraceResponseDTO»"
+"$ref": "#/definitions/PageCycleConfigurationTraceResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -2425,13 +2278,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«CycleConfigurationTraceResponseDTO»»"
+"title": "RestCommonResponseDTOPageCycleConfigurationTraceResponseDTO"
 },
-"RestCommonResponseDTO«Page«MonthlyCycleLogResponseDTO»»": {
+"RestCommonResponseDTOPageMonthlyCycleLogResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«MonthlyCycleLogResponseDTO»"
+"$ref": "#/definitions/PageMonthlyCycleLogResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -2450,13 +2303,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«MonthlyCycleLogResponseDTO»»"
+"title": "RestCommonResponseDTOPageMonthlyCycleLogResponseDTO"
 },
-"RestCommonResponseDTO«Page«ReloadingResponseDTO»»": {
+"RestCommonResponseDTOPageReloadingResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«ReloadingResponseDTO»"
+"$ref": "#/definitions/PageReloadingResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -2475,13 +2328,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«ReloadingResponseDTO»»"
+"title": "RestCommonResponseDTOPageReloadingResponseDTO"
 },
-"RestCommonResponseDTO«Page«TranfinResponseDTO»»": {
+"RestCommonResponseDTOPageTranfinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«TranfinResponseDTO»"
+"$ref": "#/definitions/PageTranfinResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -2500,13 +2353,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«TranfinResponseDTO»»"
+"title": "RestCommonResponseDTOPageTranfinResponseDTO"
 },
-"RestCommonResponseDTO«Page«TranlogResponseDTO»»": {
+"RestCommonResponseDTOPageTranlogResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«TranlogResponseDTO»"
+"$ref": "#/definitions/PageTranlogResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -2525,34 +2378,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«TranlogResponseDTO»»"
+"title": "RestCommonResponseDTOPageTranlogResponseDTO"
 },
-"RestCommonResponseDTO«ReloadingRequestDTO»": {
-"type": "object",
-"properties": {
-"data": {
-"$ref": "#/definitions/ReloadingResponseDTO"
-},
-"devMessage": {
-"type": "string"
-},
-"errorCode": {
-"type": "integer",
-"format": "int32"
-},
-"message": {
-"type": "string"
-},
-"title": {
-"type": "string"
-},
-"valid": {
-"type": "boolean"
-}
-},
-"title": "RestCommonResponseDTO«ReloadingRequestDTO»"
-},
-"RestCommonResponseDTO«ReloadingResponseDTO»": {
+"RestCommonResponseDTOReloadingRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2575,9 +2403,34 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ReloadingResponseDTO»"
+"title": "RestCommonResponseDTOReloadingRequestDTO"
 },
-"RestCommonResponseDTO«TranfinRequestDTO»": {
+"RestCommonResponseDTOReloadingResponseDTO": {
+"type": "object",
+"properties": {
+"data": {
+"$ref": "#/definitions/ReloadingResponseDTO"
+},
+"devMessage": {
+"type": "string"
+},
+"errorCode": {
+"type": "integer",
+"format": "int32"
+},
+"message": {
+"type": "string"
+},
+"title": {
+"type": "string"
+},
+"valid": {
+"type": "boolean"
+}
+},
+"title": "RestCommonResponseDTOReloadingResponseDTO"
+},
+"RestCommonResponseDTOTranfinRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2600,9 +2453,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«TranfinRequestDTO»"
+"title": "RestCommonResponseDTOTranfinRequestDTO"
 },
-"RestCommonResponseDTO«TranfinResponseDTO»": {
+"RestCommonResponseDTOTranfinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2625,9 +2478,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«TranfinResponseDTO»"
+"title": "RestCommonResponseDTOTranfinResponseDTO"
 },
-"RestCommonResponseDTO«TranlogRequestDTO»": {
+"RestCommonResponseDTOTranlogRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2650,9 +2503,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«TranlogRequestDTO»"
+"title": "RestCommonResponseDTOTranlogRequestDTO"
 },
-"RestCommonResponseDTO«TranlogResponseDTO»": {
+"RestCommonResponseDTOTranlogResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -2675,9 +2528,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«TranlogResponseDTO»"
+"title": "RestCommonResponseDTOTranlogResponseDTO"
 },
-"RestCommonResponseDTO«string»": {
+"RestCommonResponseDTOstring": {
 "type": "object",
 "properties": {
 "data": {
@@ -2700,7 +2553,7 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«string»"
+"title": "RestCommonResponseDTOstring"
 },
 "SearchCriteria": {
 "type": "object",
@@ -5315,7 +5168,7 @@
 "type": "object",
 "title": "InterestProfileService"
 },
-"Page«AccountAndBucketDiscrepanciesResponseDTO»": {
+"PageAccountAndBucketDiscrepanciesResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5360,9 +5213,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountAndBucketDiscrepanciesResponseDTO»"
+"title": "PageAccountAndBucketDiscrepanciesResponseDTO"
 },
-"Page«AccountCardResponseDTO»": {
+"PageAccountCardResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5407,9 +5260,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountCardResponseDTO»"
+"title": "PageAccountCardResponseDTO"
 },
-"Page«AccountResponseDTO»": {
+"PageAccountResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5454,9 +5307,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountResponseDTO»"
+"title": "PageAccountResponseDTO"
 },
-"Page«AccountStatusResponseDTO»": {
+"PageAccountStatusResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5501,9 +5354,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountStatusResponseDTO»"
+"title": "PageAccountStatusResponseDTO"
 },
-"Page«AccountStructureResponseDTO»": {
+"PageAccountStructureResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5548,9 +5401,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountStructureResponseDTO»"
+"title": "PageAccountStructureResponseDTO"
 },
-"Page«AccountSubTypeResponseDTO»": {
+"PageAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5595,9 +5448,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountSubTypeResponseDTO»"
+"title": "PageAccountSubTypeResponseDTO"
 },
-"Page«AccountTypeResponseDTO»": {
+"PageAccountTypeResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5642,9 +5495,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AccountTypeResponseDTO»"
+"title": "PageAccountTypeResponseDTO"
 },
-"Page«AuthorizationReleaseDateLogsResponseDTO»": {
+"PageAuthorizationReleaseDateLogsResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5689,9 +5542,9 @@
 "format": "int32"
 }
 },
-"title": "Page«AuthorizationReleaseDateLogsResponseDTO»"
+"title": "PageAuthorizationReleaseDateLogsResponseDTO"
 },
-"Page«BatchProductionDetailResponseDTO»": {
+"PageBatchProductionDetailResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5736,9 +5589,9 @@
 "format": "int32"
 }
 },
-"title": "Page«BatchProductionDetailResponseDTO»"
+"title": "PageBatchProductionDetailResponseDTO"
 },
-"Page«BatchProductionResponseDTO»": {
+"PageBatchProductionResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5783,9 +5636,9 @@
 "format": "int32"
 }
 },
-"title": "Page«BatchProductionResponseDTO»"
+"title": "PageBatchProductionResponseDTO"
 },
-"Page«BinResponseDTO»": {
+"PageBinResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5830,9 +5683,9 @@
 "format": "int32"
 }
 },
-"title": "Page«BinResponseDTO»"
+"title": "PageBinResponseDTO"
 },
-"Page«BucketEntryResponseDTO»": {
+"PageBucketEntryResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5877,9 +5730,9 @@
 "format": "int32"
 }
 },
-"title": "Page«BucketEntryResponseDTO»"
+"title": "PageBucketEntryResponseDTO"
 },
-"Page«BucketResponseDTO»": {
+"PageBucketResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5924,9 +5777,9 @@
 "format": "int32"
 }
 },
-"title": "Page«BucketResponseDTO»"
+"title": "PageBucketResponseDTO"
 },
-"Page«CardActivityDetailResponseDTO»": {
+"PageCardActivityDetailResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -5971,9 +5824,9 @@
 "format": "int32"
 }
 },
-"title": "Page«CardActivityDetailResponseDTO»"
+"title": "PageCardActivityDetailResponseDTO"
 },
-"Page«CardActivityResponseDTO»": {
+"PageCardActivityResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6018,9 +5871,9 @@
 "format": "int32"
 }
 },
-"title": "Page«CardActivityResponseDTO»"
+"title": "PageCardActivityResponseDTO"
 },
-"Page«CardPlanResponseDTO»": {
+"PageCardPlanResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6065,9 +5918,9 @@
 "format": "int32"
 }
 },
-"title": "Page«CardPlanResponseDTO»"
+"title": "PageCardPlanResponseDTO"
 },
-"Page«FILevelResponseDTO»": {
+"PageFILevelResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6112,9 +5965,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FILevelResponseDTO»"
+"title": "PageFILevelResponseDTO"
 },
-"Page«FiAccountBucketDTO»": {
+"PageFiAccountBucketDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6159,9 +6012,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiAccountBucketDTO»"
+"title": "PageFiAccountBucketDTO"
 },
-"Page«FiAccountSubTypeResponseDTO»": {
+"PageFiAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6206,9 +6059,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiAccountSubTypeResponseDTO»"
+"title": "PageFiAccountSubTypeResponseDTO"
 },
-"Page«FiBucketLevelResponseDTO»": {
+"PageFiBucketLevelResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6253,9 +6106,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiBucketLevelResponseDTO»"
+"title": "PageFiBucketLevelResponseDTO"
 },
-"Page«FiBucketResponseDTO»": {
+"PageFiBucketResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6300,9 +6153,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiBucketResponseDTO»"
+"title": "PageFiBucketResponseDTO"
 },
-"Page«FiCardActivitiesResponseDTO»": {
+"PageFiCardActivitiesResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6347,9 +6200,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiCardActivitiesResponseDTO»"
+"title": "PageFiCardActivitiesResponseDTO"
 },
-"Page«FiCronResponseDTO»": {
+"PageFiCronResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6394,9 +6247,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiCronResponseDTO»"
+"title": "PageFiCronResponseDTO"
 },
-"Page«FiEmbossingReqResponseDTO»": {
+"PageFiEmbossingReqResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6441,9 +6294,9 @@
 "format": "int32"
 }
 },
-"title": "Page«FiEmbossingReqResponseDTO»"
+"title": "PageFiEmbossingReqResponseDTO"
 },
-"Page«InterestProfileResponseDTO»": {
+"PageInterestProfileResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6488,9 +6341,9 @@
 "format": "int32"
 }
 },
-"title": "Page«InterestProfileResponseDTO»"
+"title": "PageInterestProfileResponseDTO"
 },
-"Page«PaymentToolResponseDTO»": {
+"PagePaymentToolResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6535,9 +6388,9 @@
 "format": "int32"
 }
 },
-"title": "Page«PaymentToolResponseDTO»"
+"title": "PagePaymentToolResponseDTO"
 },
-"Page«PaymentToolStatusResponseDTO»": {
+"PagePaymentToolStatusResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6582,9 +6435,9 @@
 "format": "int32"
 }
 },
-"title": "Page«PaymentToolStatusResponseDTO»"
+"title": "PagePaymentToolStatusResponseDTO"
 },
-"Page«PhysicalStatusResponseDTO»": {
+"PagePhysicalStatusResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6629,9 +6482,9 @@
 "format": "int32"
 }
 },
-"title": "Page«PhysicalStatusResponseDTO»"
+"title": "PagePhysicalStatusResponseDTO"
 },
-"Page«ProductResponseDTO»": {
+"PageProductResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6676,9 +6529,9 @@
 "format": "int32"
 }
 },
-"title": "Page«ProductResponseDTO»"
+"title": "PageProductResponseDTO"
 },
-"Page«ProfileResponseDTO»": {
+"PageProfileResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6723,9 +6576,9 @@
 "format": "int32"
 }
 },
-"title": "Page«ProfileResponseDTO»"
+"title": "PageProfileResponseDTO"
 },
-"Page«ServiceCodeResponseDTO»": {
+"PageServiceCodeResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6770,9 +6623,9 @@
 "format": "int32"
 }
 },
-"title": "Page«ServiceCodeResponseDTO»"
+"title": "PageServiceCodeResponseDTO"
 },
-"Page«StatusWorkflowResponseDTO»": {
+"PageStatusWorkflowResponseDTO": {
 "type": "object",
 "properties": {
 "content": {
@@ -6817,7 +6670,7 @@
 "format": "int32"
 }
 },
-"title": "Page«StatusWorkflowResponseDTO»"
+"title": "PageStatusWorkflowResponseDTO"
 },
 "PaymentToolClosingRequestDTO": {
 "type": "object",
@@ -7384,7 +7237,7 @@
 },
 "title": "RestCommonResponseDTO"
 },
-"RestCommonResponseDTO«AccountAndBucketDiscrepanciesResponseDTO»": {
+"RestCommonResponseDTOAccountAndBucketDiscrepanciesResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7407,9 +7260,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountAndBucketDiscrepanciesResponseDTO»"
+"title": "RestCommonResponseDTOAccountAndBucketDiscrepanciesResponseDTO"
 },
-"RestCommonResponseDTO«AccountCardResponseDTO»": {
+"RestCommonResponseDTOAccountCardResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7432,9 +7285,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountCardResponseDTO»"
+"title": "RestCommonResponseDTOAccountCardResponseDTO"
 },
-"RestCommonResponseDTO«AccountRequestDTO»": {
+"RestCommonResponseDTOAccountRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7457,9 +7310,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountRequestDTO»"
+"title": "RestCommonResponseDTOAccountRequestDTO"
 },
-"RestCommonResponseDTO«AccountResponseDTO»": {
+"RestCommonResponseDTOAccountResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7482,9 +7335,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountResponseDTO»"
+"title": "RestCommonResponseDTOAccountResponseDTO"
 },
-"RestCommonResponseDTO«AccountStatusRequestDTO»": {
+"RestCommonResponseDTOAccountStatusRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7507,9 +7360,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountStatusRequestDTO»"
+"title": "RestCommonResponseDTOAccountStatusRequestDTO"
 },
-"RestCommonResponseDTO«AccountStatusResponseDTO»": {
+"RestCommonResponseDTOAccountStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7532,9 +7385,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountStatusResponseDTO»"
+"title": "RestCommonResponseDTOAccountStatusResponseDTO"
 },
-"RestCommonResponseDTO«AccountStructureRequestDTO»": {
+"RestCommonResponseDTOAccountStructureRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7557,9 +7410,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountStructureRequestDTO»"
+"title": "RestCommonResponseDTOAccountStructureRequestDTO"
 },
-"RestCommonResponseDTO«AccountStructureResponseDTO»": {
+"RestCommonResponseDTOAccountStructureResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7582,9 +7435,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountStructureResponseDTO»"
+"title": "RestCommonResponseDTOAccountStructureResponseDTO"
 },
-"RestCommonResponseDTO«AccountSubTypeRequestDTO»": {
+"RestCommonResponseDTOAccountSubTypeRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7607,9 +7460,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountSubTypeRequestDTO»"
+"title": "RestCommonResponseDTOAccountSubTypeRequestDTO"
 },
-"RestCommonResponseDTO«AccountSubTypeResponseDTO»": {
+"RestCommonResponseDTOAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7632,9 +7485,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountSubTypeResponseDTO»"
+"title": "RestCommonResponseDTOAccountSubTypeResponseDTO"
 },
-"RestCommonResponseDTO«AccountTypeRequestDTO»": {
+"RestCommonResponseDTOAccountTypeRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7657,9 +7510,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountTypeRequestDTO»"
+"title": "RestCommonResponseDTOAccountTypeRequestDTO"
 },
-"RestCommonResponseDTO«AccountTypeResponseDTO»": {
+"RestCommonResponseDTOAccountTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7682,9 +7535,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AccountTypeResponseDTO»"
+"title": "RestCommonResponseDTOAccountTypeResponseDTO"
 },
-"RestCommonResponseDTO«Array«string»»": {
+"RestCommonResponseDTOArraystring": {
 "type": "object",
 "properties": {
 "data": {
@@ -7710,9 +7563,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Array«string»»"
+"title": "RestCommonResponseDTOArraystring"
 },
-"RestCommonResponseDTO«AuthorizationReleaseDateLogsResponseDTO»": {
+"RestCommonResponseDTOAuthorizationReleaseDateLogsResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7735,9 +7588,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«AuthorizationReleaseDateLogsResponseDTO»"
+"title": "RestCommonResponseDTOAuthorizationReleaseDateLogsResponseDTO"
 },
-"RestCommonResponseDTO«BatchProductionDetailResponseDTO»": {
+"RestCommonResponseDTOBatchProductionDetailResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7760,9 +7613,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BatchProductionDetailResponseDTO»"
+"title": "RestCommonResponseDTOBatchProductionDetailResponseDTO"
 },
-"RestCommonResponseDTO«BatchProductionResponseDTO»": {
+"RestCommonResponseDTOBatchProductionResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7785,9 +7638,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BatchProductionResponseDTO»"
+"title": "RestCommonResponseDTOBatchProductionResponseDTO"
 },
-"RestCommonResponseDTO«BinRequestDTO»": {
+"RestCommonResponseDTOBinRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7810,9 +7663,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BinRequestDTO»"
+"title": "RestCommonResponseDTOBinRequestDTO"
 },
-"RestCommonResponseDTO«BinResponseDTO»": {
+"RestCommonResponseDTOBinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7835,9 +7688,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BinResponseDTO»"
+"title": "RestCommonResponseDTOBinResponseDTO"
 },
-"RestCommonResponseDTO«BucketEntryRequestDTO»": {
+"RestCommonResponseDTOBucketEntryRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7860,9 +7713,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BucketEntryRequestDTO»"
+"title": "RestCommonResponseDTOBucketEntryRequestDTO"
 },
-"RestCommonResponseDTO«BucketEntryResponseDTO»": {
+"RestCommonResponseDTOBucketEntryResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7885,9 +7738,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BucketEntryResponseDTO»"
+"title": "RestCommonResponseDTOBucketEntryResponseDTO"
 },
-"RestCommonResponseDTO«BucketRequestDTO»": {
+"RestCommonResponseDTOBucketRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7910,9 +7763,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BucketRequestDTO»"
+"title": "RestCommonResponseDTOBucketRequestDTO"
 },
-"RestCommonResponseDTO«BucketResponseDTO»": {
+"RestCommonResponseDTOBucketResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7935,9 +7788,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«BucketResponseDTO»"
+"title": "RestCommonResponseDTOBucketResponseDTO"
 },
-"RestCommonResponseDTO«CardActivityDetailResponseDTO»": {
+"RestCommonResponseDTOCardActivityDetailResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7960,9 +7813,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CardActivityDetailResponseDTO»"
+"title": "RestCommonResponseDTOCardActivityDetailResponseDTO"
 },
-"RestCommonResponseDTO«CardActivityRequestDTO»": {
+"RestCommonResponseDTOCardActivityRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -7985,9 +7838,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CardActivityRequestDTO»"
+"title": "RestCommonResponseDTOCardActivityRequestDTO"
 },
-"RestCommonResponseDTO«CardActivityResponseDTO»": {
+"RestCommonResponseDTOCardActivityResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8010,9 +7863,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CardActivityResponseDTO»"
+"title": "RestCommonResponseDTOCardActivityResponseDTO"
 },
-"RestCommonResponseDTO«CardPlanRequestDTO»": {
+"RestCommonResponseDTOCardPlanRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8035,9 +7888,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CardPlanRequestDTO»"
+"title": "RestCommonResponseDTOCardPlanRequestDTO"
 },
-"RestCommonResponseDTO«CardPlanResponseDTO»": {
+"RestCommonResponseDTOCardPlanResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8060,9 +7913,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«CardPlanResponseDTO»"
+"title": "RestCommonResponseDTOCardPlanResponseDTO"
 },
-"RestCommonResponseDTO«FILevelRequestDTO»": {
+"RestCommonResponseDTOFILevelRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8085,9 +7938,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FILevelRequestDTO»"
+"title": "RestCommonResponseDTOFILevelRequestDTO"
 },
-"RestCommonResponseDTO«FILevelResponseDTO»": {
+"RestCommonResponseDTOFILevelResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8110,9 +7963,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FILevelResponseDTO»"
+"title": "RestCommonResponseDTOFILevelResponseDTO"
 },
-"RestCommonResponseDTO«FiAccountBucketDTO»": {
+"RestCommonResponseDTOFiAccountBucketDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8135,9 +7988,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiAccountBucketDTO»"
+"title": "RestCommonResponseDTOFiAccountBucketDTO"
 },
-"RestCommonResponseDTO«FiAccountSubTypeRequestDTO»": {
+"RestCommonResponseDTOFiAccountSubTypeRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8160,9 +8013,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiAccountSubTypeRequestDTO»"
+"title": "RestCommonResponseDTOFiAccountSubTypeRequestDTO"
 },
-"RestCommonResponseDTO«FiAccountSubTypeResponseDTO»": {
+"RestCommonResponseDTOFiAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8185,9 +8038,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiAccountSubTypeResponseDTO»"
+"title": "RestCommonResponseDTOFiAccountSubTypeResponseDTO"
 },
-"RestCommonResponseDTO«FiBucketLevelRequestDTO»": {
+"RestCommonResponseDTOFiBucketLevelRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8210,9 +8063,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiBucketLevelRequestDTO»"
+"title": "RestCommonResponseDTOFiBucketLevelRequestDTO"
 },
-"RestCommonResponseDTO«FiBucketLevelResponseDTO»": {
+"RestCommonResponseDTOFiBucketLevelResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8235,9 +8088,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiBucketLevelResponseDTO»"
+"title": "RestCommonResponseDTOFiBucketLevelResponseDTO"
 },
-"RestCommonResponseDTO«FiBucketResponseDTO»": {
+"RestCommonResponseDTOFiBucketResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8260,9 +8113,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiBucketResponseDTO»"
+"title": "RestCommonResponseDTOFiBucketResponseDTO"
 },
-"RestCommonResponseDTO«FiCardActivitiesRequestDTO»": {
+"RestCommonResponseDTOFiCardActivitiesRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8285,9 +8138,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiCardActivitiesRequestDTO»"
+"title": "RestCommonResponseDTOFiCardActivitiesRequestDTO"
 },
-"RestCommonResponseDTO«FiCardActivitiesResponseDTO»": {
+"RestCommonResponseDTOFiCardActivitiesResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8310,9 +8163,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiCardActivitiesResponseDTO»"
+"title": "RestCommonResponseDTOFiCardActivitiesResponseDTO"
 },
-"RestCommonResponseDTO«FiCronRequestDTO»": {
+"RestCommonResponseDTOFiCronRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8335,9 +8188,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiCronRequestDTO»"
+"title": "RestCommonResponseDTOFiCronRequestDTO"
 },
-"RestCommonResponseDTO«FiCronResponseDTO»": {
+"RestCommonResponseDTOFiCronResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8360,9 +8213,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiCronResponseDTO»"
+"title": "RestCommonResponseDTOFiCronResponseDTO"
 },
-"RestCommonResponseDTO«FiEmbossingReqRequestDTO»": {
+"RestCommonResponseDTOFiEmbossingReqRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8385,9 +8238,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiEmbossingReqRequestDTO»"
+"title": "RestCommonResponseDTOFiEmbossingReqRequestDTO"
 },
-"RestCommonResponseDTO«FiEmbossingReqResponseDTO»": {
+"RestCommonResponseDTOFiEmbossingReqResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8410,9 +8263,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«FiEmbossingReqResponseDTO»"
+"title": "RestCommonResponseDTOFiEmbossingReqResponseDTO"
 },
-"RestCommonResponseDTO«InterestProfileRequestDTO»": {
+"RestCommonResponseDTOInterestProfileRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8435,9 +8288,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«InterestProfileRequestDTO»"
+"title": "RestCommonResponseDTOInterestProfileRequestDTO"
 },
-"RestCommonResponseDTO«InterestProfileResponseDTO»": {
+"RestCommonResponseDTOInterestProfileResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8460,9 +8313,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«InterestProfileResponseDTO»"
+"title": "RestCommonResponseDTOInterestProfileResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountAndBucketDiscrepanciesResponseDTO»»": {
+"RestCommonResponseDTOListAccountAndBucketDiscrepanciesResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8488,9 +8341,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountAndBucketDiscrepanciesResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountAndBucketDiscrepanciesResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountCardResponseDTO»»": {
+"RestCommonResponseDTOListAccountCardResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8516,9 +8369,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountCardResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountCardResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountResponseDTO»»": {
+"RestCommonResponseDTOListAccountResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8544,9 +8397,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountStatusResponseDTO»»": {
+"RestCommonResponseDTOListAccountStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8572,9 +8425,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountStatusResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountStatusResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountStructureResponseDTO»»": {
+"RestCommonResponseDTOListAccountStructureResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8600,9 +8453,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountStructureResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountStructureResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountSubTypeResponseDTO»»": {
+"RestCommonResponseDTOListAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8628,9 +8481,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountSubTypeResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountSubTypeResponseDTO"
 },
-"RestCommonResponseDTO«List«AccountTypeResponseDTO»»": {
+"RestCommonResponseDTOListAccountTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8656,9 +8509,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AccountTypeResponseDTO»»"
+"title": "RestCommonResponseDTOListAccountTypeResponseDTO"
 },
-"RestCommonResponseDTO«List«AuthorizationReleaseDateLogsResponseDTO»»": {
+"RestCommonResponseDTOListAuthorizationReleaseDateLogsResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8684,9 +8537,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«AuthorizationReleaseDateLogsResponseDTO»»"
+"title": "RestCommonResponseDTOListAuthorizationReleaseDateLogsResponseDTO"
 },
-"RestCommonResponseDTO«List«BatchProductionDetailResponseDTO»»": {
+"RestCommonResponseDTOListBatchProductionDetailResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8712,9 +8565,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«BatchProductionDetailResponseDTO»»"
+"title": "RestCommonResponseDTOListBatchProductionDetailResponseDTO"
 },
-"RestCommonResponseDTO«List«BatchProductionResponseDTO»»": {
+"RestCommonResponseDTOListBatchProductionResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8740,9 +8593,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«BatchProductionResponseDTO»»"
+"title": "RestCommonResponseDTOListBatchProductionResponseDTO"
 },
-"RestCommonResponseDTO«List«BinResponseDTO»»": {
+"RestCommonResponseDTOListBinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8768,9 +8621,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«BinResponseDTO»»"
+"title": "RestCommonResponseDTOListBinResponseDTO"
 },
-"RestCommonResponseDTO«List«BucketEntryResponseDTO»»": {
+"RestCommonResponseDTOListBucketEntryResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8796,9 +8649,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«BucketEntryResponseDTO»»"
+"title": "RestCommonResponseDTOListBucketEntryResponseDTO"
 },
-"RestCommonResponseDTO«List«BucketResponseDTO»»": {
+"RestCommonResponseDTOListBucketResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8824,9 +8677,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«BucketResponseDTO»»"
+"title": "RestCommonResponseDTOListBucketResponseDTO"
 },
-"RestCommonResponseDTO«List«CardActivityDetailResponseDTO»»": {
+"RestCommonResponseDTOListCardActivityDetailResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8852,9 +8705,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«CardActivityDetailResponseDTO»»"
+"title": "RestCommonResponseDTOListCardActivityDetailResponseDTO"
 },
-"RestCommonResponseDTO«List«CardActivityResponseDTO»»": {
+"RestCommonResponseDTOListCardActivityResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8880,9 +8733,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«CardActivityResponseDTO»»"
+"title": "RestCommonResponseDTOListCardActivityResponseDTO"
 },
-"RestCommonResponseDTO«List«CardPlanResponseDTO»»": {
+"RestCommonResponseDTOListCardPlanResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8908,9 +8761,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«CardPlanResponseDTO»»"
+"title": "RestCommonResponseDTOListCardPlanResponseDTO"
 },
-"RestCommonResponseDTO«List«FILevelResponseDTO»»": {
+"RestCommonResponseDTOListFILevelResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8936,9 +8789,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FILevelResponseDTO»»"
+"title": "RestCommonResponseDTOListFILevelResponseDTO"
 },
-"RestCommonResponseDTO«List«FiAccountBucketDTO»»": {
+"RestCommonResponseDTOListFiAccountBucketDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8964,9 +8817,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiAccountBucketDTO»»"
+"title": "RestCommonResponseDTOListFiAccountBucketDTO"
 },
-"RestCommonResponseDTO«List«FiAccountSubTypeResponseDTO»»": {
+"RestCommonResponseDTOListFiAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -8992,9 +8845,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiAccountSubTypeResponseDTO»»"
+"title": "RestCommonResponseDTOListFiAccountSubTypeResponseDTO"
 },
-"RestCommonResponseDTO«List«FiBucketLevelResponseDTO»»": {
+"RestCommonResponseDTOListFiBucketLevelResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9020,9 +8873,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiBucketLevelResponseDTO»»"
+"title": "RestCommonResponseDTOListFiBucketLevelResponseDTO"
 },
-"RestCommonResponseDTO«List«FiBucketResponseDTO»»": {
+"RestCommonResponseDTOListFiBucketResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9048,9 +8901,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiBucketResponseDTO»»"
+"title": "RestCommonResponseDTOListFiBucketResponseDTO"
 },
-"RestCommonResponseDTO«List«FiCardActivitiesResponseDTO»»": {
+"RestCommonResponseDTOListFiCardActivitiesResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9076,9 +8929,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiCardActivitiesResponseDTO»»"
+"title": "RestCommonResponseDTOListFiCardActivitiesResponseDTO"
 },
-"RestCommonResponseDTO«List«FiCronResponseDTO»»": {
+"RestCommonResponseDTOListFiCronResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9104,9 +8957,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiCronResponseDTO»»"
+"title": "RestCommonResponseDTOListFiCronResponseDTO"
 },
-"RestCommonResponseDTO«List«FiEmbossingReqResponseDTO»»": {
+"RestCommonResponseDTOListFiEmbossingReqResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9132,9 +8985,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«FiEmbossingReqResponseDTO»»"
+"title": "RestCommonResponseDTOListFiEmbossingReqResponseDTO"
 },
-"RestCommonResponseDTO«List«InterestProfileResponseDTO»»": {
+"RestCommonResponseDTOListInterestProfileResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9160,9 +9013,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«InterestProfileResponseDTO»»"
+"title": "RestCommonResponseDTOListInterestProfileResponseDTO"
 },
-"RestCommonResponseDTO«List«PaymentToolResponseDTO»»": {
+"RestCommonResponseDTOListPaymentToolResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9188,9 +9041,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«PaymentToolResponseDTO»»"
+"title": "RestCommonResponseDTOListPaymentToolResponseDTO"
 },
-"RestCommonResponseDTO«List«PaymentToolStatusResponseDTO»»": {
+"RestCommonResponseDTOListPaymentToolStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9216,9 +9069,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«PaymentToolStatusResponseDTO»»"
+"title": "RestCommonResponseDTOListPaymentToolStatusResponseDTO"
 },
-"RestCommonResponseDTO«List«PhysicalStatusResponseDTO»»": {
+"RestCommonResponseDTOListPhysicalStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9244,9 +9097,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«PhysicalStatusResponseDTO»»"
+"title": "RestCommonResponseDTOListPhysicalStatusResponseDTO"
 },
-"RestCommonResponseDTO«List«ProductResponseDTO»»": {
+"RestCommonResponseDTOListProductResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9272,9 +9125,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«ProductResponseDTO»»"
+"title": "RestCommonResponseDTOListProductResponseDTO"
 },
-"RestCommonResponseDTO«List«ProfileResponseDTO»»": {
+"RestCommonResponseDTOListProfileResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9300,9 +9153,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«ProfileResponseDTO»»"
+"title": "RestCommonResponseDTOListProfileResponseDTO"
 },
-"RestCommonResponseDTO«List«ServiceCodeResponseDTO»»": {
+"RestCommonResponseDTOListServiceCodeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9328,9 +9181,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«ServiceCodeResponseDTO»»"
+"title": "RestCommonResponseDTOListServiceCodeResponseDTO"
 },
-"RestCommonResponseDTO«List«StatusWorkflowResponseDTO»»": {
+"RestCommonResponseDTOListStatusWorkflowResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -9356,9 +9209,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«StatusWorkflowResponseDTO»»"
+"title": "RestCommonResponseDTOListStatusWorkflowResponseDTO"
 },
-"RestCommonResponseDTO«List«string»»": {
+"RestCommonResponseDTOListstring": {
 "type": "object",
 "properties": {
 "data": {
@@ -9384,9 +9237,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«string»»"
+"title": "RestCommonResponseDTOListstring"
 },
-"RestCommonResponseDTO«List«uuid»»": {
+"RestCommonResponseDTOListuuid": {
 "type": "object",
 "properties": {
 "data": {
@@ -9413,13 +9266,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«List«uuid»»"
+"title": "RestCommonResponseDTOListuuid"
 },
-"RestCommonResponseDTO«Page«AccountAndBucketDiscrepanciesResponseDTO»»": {
+"RestCommonResponseDTOPageAccountAndBucketDiscrepanciesResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountAndBucketDiscrepanciesResponseDTO»"
+"$ref": "#/definitions/PageAccountAndBucketDiscrepanciesResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9438,13 +9291,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountAndBucketDiscrepanciesResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountAndBucketDiscrepanciesResponseDTO"
 },
-"RestCommonResponseDTO«Page«AccountCardResponseDTO»»": {
+"RestCommonResponseDTOPageAccountCardResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountCardResponseDTO»"
+"$ref": "#/definitions/PageAccountCardResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9463,13 +9316,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountCardResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountCardResponseDTO"
 },
-"RestCommonResponseDTO«Page«AccountResponseDTO»»": {
+"RestCommonResponseDTOPageAccountResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountResponseDTO»"
+"$ref": "#/definitions/PageAccountResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9488,13 +9341,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountResponseDTO"
 },
-"RestCommonResponseDTO«Page«AccountStatusResponseDTO»»": {
+"RestCommonResponseDTOPageAccountStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountStatusResponseDTO»"
+"$ref": "#/definitions/PageAccountStatusResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9513,13 +9366,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountStatusResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountStatusResponseDTO"
 },
-"RestCommonResponseDTO«Page«AccountStructureResponseDTO»»": {
+"RestCommonResponseDTOPageAccountStructureResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountStructureResponseDTO»"
+"$ref": "#/definitions/PageAccountStructureResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9538,13 +9391,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountStructureResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountStructureResponseDTO"
 },
-"RestCommonResponseDTO«Page«AccountSubTypeResponseDTO»»": {
+"RestCommonResponseDTOPageAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountSubTypeResponseDTO»"
+"$ref": "#/definitions/PageAccountSubTypeResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9563,13 +9416,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountSubTypeResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountSubTypeResponseDTO"
 },
-"RestCommonResponseDTO«Page«AccountTypeResponseDTO»»": {
+"RestCommonResponseDTOPageAccountTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AccountTypeResponseDTO»"
+"$ref": "#/definitions/PageAccountTypeResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9588,13 +9441,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AccountTypeResponseDTO»»"
+"title": "RestCommonResponseDTOPageAccountTypeResponseDTO"
 },
-"RestCommonResponseDTO«Page«AuthorizationReleaseDateLogsResponseDTO»»": {
+"RestCommonResponseDTOPageAuthorizationReleaseDateLogsResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«AuthorizationReleaseDateLogsResponseDTO»"
+"$ref": "#/definitions/PageAuthorizationReleaseDateLogsResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9613,13 +9466,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«AuthorizationReleaseDateLogsResponseDTO»»"
+"title": "RestCommonResponseDTOPageAuthorizationReleaseDateLogsResponseDTO"
 },
-"RestCommonResponseDTO«Page«BatchProductionDetailResponseDTO»»": {
+"RestCommonResponseDTOPageBatchProductionDetailResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«BatchProductionDetailResponseDTO»"
+"$ref": "#/definitions/PageBatchProductionDetailResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9638,13 +9491,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«BatchProductionDetailResponseDTO»»"
+"title": "RestCommonResponseDTOPageBatchProductionDetailResponseDTO"
 },
-"RestCommonResponseDTO«Page«BatchProductionResponseDTO»»": {
+"RestCommonResponseDTOPageBatchProductionResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«BatchProductionResponseDTO»"
+"$ref": "#/definitions/PageBatchProductionResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9663,13 +9516,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«BatchProductionResponseDTO»»"
+"title": "RestCommonResponseDTOPageBatchProductionResponseDTO"
 },
-"RestCommonResponseDTO«Page«BinResponseDTO»»": {
+"RestCommonResponseDTOPageBinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«BinResponseDTO»"
+"$ref": "#/definitions/PageBinResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9688,13 +9541,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«BinResponseDTO»»"
+"title": "RestCommonResponseDTOPageBinResponseDTO"
 },
-"RestCommonResponseDTO«Page«BucketEntryResponseDTO»»": {
+"RestCommonResponseDTOPageBucketEntryResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«BucketEntryResponseDTO»"
+"$ref": "#/definitions/PageBucketEntryResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9713,13 +9566,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«BucketEntryResponseDTO»»"
+"title": "RestCommonResponseDTOPageBucketEntryResponseDTO"
 },
-"RestCommonResponseDTO«Page«BucketResponseDTO»»": {
+"RestCommonResponseDTOPageBucketResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«BucketResponseDTO»"
+"$ref": "#/definitions/PageBucketResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9738,13 +9591,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«BucketResponseDTO»»"
+"title": "RestCommonResponseDTOPageBucketResponseDTO"
 },
-"RestCommonResponseDTO«Page«CardActivityDetailResponseDTO»»": {
+"RestCommonResponseDTOPageCardActivityDetailResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«CardActivityDetailResponseDTO»"
+"$ref": "#/definitions/PageCardActivityDetailResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9763,13 +9616,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«CardActivityDetailResponseDTO»»"
+"title": "RestCommonResponseDTOPageCardActivityDetailResponseDTO"
 },
-"RestCommonResponseDTO«Page«CardActivityResponseDTO»»": {
+"RestCommonResponseDTOPageCardActivityResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«CardActivityResponseDTO»"
+"$ref": "#/definitions/PageCardActivityResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9788,13 +9641,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«CardActivityResponseDTO»»"
+"title": "RestCommonResponseDTOPageCardActivityResponseDTO"
 },
-"RestCommonResponseDTO«Page«CardPlanResponseDTO»»": {
+"RestCommonResponseDTOPageCardPlanResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«CardPlanResponseDTO»"
+"$ref": "#/definitions/PageCardPlanResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9813,13 +9666,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«CardPlanResponseDTO»»"
+"title": "RestCommonResponseDTOPageCardPlanResponseDTO"
 },
-"RestCommonResponseDTO«Page«FILevelResponseDTO»»": {
+"RestCommonResponseDTOPageFILevelResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FILevelResponseDTO»"
+"$ref": "#/definitions/PageFILevelResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9838,13 +9691,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FILevelResponseDTO»»"
+"title": "RestCommonResponseDTOPageFILevelResponseDTO"
 },
-"RestCommonResponseDTO«Page«FiAccountBucketDTO»»": {
+"RestCommonResponseDTOPageFiAccountBucketDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiAccountBucketDTO»"
+"$ref": "#/definitions/PageFiAccountBucketDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9863,13 +9716,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiAccountBucketDTO»»"
+"title": "RestCommonResponseDTOPageFiAccountBucketDTO"
 },
-"RestCommonResponseDTO«Page«FiAccountSubTypeResponseDTO»»": {
+"RestCommonResponseDTOPageFiAccountSubTypeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiAccountSubTypeResponseDTO»"
+"$ref": "#/definitions/PageFiAccountSubTypeResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9888,13 +9741,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiAccountSubTypeResponseDTO»»"
+"title": "RestCommonResponseDTOPageFiAccountSubTypeResponseDTO"
 },
-"RestCommonResponseDTO«Page«FiBucketLevelResponseDTO»»": {
+"RestCommonResponseDTOPageFiBucketLevelResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiBucketLevelResponseDTO»"
+"$ref": "#/definitions/PageFiBucketLevelResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9913,13 +9766,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiBucketLevelResponseDTO»»"
+"title": "RestCommonResponseDTOPageFiBucketLevelResponseDTO"
 },
-"RestCommonResponseDTO«Page«FiBucketResponseDTO»»": {
+"RestCommonResponseDTOPageFiBucketResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiBucketResponseDTO»"
+"$ref": "#/definitions/PageFiBucketResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9938,13 +9791,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiBucketResponseDTO»»"
+"title": "RestCommonResponseDTOPageFiBucketResponseDTO"
 },
-"RestCommonResponseDTO«Page«FiCardActivitiesResponseDTO»»": {
+"RestCommonResponseDTOPageFiCardActivitiesResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiCardActivitiesResponseDTO»"
+"$ref": "#/definitions/PageFiCardActivitiesResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9963,13 +9816,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiCardActivitiesResponseDTO»»"
+"title": "RestCommonResponseDTOPageFiCardActivitiesResponseDTO"
 },
-"RestCommonResponseDTO«Page«FiCronResponseDTO»»": {
+"RestCommonResponseDTOPageFiCronResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiCronResponseDTO»"
+"$ref": "#/definitions/PageFiCronResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -9988,13 +9841,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiCronResponseDTO»»"
+"title": "RestCommonResponseDTOPageFiCronResponseDTO"
 },
-"RestCommonResponseDTO«Page«FiEmbossingReqResponseDTO»»": {
+"RestCommonResponseDTOPageFiEmbossingReqResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«FiEmbossingReqResponseDTO»"
+"$ref": "#/definitions/PageFiEmbossingReqResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10013,13 +9866,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«FiEmbossingReqResponseDTO»»"
+"title": "RestCommonResponseDTOPageFiEmbossingReqResponseDTO"
 },
-"RestCommonResponseDTO«Page«InterestProfileResponseDTO»»": {
+"RestCommonResponseDTOPageInterestProfileResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«InterestProfileResponseDTO»"
+"$ref": "#/definitions/PageInterestProfileResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10038,13 +9891,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«InterestProfileResponseDTO»»"
+"title": "RestCommonResponseDTOPageInterestProfileResponseDTO"
 },
-"RestCommonResponseDTO«Page«PaymentToolResponseDTO»»": {
+"RestCommonResponseDTOPagePaymentToolResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«PaymentToolResponseDTO»"
+"$ref": "#/definitions/PagePaymentToolResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10063,13 +9916,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«PaymentToolResponseDTO»»"
+"title": "RestCommonResponseDTOPagePaymentToolResponseDTO"
 },
-"RestCommonResponseDTO«Page«PaymentToolStatusResponseDTO»»": {
+"RestCommonResponseDTOPagePaymentToolStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«PaymentToolStatusResponseDTO»"
+"$ref": "#/definitions/PagePaymentToolStatusResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10088,13 +9941,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«PaymentToolStatusResponseDTO»»"
+"title": "RestCommonResponseDTOPagePaymentToolStatusResponseDTO"
 },
-"RestCommonResponseDTO«Page«PhysicalStatusResponseDTO»»": {
+"RestCommonResponseDTOPagePhysicalStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«PhysicalStatusResponseDTO»"
+"$ref": "#/definitions/PagePhysicalStatusResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10113,13 +9966,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«PhysicalStatusResponseDTO»»"
+"title": "RestCommonResponseDTOPagePhysicalStatusResponseDTO"
 },
-"RestCommonResponseDTO«Page«ProductResponseDTO»»": {
+"RestCommonResponseDTOPageProductResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«ProductResponseDTO»"
+"$ref": "#/definitions/PageProductResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10138,13 +9991,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«ProductResponseDTO»»"
+"title": "RestCommonResponseDTOPageProductResponseDTO"
 },
-"RestCommonResponseDTO«Page«ProfileResponseDTO»»": {
+"RestCommonResponseDTOPageProfileResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«ProfileResponseDTO»"
+"$ref": "#/definitions/PageProfileResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10163,13 +10016,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«ProfileResponseDTO»»"
+"title": "RestCommonResponseDTOPageProfileResponseDTO"
 },
-"RestCommonResponseDTO«Page«ServiceCodeResponseDTO»»": {
+"RestCommonResponseDTOPageServiceCodeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«ServiceCodeResponseDTO»"
+"$ref": "#/definitions/PageServiceCodeResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10188,13 +10041,13 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«ServiceCodeResponseDTO»»"
+"title": "RestCommonResponseDTOPageServiceCodeResponseDTO"
 },
-"RestCommonResponseDTO«Page«StatusWorkflowResponseDTO»»": {
+"RestCommonResponseDTOPageStatusWorkflowResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
-"$ref": "#/definitions/Page«StatusWorkflowResponseDTO»"
+"$ref": "#/definitions/PageStatusWorkflowResponseDTO"
 },
 "devMessage": {
 "type": "string"
@@ -10213,9 +10066,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«Page«StatusWorkflowResponseDTO»»"
+"title": "RestCommonResponseDTOPageStatusWorkflowResponseDTO"
 },
-"RestCommonResponseDTO«PaymentToolPinResponseDTO»": {
+"RestCommonResponseDTOPaymentToolPinResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10238,9 +10091,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«PaymentToolPinResponseDTO»"
+"title": "RestCommonResponseDTOPaymentToolPinResponseDTO"
 },
-"RestCommonResponseDTO«PaymentToolRequestDTO»": {
+"RestCommonResponseDTOPaymentToolRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10263,9 +10116,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«PaymentToolRequestDTO»"
+"title": "RestCommonResponseDTOPaymentToolRequestDTO"
 },
-"RestCommonResponseDTO«PaymentToolResponseDTO»": {
+"RestCommonResponseDTOPaymentToolResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10288,9 +10141,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«PaymentToolResponseDTO»"
+"title": "RestCommonResponseDTOPaymentToolResponseDTO"
 },
-"RestCommonResponseDTO«PaymentToolStatusResponseDTO»": {
+"RestCommonResponseDTOPaymentToolStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10313,9 +10166,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«PaymentToolStatusResponseDTO»"
+"title": "RestCommonResponseDTOPaymentToolStatusResponseDTO"
 },
-"RestCommonResponseDTO«PhysicalStatusRequestDTO»": {
+"RestCommonResponseDTOPhysicalStatusRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10338,9 +10191,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«PhysicalStatusRequestDTO»"
+"title": "RestCommonResponseDTOPhysicalStatusRequestDTO"
 },
-"RestCommonResponseDTO«PhysicalStatusResponseDTO»": {
+"RestCommonResponseDTOPhysicalStatusResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10363,9 +10216,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«PhysicalStatusResponseDTO»"
+"title": "RestCommonResponseDTOPhysicalStatusResponseDTO"
 },
-"RestCommonResponseDTO«ProductRequestDTO»": {
+"RestCommonResponseDTOProductRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10388,9 +10241,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ProductRequestDTO»"
+"title": "RestCommonResponseDTOProductRequestDTO"
 },
-"RestCommonResponseDTO«ProductResponseDTO»": {
+"RestCommonResponseDTOProductResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10413,9 +10266,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ProductResponseDTO»"
+"title": "RestCommonResponseDTOProductResponseDTO"
 },
-"RestCommonResponseDTO«ProfileRequestDTO»": {
+"RestCommonResponseDTOProfileRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10438,9 +10291,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ProfileRequestDTO»"
+"title": "RestCommonResponseDTOProfileRequestDTO"
 },
-"RestCommonResponseDTO«ProfileResponseDTO»": {
+"RestCommonResponseDTOProfileResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10463,9 +10316,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ProfileResponseDTO»"
+"title": "RestCommonResponseDTOProfileResponseDTO"
 },
-"RestCommonResponseDTO«ServiceCodeRequestDTO»": {
+"RestCommonResponseDTOServiceCodeRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10488,9 +10341,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ServiceCodeRequestDTO»"
+"title": "RestCommonResponseDTOServiceCodeRequestDTO"
 },
-"RestCommonResponseDTO«ServiceCodeResponseDTO»": {
+"RestCommonResponseDTOServiceCodeResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10513,9 +10366,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«ServiceCodeResponseDTO»"
+"title": "RestCommonResponseDTOServiceCodeResponseDTO"
 },
-"RestCommonResponseDTO«StatusWorkflowRequestDTO»": {
+"RestCommonResponseDTOStatusWorkflowRequestDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10538,9 +10391,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«StatusWorkflowRequestDTO»"
+"title": "RestCommonResponseDTOStatusWorkflowRequestDTO"
 },
-"RestCommonResponseDTO«StatusWorkflowResponseDTO»": {
+"RestCommonResponseDTOStatusWorkflowResponseDTO": {
 "type": "object",
 "properties": {
 "data": {
@@ -10563,9 +10416,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«StatusWorkflowResponseDTO»"
+"title": "RestCommonResponseDTOStatusWorkflowResponseDTO"
 },
-"RestCommonResponseDTO«boolean»": {
+"RestCommonResponseDTOboolean": {
 "type": "object",
 "properties": {
 "data": {
@@ -10588,9 +10441,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«boolean»"
+"title": "RestCommonResponseDTOboolean"
 },
-"RestCommonResponseDTO«double»": {
+"RestCommonResponseDTOdouble": {
 "type": "object",
 "properties": {
 "data": {
@@ -10614,9 +10467,9 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«double»"
+"title": "RestCommonResponseDTOdouble"
 },
-"RestCommonResponseDTO«uuid»": {
+"RestCommonResponseDTOuuid": {
 "type": "object",
 "properties": {
 "data": {
@@ -10640,7 +10493,7 @@
 "type": "boolean"
 }
 },
-"title": "RestCommonResponseDTO«uuid»"
+"title": "RestCommonResponseDTOuuid"
 },
 "ServiceCodeRequestDTO": {
 "type": "object",
