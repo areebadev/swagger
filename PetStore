@@ -1,2716 +1,649 @@
-{
-    "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome3",
-    "definitions": {
-        "405": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/405_Content"
-                }
-            },
-            "required": [
-                "content",
-                "description"
-            ],
-            "title": "405"
-        },
-        "Welcome3": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "openapi": {
-                    "type": "string"
-                },
-                "info": {
-                    "$ref": "#/definitions/Info"
-                },
-                "externalDocs": {
-                    "$ref": "#/definitions/ExternalDocs"
-                },
-                "servers": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Server"
-                    }
-                },
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Tag"
-                    }
-                },
-                "paths": {
-                    "$ref": "#/definitions/Paths"
-                },
-                "components": {
-                    "$ref": "#/definitions/Components"
-                }
-            },
-            "required": [
-                "components",
-                "externalDocs",
-                "info",
-                "openapi",
-                "paths",
-                "servers",
-                "tags"
-            ],
-            "title": "Welcome3"
-        },
-        "Components": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schemas": {
-                    "$ref": "#/definitions/Schemas"
-                },
-                "securitySchemes": {
-                    "$ref": "#/definitions/SecuritySchemes"
-                }
-            },
-            "required": [
-                "schemas",
-                "securitySchemes"
-            ],
-            "title": "Components"
-        },
-        "Schemas": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "Order": {
-                    "$ref": "#/definitions/Order"
-                },
-                "Category": {
-                    "$ref": "#/definitions/CategoryClass"
-                },
-                "User": {
-                    "$ref": "#/definitions/User"
-                },
-                "Tag": {
-                    "$ref": "#/definitions/CategoryClass"
-                },
-                "Pet": {
-                    "$ref": "#/definitions/Pet"
-                },
-                "ApiResponse": {
-                    "$ref": "#/definitions/APIResponse"
-                }
-            },
-            "required": [
-                "ApiResponse",
-                "Category",
-                "Order",
-                "Pet",
-                "Tag",
-                "User"
-            ],
-            "title": "Schemas"
-        },
-        "APIResponse": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "properties": {
-                    "$ref": "#/definitions/APIResponseProperties"
-                }
-            },
-            "required": [
-                "properties",
-                "type"
-            ],
-            "title": "APIResponse"
-        },
-        "APIResponseProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "code": {
-                    "$ref": "#/definitions/Code"
-                },
-                "type": {
-                    "$ref": "#/definitions/Message"
-                },
-                "message": {
-                    "$ref": "#/definitions/Message"
-                }
-            },
-            "required": [
-                "code",
-                "message",
-                "type"
-            ],
-            "title": "APIResponseProperties"
-        },
-        "Code": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "format": {
-                    "$ref": "#/definitions/Format"
-                }
-            },
-            "required": [
-                "type"
-            ],
-            "title": "Code"
-        },
-        "Message": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                }
-            },
-            "required": [
-                "type"
-            ],
-            "title": "Message"
-        },
-        "CategoryClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "properties": {
-                    "$ref": "#/definitions/CategoryProperties"
-                },
-                "xml": {
-                    "$ref": "#/definitions/CategoryXML"
-                }
-            },
-            "required": [
-                "properties",
-                "type",
-                "xml"
-            ],
-            "title": "CategoryClass"
-        },
-        "CategoryProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "$ref": "#/definitions/Code"
-                },
-                "name": {
-                    "$ref": "#/definitions/Message"
-                }
-            },
-            "required": [
-                "id",
-                "name"
-            ],
-            "title": "CategoryProperties"
-        },
-        "CategoryXML": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name"
-            ],
-            "title": "CategoryXML"
-        },
-        "Order": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "properties": {
-                    "$ref": "#/definitions/OrderProperties"
-                },
-                "xml": {
-                    "$ref": "#/definitions/CategoryXML"
-                }
-            },
-            "required": [
-                "properties",
-                "type",
-                "xml"
-            ],
-            "title": "Order"
-        },
-        "OrderProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "$ref": "#/definitions/Code"
-                },
-                "petId": {
-                    "$ref": "#/definitions/Code"
-                },
-                "quantity": {
-                    "$ref": "#/definitions/Code"
-                },
-                "shipDate": {
-                    "$ref": "#/definitions/Code"
-                },
-                "status": {
-                    "$ref": "#/definitions/Status"
-                },
-                "complete": {
-                    "$ref": "#/definitions/Complete"
-                }
-            },
-            "required": [
-                "complete",
-                "id",
-                "petId",
-                "quantity",
-                "shipDate",
-                "status"
-            ],
-            "title": "OrderProperties"
-        },
-        "Complete": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "default": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "default",
-                "type"
-            ],
-            "title": "Complete"
-        },
-        "Status": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "enum": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "enum",
-                "type"
-            ],
-            "title": "Status"
-        },
-        "Pet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "required": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "type": {
-                    "type": "string"
-                },
-                "properties": {
-                    "$ref": "#/definitions/PetProperties"
-                },
-                "xml": {
-                    "$ref": "#/definitions/CategoryXML"
-                }
-            },
-            "required": [
-                "properties",
-                "required",
-                "type",
-                "xml"
-            ],
-            "title": "Pet"
-        },
-        "PetProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "$ref": "#/definitions/Code"
-                },
-                "category": {
-                    "$ref": "#/definitions/ItemsClass"
-                },
-                "name": {
-                    "$ref": "#/definitions/PurpleName"
-                },
-                "photoUrls": {
-                    "$ref": "#/definitions/PhotoUrls"
-                },
-                "tags": {
-                    "$ref": "#/definitions/Tags"
-                },
-                "status": {
-                    "$ref": "#/definitions/Status"
-                }
-            },
-            "required": [
-                "category",
-                "id",
-                "name",
-                "photoUrls",
-                "status",
-                "tags"
-            ],
-            "title": "PetProperties"
-        },
-        "ItemsClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "$ref": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "$ref"
-            ],
-            "title": "ItemsClass"
-        },
-        "PurpleName": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "example": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "example",
-                "type"
-            ],
-            "title": "PurpleName"
-        },
-        "PhotoUrls": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "xml": {
-                    "$ref": "#/definitions/PhotoUrlsXML"
-                },
-                "items": {
-                    "$ref": "#/definitions/Message"
-                }
-            },
-            "required": [
-                "items",
-                "type",
-                "xml"
-            ],
-            "title": "PhotoUrls"
-        },
-        "PhotoUrlsXML": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "wrapped": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "name",
-                "wrapped"
-            ],
-            "title": "PhotoUrlsXML"
-        },
-        "Tags": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "xml": {
-                    "$ref": "#/definitions/PhotoUrlsXML"
-                },
-                "items": {
-                    "$ref": "#/definitions/ItemsClass"
-                }
-            },
-            "required": [
-                "items",
-                "type",
-                "xml"
-            ],
-            "title": "Tags"
-        },
-        "User": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "properties": {
-                    "$ref": "#/definitions/UserProperties"
-                },
-                "xml": {
-                    "$ref": "#/definitions/CategoryXML"
-                }
-            },
-            "required": [
-                "properties",
-                "type",
-                "xml"
-            ],
-            "title": "User"
-        },
-        "UserProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "$ref": "#/definitions/Code"
-                },
-                "username": {
-                    "$ref": "#/definitions/Message"
-                },
-                "firstName": {
-                    "$ref": "#/definitions/Message"
-                },
-                "lastName": {
-                    "$ref": "#/definitions/Message"
-                },
-                "email": {
-                    "$ref": "#/definitions/Message"
-                },
-                "password": {
-                    "$ref": "#/definitions/Message"
-                },
-                "phone": {
-                    "$ref": "#/definitions/Message"
-                },
-                "userStatus": {
-                    "$ref": "#/definitions/UserStatus"
-                }
-            },
-            "required": [
-                "email",
-                "firstName",
-                "id",
-                "lastName",
-                "password",
-                "phone",
-                "userStatus",
-                "username"
-            ],
-            "title": "UserProperties"
-        },
-        "UserStatus": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "format": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "description",
-                "format",
-                "type"
-            ],
-            "title": "UserStatus"
-        },
-        "SecuritySchemes": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "petstore_auth": {
-                    "$ref": "#/definitions/PetstoreAuthClass"
-                },
-                "api_key": {
-                    "$ref": "#/definitions/APIKey"
-                }
-            },
-            "required": [
-                "api_key",
-                "petstore_auth"
-            ],
-            "title": "SecuritySchemes"
-        },
-        "APIKey": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "in": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "in",
-                "name",
-                "type"
-            ],
-            "title": "APIKey"
-        },
-        "PetstoreAuthClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "flows": {
-                    "$ref": "#/definitions/Flows"
-                }
-            },
-            "required": [
-                "flows",
-                "type"
-            ],
-            "title": "PetstoreAuthClass"
-        },
-        "Flows": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "implicit": {
-                    "$ref": "#/definitions/Implicit"
-                }
-            },
-            "required": [
-                "implicit"
-            ],
-            "title": "Flows"
-        },
-        "Implicit": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "authorizationUrl": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "http"
-                    ]
-                },
-                "scopes": {
-                    "$ref": "#/definitions/Scopes"
-                }
-            },
-            "required": [
-                "authorizationUrl",
-                "scopes"
-            ],
-            "title": "Implicit"
-        },
-        "Scopes": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "write:pets": {
-                    "type": "string"
-                },
-                "read:pets": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "read:pets",
-                "write:pets"
-            ],
-            "title": "Scopes"
-        },
-        "ExternalDocs": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "http"
-                    ]
-                }
-            },
-            "required": [
-                "description",
-                "url"
-            ],
-            "title": "ExternalDocs"
-        },
-        "Info": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "title": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "termsOfService": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "http"
-                    ]
-                },
-                "contact": {
-                    "$ref": "#/definitions/Contact"
-                },
-                "license": {
-                    "$ref": "#/definitions/License"
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "contact",
-                "description",
-                "license",
-                "termsOfService",
-                "title",
-                "version"
-            ],
-            "title": "Info"
-        },
-        "Contact": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "email": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "email"
-            ],
-            "title": "Contact"
-        },
-        "License": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "http"
-                    ],
-                    "qt-uri-extensions": [
-                        ".html"
-                    ]
-                }
-            },
-            "required": [
-                "name",
-                "url"
-            ],
-            "title": "License"
-        },
-        "Paths": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "/pet": {
-                    "$ref": "#/definitions/PetClass"
-                },
-                "/pet/findByStatus": {
-                    "$ref": "#/definitions/PetFindByStatus"
-                },
-                "/pet/findByTags": {
-                    "$ref": "#/definitions/PetFindByTags"
-                },
-                "/pet/{petId}": {
-                    "$ref": "#/definitions/PetPetID"
-                },
-                "/pet/{petId}/uploadImage": {
-                    "$ref": "#/definitions/PetPetIDUploadImage"
-                },
-                "/store/inventory": {
-                    "$ref": "#/definitions/StoreInventory"
-                },
-                "/store/order": {
-                    "$ref": "#/definitions/StoreOrder"
-                },
-                "/store/order/{orderId}": {
-                    "$ref": "#/definitions/StoreOrderOrderID"
-                },
-                "/user": {
-                    "$ref": "#/definitions/UserClass"
-                },
-                "/user/createWithArray": {
-                    "$ref": "#/definitions/UserCreateWith"
-                },
-                "/user/createWithList": {
-                    "$ref": "#/definitions/UserCreateWith"
-                },
-                "/user/login": {
-                    "$ref": "#/definitions/UserLogin"
-                },
-                "/user/logout": {
-                    "$ref": "#/definitions/UserLogout"
-                },
-                "/user/{username}": {
-                    "$ref": "#/definitions/UserUsername"
-                }
-            },
-            "required": [
-                "/pet",
-                "/pet/findByStatus",
-                "/pet/findByTags",
-                "/pet/{petId}",
-                "/pet/{petId}/uploadImage",
-                "/store/inventory",
-                "/store/order",
-                "/store/order/{orderId}",
-                "/user",
-                "/user/createWithArray",
-                "/user/createWithList",
-                "/user/login",
-                "/user/logout",
-                "/user/{username}"
-            ],
-            "title": "Paths"
-        },
-        "PetClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "put": {
-                    "$ref": "#/definitions/Put"
-                },
-                "post": {
-                    "$ref": "#/definitions/PetPost"
-                }
-            },
-            "required": [
-                "post",
-                "put"
-            ],
-            "title": "PetClass"
-        },
-        "PetPost": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/PurpleRequestBody"
-                },
-                "responses": {
-                    "$ref": "#/definitions/PurpleResponses"
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                },
-                "x-codegen-request-body-name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "operationId",
-                "requestBody",
-                "responses",
-                "security",
-                "summary",
-                "tags",
-                "x-codegen-request-body-name"
-            ],
-            "title": "PetPost"
-        },
-        "PurpleRequestBody": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/PurpleContent"
-                },
-                "required": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "content",
-                "description",
-                "required"
-            ],
-            "title": "PurpleRequestBody"
-        },
-        "PurpleContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/json": {
-                    "$ref": "#/definitions/ApplicationJSON"
-                },
-                "application/xml": {
-                    "$ref": "#/definitions/ApplicationJSON"
-                }
-            },
-            "required": [
-                "application/json",
-                "application/xml"
-            ],
-            "title": "PurpleContent"
-        },
-        "ApplicationJSON": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schema": {
-                    "$ref": "#/definitions/ItemsClass"
-                }
-            },
-            "required": [
-                "schema"
-            ],
-            "title": "ApplicationJSON"
-        },
-        "PurpleResponses": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "405": {
-                    "$ref": "#/definitions/405"
-                }
-            },
-            "required": [
-                "405"
-            ],
-            "title": "PurpleResponses"
-        },
-        "405_Content": {
-            "type": "object",
-            "additionalProperties": false,
-            "title": "405_Content"
-        },
-        "PostSecurity": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "petstore_auth": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PetstoreAuthElement"
-                    }
-                }
-            },
-            "required": [
-                "petstore_auth"
-            ],
-            "title": "PostSecurity"
-        },
-        "Put": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/PurpleRequestBody"
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/405"
-                    }
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                },
-                "x-codegen-request-body-name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "operationId",
-                "requestBody",
-                "responses",
-                "security",
-                "summary",
-                "tags",
-                "x-codegen-request-body-name"
-            ],
-            "title": "Put"
-        },
-        "PetFindByStatus": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/PetFindByStatusGet"
-                }
-            },
-            "required": [
-                "get"
-            ],
-            "title": "PetFindByStatus"
-        },
-        "PetFindByStatusGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PurpleParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/PurpleResponse"
-                    }
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "parameters",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "PetFindByStatusGet"
-        },
-        "PurpleParameter": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "in": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "required": {
-                    "type": "boolean"
-                },
-                "style": {
-                    "type": "string"
-                },
-                "explode": {
-                    "type": "boolean"
-                },
-                "schema": {
-                    "$ref": "#/definitions/PurpleSchema"
-                }
-            },
-            "required": [
-                "description",
-                "explode",
-                "in",
-                "name",
-                "required",
-                "schema",
-                "style"
-            ],
-            "title": "PurpleParameter"
-        },
-        "PurpleSchema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "items": {
-                    "$ref": "#/definitions/Items"
-                }
-            },
-            "required": [
-                "items",
-                "type"
-            ],
-            "title": "PurpleSchema"
-        },
-        "Items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "default": {
-                    "type": "string"
-                },
-                "enum": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": [
-                "default",
-                "enum",
-                "type"
-            ],
-            "title": "Items"
-        },
-        "PurpleResponse": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/FluffyContent"
-                }
-            },
-            "required": [
-                "content",
-                "description"
-            ],
-            "title": "PurpleResponse"
-        },
-        "FluffyContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/xml": {
-                    "$ref": "#/definitions/Empty"
-                },
-                "application/json": {
-                    "$ref": "#/definitions/Empty"
-                }
-            },
-            "required": [],
-            "title": "FluffyContent"
-        },
-        "Empty": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schema": {
-                    "$ref": "#/definitions/Schema"
-                }
-            },
-            "required": [
-                "schema"
-            ],
-            "title": "Empty"
-        },
-        "Schema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "items": {
-                    "$ref": "#/definitions/ItemsClass"
-                }
-            },
-            "required": [
-                "items",
-                "type"
-            ],
-            "title": "Schema"
-        },
-        "PetFindByTags": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/PetFindByTagsGet"
-                }
-            },
-            "required": [
-                "get"
-            ],
-            "title": "PetFindByTags"
-        },
-        "PetFindByTagsGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FluffyParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/PurpleResponse"
-                    }
-                },
-                "deprecated": {
-                    "type": "boolean"
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                }
-            },
-            "required": [
-                "deprecated",
-                "description",
-                "operationId",
-                "parameters",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "PetFindByTagsGet"
-        },
-        "FluffyParameter": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "in": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "required": {
-                    "type": "boolean"
-                },
-                "style": {
-                    "type": "string"
-                },
-                "explode": {
-                    "type": "boolean"
-                },
-                "schema": {
-                    "$ref": "#/definitions/FluffySchema"
-                }
-            },
-            "required": [
-                "description",
-                "explode",
-                "in",
-                "name",
-                "required",
-                "schema",
-                "style"
-            ],
-            "title": "FluffyParameter"
-        },
-        "FluffySchema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "items": {
-                    "$ref": "#/definitions/Message"
-                }
-            },
-            "required": [
-                "items",
-                "type"
-            ],
-            "title": "FluffySchema"
-        },
-        "PetPetID": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/PetPetIDGet"
-                },
-                "post": {
-                    "$ref": "#/definitions/PetPetIDPost"
-                },
-                "delete": {
-                    "$ref": "#/definitions/PetPetIDDelete"
-                }
-            },
-            "required": [
-                "delete",
-                "get",
-                "post"
-            ],
-            "title": "PetPetID"
-        },
-        "PetPetIDDelete": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/405"
-                    }
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                }
-            },
-            "required": [
-                "operationId",
-                "parameters",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "PetPetIDDelete"
-        },
-        "PostParameter": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "in": {
-                    "type": "string"
-                },
-                "schema": {
-                    "$ref": "#/definitions/Code"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "required": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "in",
-                "name",
-                "schema"
-            ],
-            "title": "PostParameter"
-        },
-        "PetPetIDGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/PostResponse"
-                    }
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PurpleSecurity"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "parameters",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "PetPetIDGet"
-        },
-        "PostResponse": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/TentacledContent"
-                }
-            },
-            "required": [
-                "content",
-                "description"
-            ],
-            "title": "PostResponse"
-        },
-        "TentacledContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/json": {
-                    "$ref": "#/definitions/ApplicationJSON"
-                },
-                "application/xml": {
-                    "$ref": "#/definitions/ApplicationJSON"
-                }
-            },
-            "required": [],
-            "title": "TentacledContent"
-        },
-        "PurpleSecurity": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "api_key": {
-                    "type": "array",
-                    "items": {}
-                }
-            },
-            "required": [
-                "api_key"
-            ],
-            "title": "PurpleSecurity"
-        },
-        "PetPetIDPost": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostParameter"
-                    }
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/FluffyRequestBody"
-                },
-                "responses": {
-                    "$ref": "#/definitions/PurpleResponses"
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                }
-            },
-            "required": [
-                "operationId",
-                "parameters",
-                "requestBody",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "PetPetIDPost"
-        },
-        "FluffyRequestBody": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "content": {
-                    "$ref": "#/definitions/StickyContent"
-                }
-            },
-            "required": [
-                "content"
-            ],
-            "title": "FluffyRequestBody"
-        },
-        "StickyContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/x-www-form-urlencoded": {
-                    "$ref": "#/definitions/ApplicationXWWWFormUrlencoded"
-                }
-            },
-            "required": [
-                "application/x-www-form-urlencoded"
-            ],
-            "title": "StickyContent"
-        },
-        "ApplicationXWWWFormUrlencoded": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schema": {
-                    "$ref": "#/definitions/ApplicationXWWWFormUrlencodedSchema"
-                }
-            },
-            "required": [
-                "schema"
-            ],
-            "title": "ApplicationXWWWFormUrlencoded"
-        },
-        "ApplicationXWWWFormUrlencodedSchema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "properties": {
-                    "$ref": "#/definitions/PurpleProperties"
-                }
-            },
-            "required": [
-                "properties"
-            ],
-            "title": "ApplicationXWWWFormUrlencodedSchema"
-        },
-        "PurpleProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "$ref": "#/definitions/StatusClass"
-                },
-                "status": {
-                    "$ref": "#/definitions/StatusClass"
-                }
-            },
-            "required": [
-                "name",
-                "status"
-            ],
-            "title": "PurpleProperties"
-        },
-        "StatusClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "description": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "description",
-                "type"
-            ],
-            "title": "StatusClass"
-        },
-        "PetPetIDUploadImage": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "post": {
-                    "$ref": "#/definitions/PetPetIDUploadImagePost"
-                }
-            },
-            "required": [
-                "post"
-            ],
-            "title": "PetPetIDUploadImage"
-        },
-        "PetPetIDUploadImagePost": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostParameter"
-                    }
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/TentacledRequestBody"
-                },
-                "responses": {
-                    "$ref": "#/definitions/FluffyResponses"
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PostSecurity"
-                    }
-                }
-            },
-            "required": [
-                "operationId",
-                "parameters",
-                "requestBody",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "PetPetIDUploadImagePost"
-        },
-        "TentacledRequestBody": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "content": {
-                    "$ref": "#/definitions/IndigoContent"
-                }
-            },
-            "required": [
-                "content"
-            ],
-            "title": "TentacledRequestBody"
-        },
-        "IndigoContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "multipart/form-data": {
-                    "$ref": "#/definitions/MultipartFormData"
-                }
-            },
-            "required": [
-                "multipart/form-data"
-            ],
-            "title": "IndigoContent"
-        },
-        "MultipartFormData": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schema": {
-                    "$ref": "#/definitions/MultipartFormDataSchema"
-                }
-            },
-            "required": [
-                "schema"
-            ],
-            "title": "MultipartFormData"
-        },
-        "MultipartFormDataSchema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "properties": {
-                    "$ref": "#/definitions/FluffyProperties"
-                }
-            },
-            "required": [
-                "properties"
-            ],
-            "title": "MultipartFormDataSchema"
-        },
-        "FluffyProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "additionalMetadata": {
-                    "$ref": "#/definitions/StatusClass"
-                },
-                "file": {
-                    "$ref": "#/definitions/UserStatus"
-                }
-            },
-            "required": [
-                "additionalMetadata",
-                "file"
-            ],
-            "title": "FluffyProperties"
-        },
-        "FluffyResponses": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "200": {
-                    "$ref": "#/definitions/Purple200"
-                }
-            },
-            "required": [
-                "200"
-            ],
-            "title": "FluffyResponses"
-        },
-        "Purple200": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/IndecentContent"
-                }
-            },
-            "required": [
-                "content",
-                "description"
-            ],
-            "title": "Purple200"
-        },
-        "IndecentContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/json": {
-                    "$ref": "#/definitions/ApplicationJSON"
-                }
-            },
-            "required": [
-                "application/json"
-            ],
-            "title": "IndecentContent"
-        },
-        "StoreInventory": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/StoreInventoryGet"
-                }
-            },
-            "required": [
-                "get"
-            ],
-            "title": "StoreInventory"
-        },
-        "StoreInventoryGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "responses": {
-                    "$ref": "#/definitions/TentacledResponses"
-                },
-                "security": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PurpleSecurity"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "responses",
-                "security",
-                "summary",
-                "tags"
-            ],
-            "title": "StoreInventoryGet"
-        },
-        "TentacledResponses": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "200": {
-                    "$ref": "#/definitions/Fluffy200"
-                }
-            },
-            "required": [
-                "200"
-            ],
-            "title": "TentacledResponses"
-        },
-        "Fluffy200": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/HilariousContent"
-                }
-            },
-            "required": [
-                "content",
-                "description"
-            ],
-            "title": "Fluffy200"
-        },
-        "HilariousContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/json": {
-                    "$ref": "#/definitions/PurpleApplicationJSON"
-                }
-            },
-            "required": [
-                "application/json"
-            ],
-            "title": "HilariousContent"
-        },
-        "PurpleApplicationJSON": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schema": {
-                    "$ref": "#/definitions/TentacledSchema"
-                }
-            },
-            "required": [
-                "schema"
-            ],
-            "title": "PurpleApplicationJSON"
-        },
-        "TentacledSchema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "type": "string"
-                },
-                "additionalProperties": {
-                    "$ref": "#/definitions/Code"
-                }
-            },
-            "required": [
-                "additionalProperties",
-                "type"
-            ],
-            "title": "TentacledSchema"
-        },
-        "StoreOrder": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "post": {
-                    "$ref": "#/definitions/StoreOrderPost"
-                }
-            },
-            "required": [
-                "post"
-            ],
-            "title": "StoreOrder"
-        },
-        "StoreOrderPost": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/DeleteRequestBody"
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/PostResponse"
-                    }
-                },
-                "x-codegen-request-body-name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "operationId",
-                "requestBody",
-                "responses",
-                "summary",
-                "tags",
-                "x-codegen-request-body-name"
-            ],
-            "title": "StoreOrderPost"
-        },
-        "DeleteRequestBody": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/AmbitiousContent"
-                },
-                "required": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "content",
-                "description",
-                "required"
-            ],
-            "title": "DeleteRequestBody"
-        },
-        "AmbitiousContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "*/*": {
-                    "$ref": "#/definitions/ApplicationJSON"
-                }
-            },
-            "required": [
-                "*/*"
-            ],
-            "title": "AmbitiousContent"
-        },
-        "StoreOrderOrderID": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/StoreOrderOrderIDGet"
-                },
-                "delete": {
-                    "$ref": "#/definitions/StoreOrderOrderIDDelete"
-                }
-            },
-            "required": [
-                "delete",
-                "get"
-            ],
-            "title": "StoreOrderOrderID"
-        },
-        "StoreOrderOrderIDDelete": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/TentacledParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/405"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "parameters",
-                "responses",
-                "summary",
-                "tags"
-            ],
-            "title": "StoreOrderOrderIDDelete"
-        },
-        "TentacledParameter": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "in": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "required": {
-                    "type": "boolean"
-                },
-                "schema": {
-                    "$ref": "#/definitions/StickySchema"
-                }
-            },
-            "required": [
-                "description",
-                "in",
-                "name",
-                "required",
-                "schema"
-            ],
-            "title": "TentacledParameter"
-        },
-        "StickySchema": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "minimum": {
-                    "type": "integer"
-                },
-                "type": {
-                    "$ref": "#/definitions/Type"
-                },
-                "format": {
-                    "$ref": "#/definitions/Format"
-                },
-                "maximum": {
-                    "type": "integer"
-                }
-            },
-            "required": [
-                "format",
-                "minimum",
-                "type"
-            ],
-            "title": "StickySchema"
-        },
-        "StoreOrderOrderIDGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/TentacledParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/PostResponse"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "parameters",
-                "responses",
-                "summary",
-                "tags"
-            ],
-            "title": "StoreOrderOrderIDGet"
-        },
-        "UserClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "post": {
-                    "$ref": "#/definitions/UserPost"
-                }
-            },
-            "required": [
-                "post"
-            ],
-            "title": "UserClass"
-        },
-        "UserPost": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/DeleteRequestBody"
-                },
-                "responses": {
-                    "$ref": "#/definitions/StickyResponses"
-                },
-                "x-codegen-request-body-name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "requestBody",
-                "responses",
-                "summary",
-                "tags",
-                "x-codegen-request-body-name"
-            ],
-            "title": "UserPost"
-        },
-        "StickyResponses": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "default": {
-                    "$ref": "#/definitions/405"
-                }
-            },
-            "required": [
-                "default"
-            ],
-            "title": "StickyResponses"
-        },
-        "UserCreateWith": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "post": {
-                    "$ref": "#/definitions/UserCreateWithArrayPost"
-                }
-            },
-            "required": [
-                "post"
-            ],
-            "title": "UserCreateWith"
-        },
-        "UserCreateWithArrayPost": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/StickyRequestBody"
-                },
-                "responses": {
-                    "$ref": "#/definitions/StickyResponses"
-                },
-                "x-codegen-request-body-name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "operationId",
-                "requestBody",
-                "responses",
-                "summary",
-                "tags",
-                "x-codegen-request-body-name"
-            ],
-            "title": "UserCreateWithArrayPost"
-        },
-        "StickyRequestBody": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "$ref": "#/definitions/CunningContent"
-                },
-                "required": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "content",
-                "description",
-                "required"
-            ],
-            "title": "StickyRequestBody"
-        },
-        "CunningContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "*/*": {
-                    "$ref": "#/definitions/Empty"
-                }
-            },
-            "required": [
-                "*/*"
-            ],
-            "title": "CunningContent"
-        },
-        "UserLogin": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/UserLoginGet"
-                }
-            },
-            "required": [
-                "get"
-            ],
-            "title": "UserLogin"
-        },
-        "UserLoginGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PutParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/FluffyResponse"
-                    }
-                }
-            },
-            "required": [
-                "operationId",
-                "parameters",
-                "responses",
-                "summary",
-                "tags"
-            ],
-            "title": "UserLoginGet"
-        },
-        "PutParameter": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "in": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "required": {
-                    "type": "boolean"
-                },
-                "schema": {
-                    "$ref": "#/definitions/Message"
-                }
-            },
-            "required": [
-                "description",
-                "in",
-                "name",
-                "required",
-                "schema"
-            ],
-            "title": "PutParameter"
-        },
-        "FluffyResponse": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "headers": {
-                    "$ref": "#/definitions/Headers"
-                },
-                "content": {
-                    "$ref": "#/definitions/MagentaContent"
-                }
-            },
-            "required": [
-                "content",
-                "description"
-            ],
-            "title": "FluffyResponse"
-        },
-        "MagentaContent": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "application/xml": {
-                    "$ref": "#/definitions/Application"
-                },
-                "application/json": {
-                    "$ref": "#/definitions/Application"
-                }
-            },
-            "required": [],
-            "title": "MagentaContent"
-        },
-        "Application": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "schema": {
-                    "$ref": "#/definitions/Message"
-                }
-            },
-            "required": [
-                "schema"
-            ],
-            "title": "Application"
-        },
-        "Headers": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "X-Rate-Limit": {
-                    "$ref": "#/definitions/XExpiresAfter"
-                },
-                "X-Expires-After": {
-                    "$ref": "#/definitions/XExpiresAfter"
-                }
-            },
-            "required": [
-                "X-Expires-After",
-                "X-Rate-Limit"
-            ],
-            "title": "Headers"
-        },
-        "XExpiresAfter": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "schema": {
-                    "$ref": "#/definitions/Code"
-                }
-            },
-            "required": [
-                "description",
-                "schema"
-            ],
-            "title": "XExpiresAfter"
-        },
-        "UserLogout": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/UserLogoutGet"
-                }
-            },
-            "required": [
-                "get"
-            ],
-            "title": "UserLogout"
-        },
-        "UserLogoutGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "responses": {
-                    "$ref": "#/definitions/StickyResponses"
-                }
-            },
-            "required": [
-                "operationId",
-                "responses",
-                "summary",
-                "tags"
-            ],
-            "title": "UserLogoutGet"
-        },
-        "UserUsername": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "get": {
-                    "$ref": "#/definitions/UserUsernameGet"
-                },
-                "put": {
-                    "$ref": "#/definitions/PutClass"
-                },
-                "delete": {
-                    "$ref": "#/definitions/PutClass"
-                }
-            },
-            "required": [
-                "delete",
-                "get",
-                "put"
-            ],
-            "title": "UserUsername"
-        },
-        "PutClass": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PutParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/405"
-                    }
-                },
-                "requestBody": {
-                    "$ref": "#/definitions/DeleteRequestBody"
-                },
-                "x-codegen-request-body-name": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "description",
-                "operationId",
-                "parameters",
-                "responses",
-                "summary",
-                "tags"
-            ],
-            "title": "PutClass"
-        },
-        "UserUsernameGet": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "operationId": {
-                    "type": "string"
-                },
-                "parameters": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PutParameter"
-                    }
-                },
-                "responses": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/PostResponse"
-                    }
-                }
-            },
-            "required": [
-                "operationId",
-                "parameters",
-                "responses",
-                "summary",
-                "tags"
-            ],
-            "title": "UserUsernameGet"
-        },
-        "Server": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "http",
-                        "https"
-                    ]
-                }
-            },
-            "required": [
-                "url"
-            ],
-            "title": "Server"
-        },
-        "Tag": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "externalDocs": {
-                    "$ref": "#/definitions/ExternalDocs"
-                }
-            },
-            "required": [
-                "description",
-                "name"
-            ],
-            "title": "Tag"
-        },
-        "Format": {
-            "type": "string",
-            "enum": [
-                "int32",
-                "int64",
-                "date-time"
-            ],
-            "title": "Format"
-        },
-        "Type": {
-            "type": "string",
-            "enum": [
-                "integer",
-                "string"
-            ],
-            "title": "Type"
-        },
-        "PetstoreAuthElement": {
-            "type": "string",
-            "enum": [
-                "write:pets",
-                "read:pets"
-            ],
-            "title": "PetstoreAuthElement"
-        }
-    }
-}
+swagger: '2.0'
+info:
+  title: dbaas
+  version: Unknown
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /:
+    get:
+      operationId: getVersions
+      summary: List versions
+      description: |
+        Lists information about all Database Service API versions.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "versions": [
+                      {
+                          "status": "CURRENT",
+                          "updated": "2012-01-01T00:00:00Z",
+                          "id": "v1.0",
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/",
+                                  "rel": "self"
+                              }
+                          ]
+                      }
+                  ]
+              }
+  /v1.0:
+    get:
+      operationId: getVersionInfo
+      summary: Show version details
+      description: |
+        Shows details for the Database Service API v1.0.
+      produces:
+        - application/json
+      responses:
+        '202':
+          description: 202 response
+          examples:
+            application/json: |-
+              {
+                  "versions": [
+                      {
+                          "status": "CURRENT",
+                          "updated": "2012-08-01T00:00:00Z",
+                          "id": "v1.0",
+                          "links": [
+                              {
+                                  "href": "http://23.253.228.211:8779/v1.0/",
+                                  "rel": "self"
+                              }
+                          ]
+                      }
+                  ]
+              }
+  /v1.0/{accountId}/instances:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+    post:
+      operationId: createInstance
+      summary: Create database instance
+      description: |
+        Creates a database instance.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "instance": {
+                      "status": "BUILD",
+                      "updated": "2012-01-25T21:53:10Z",
+                      "name": "json_rack_instance",
+                      "links": [
+                          {
+                              "href": "https://openstack.example.com/v1.0/1234/instances/dea5a2f7-3ec7-4496-adab-0abb5a42d635",
+                              "rel": "self"
+                          },
+                          {
+                              "href": "https://openstack.example.com/instances/dea5a2f7-3ec7-4496-adab-0abb5a42d635",
+                              "rel": "bookmark"
+                          }
+                      ],
+                      "created": "2012-01-25T21:53:09Z",
+                      "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com",
+                      "volume": {
+                          "size": 2
+                      },
+                      "flavor": {
+                          "id": "1",
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/flavors/1",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/flavors/1",
+                                  "rel": "bookmark"
+                              }
+                          ]
+                      },
+                      "id": "dea5a2f7-3ec7-4496-adab-0abb5a42d635"
+                  }
+              }
+    get:
+      operationId: getInstance
+      summary: List database instances
+      description: |
+        Lists information, including status, for all database instances.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "instances": [
+                      {
+                          "status": "ACTIVE",
+                          "name": "json_rack_instance",
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/instances/28d1b8f3-172a-4f6d-983d-36021508444a",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/instances/28d1b8f3-172a-4f6d-983d-36021508444a",
+                                  "rel": "bookmark"
+                              }
+                          ],
+                          "volume": {
+                              "size": 2
+                          },
+                          "flavor": {
+                              "id": "1",
+                              "links": [
+                                  {
+                                      "href": "https://openstack.example.com/v1.0/1234/flavors/1",
+                                      "rel": "self"
+                                  },
+                                  {
+                                      "href": "https://openstack.example.com/flavors/1",
+                                      "rel": "bookmark"
+                                  }
+                              ]
+                          },
+                          "id": "28d1b8f3-172a-4f6d-983d-36021508444a"
+                      },
+                      {
+                          "status": "ACTIVE",
+                          "name": "xml_rack_instance",
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/instances/8fb081af-f237-44f5-80cc-b46be1840ca9",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/instances/8fb081af-f237-44f5-80cc-b46be1840ca9",
+                                  "rel": "bookmark"
+                              }
+                          ],
+                          "volume": {
+                              "size": 2
+                          },
+                          "flavor": {
+                              "id": "1",
+                              "links": [
+                                  {
+                                      "href": "https://openstack.example.com/v1.0/1234/flavors/1",
+                                      "rel": "self"
+                                  },
+                                  {
+                                      "href": "https://openstack.example.com/flavors/1",
+                                      "rel": "bookmark"
+                                  }
+                              ]
+                          },
+                          "id": "8fb081af-f237-44f5-80cc-b46be1840ca9"
+                      }
+                  ]
+              }
+  /v1.0/{accountId}/instances/{instanceId}:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+    get:
+      operationId: getInstanceById
+      summary: Show database instance details
+      description: |
+        Shows database instance details.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "instance": {
+                      "status": "ACTIVE",
+                      "updated": "2012-03-28T21:34:25Z",
+                      "name": "xml_rack_instance",
+                      "links": [
+                          {
+                              "href": "https://openstack.example.com/v1.0/1234/instances/2450c73f-7805-4afe-a42c-4094ab42666b",
+                              "rel": "self"
+                          },
+                          {
+                              "href": "https://openstack.example.com/instances/2450c73f-7805-4afe-a42c-4094ab42666b",
+                              "rel": "bookmark"
+                          }
+                      ],
+                      "created": "2012-03-28T21:31:02Z",
+                      "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com",
+                      "volume": {
+                          "used": 0.124542236328125,
+                          "size": 2
+                      },
+                      "flavor": {
+                          "id": "1",
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/flavors/1",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/flavors/1",
+                                  "rel": "bookmark"
+                              }
+                          ]
+                      },
+                      "id": "2450c73f-7805-4afe-a42c-4094ab42666b"
+                  }
+              }
+    delete:
+      operationId: deleteInstance
+      summary: Delete database instance
+      description: |
+        Deletes a specified database instance, including any associated data.
+      produces: []
+      responses:
+        '202':
+          description: 202 response
+  /v1.0/{accountId}/instances/{instanceId}/action:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+    post:
+      operationId: restartInstance
+      summary: Restart instance
+      description: |
+        Restarts the database service on an instance.
+      produces:
+        - application/json
+      responses:
+        '202':
+          description: 202 response
+          examples: {}
+  /v1.0/{accountId}/instances/{instanceId}/databases:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+    post:
+      operationId: createDatabase
+      summary: Create database
+      description: |
+        Creates a database within a specified instance.
+      produces:
+        - application/json
+      responses:
+        '202':
+          description: 202 response
+          examples: {}
+    get:
+      operationId: getDatabases
+      summary: List instance databases
+      description: |
+        Lists databases for a specified instance.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "databases": [
+                      {
+                          "name": "anotherexampledb"
+                      },
+                      {
+                          "name": "exampledb"
+                      },
+                      {
+                          "name": "nextround"
+                      },
+                      {
+                          "name": "sampledb"
+                      },
+                      {
+                          "name": "testingdb"
+                      }
+                  ]
+              }
+  /v1.0/{accountId}/instances/{instanceId}/databases/{databaseName}:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+      - name: databaseName
+        required: true
+        in: path
+        type: string
+        description: |
+          The name for the specified database.
+    delete:
+      operationId: deleteDatabase
+      summary: Delete database
+      description: |
+        Deletes a specified database.
+      produces:
+        - application/json
+      responses:
+        '202':
+          description: 202 response
+          examples: {}
+  /v1.0/{accountId}/instances/{instanceId}/users:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+    post:
+      operationId: createUser
+      summary: Create user
+      description: |
+        Creates a user for a specified database instance.
+      produces:
+        - application/json
+      responses:
+        '202':
+          description: 202 response
+          examples: {}
+    get:
+      operationId: getUsers
+      summary: List database instance users
+      description: |
+        Lists the users in a specified database instance.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "users": [
+                      {
+                          "name": "dbuser3",
+                          "databases": [
+                              {
+                                  "name": "databaseA"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "dbuser4",
+                          "databases": [
+                              {
+                                  "name": "databaseB"
+                              },
+                              {
+                                  "name": "databaseC"
+                              }
+                          ]
+                      }
+                  ]
+              }
+  /v1.0/{accountId}/instances/{instanceId}/users/{name}:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+      - name: name
+        required: true
+        in: path
+        type: string
+        description: |
+          The name for the specified user.
+    delete:
+      operationId: deleteUser
+      summary: Delete user
+      description: |
+        Deletes a specified user for a specified database instance.
+      produces:
+        - application/json
+      responses:
+        '202':
+          description: 202 response
+          examples: {}
+  /v1.0/{accountId}/instances/{instanceId}/root:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: instanceId
+        required: true
+        in: path
+        type: string
+        description: |
+          The instance ID for the specified database instance.
+    post:
+      operationId: createRoot
+      summary: Enable root user
+      description: |
+        Enables the root user for a specified database instance and returns the root password.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "user": {
+                      "password": "secretsecret",
+                      "name": "root"
+                  }
+              }
+    get:
+      operationId: isRootEnabled
+      summary: Show root-enabled status for database instance
+      description: |
+        Shows root-enabled status for a database instance.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "rootEnabled": true
+              }
+  /v1.0/{accountId}/flavors:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+    get:
+      operationId: getFlavors
+      summary: List flavors
+      description: |
+        Lists information for all available flavors.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-a
+              {
+                  "flavors": [
+                      {
+                          "ram": 512,
+                          "id": 1,
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/flavors/1",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/flavors/1",
+                                  "rel": "bookmark"
+                              }
+                          ],
+                          "name": "m1.tiny"
+                      },
+                      {
+                          "ram": 1024,
+                          "id": 2,
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/flavors/2",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/flavors/2",
+                                  "rel": "bookmark"
+                              }
+                          ],
+                          "name": "m1.small"
+                      },
+                      {
+                          "ram": 2048,
+                          "id": 3,
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/flavors/3",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/flavors/3",
+                                  "rel": "bookmark"
+                              }
+                          ],
+                          "name": "m1.medium"
+                      },
+                      {
+                          "ram": 4096,
+                          "id": 4,
+                          "links": [
+                              {
+                                  "href": "https://openstack.example.com/v1.0/1234/flavors/4",
+                                  "rel": "self"
+                              },
+                              {
+                                  "href": "https://openstack.example.com/flavors/4",
+                                  "rel": "bookmark"
+                              }
+                          ],
+                          "name": "m1.large"
+                      }
+                  ]
+              }
+  /v1.0/{accountId}/flavors/{flavorId}:
+    parameters:
+      - name: accountId
+        required: true
+        in: path
+        type: string
+        description: |
+          The account ID of the owner of the specified instance.
+      - name: flavorId
+        required: true
+        in: path
+        type: string
+        description: |
+          The flavor ID for the specified flavor.
+    get:
+      operationId: getFlavorById
+      summary: Show flavor details
+      description: |
+        Shows flavor details.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 200 response
+          examples:
+            application/json: |-
+              {
+                  "flavor": {
+                      "ram": 512,
+                      "id": 1,
+                      "links": [
+                          {
+                              "href": "https://openstack.example.com/v1.0/1234/flavors/1",
+                              "rel": "self"
+                          },
+                          {
+                              "href": "https://openstack.example.com/flavors/1",
+                              "rel": "bookmark"
+                          }
+                      ],
+                      "name": "m1.tiny"
+                  }
+              }
+
