@@ -1,700 +1,2716 @@
-swagger: "2.0"
-info:
-  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
-  version: "1.0.0"
-  title: "Swagger Petstore"
-  termsOfService: "http://swagger.io/terms/"
-  contact:
-    email: "apiteam@swagger.io"
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "petstore.swagger.io"
-basePath: "/v2"
-tags:
-- name: "pet"
-  description: "Everything about your Pets"
-  externalDocs:
-    description: "Find out more"
-    url: "http://swagger.io"
-- name: "store"
-  description: "Access to Petstore orders"
-- name: "user"
-  description: "Operations about user"
-  externalDocs:
-    description: "Find out more about our store"
-    url: "http://swagger.io"
-schemes:
-- "https"
-- "http"
-paths:
-  /pet:
-    post:
-      tags:
-      - "pet"
-      summary: "Add a new pet to the store"
-      description: ""
-      operationId: "addPet"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Pet object that needs to be added to the store"
-        required: true
-        schema:
-          $ref: "#/definitions/Pet"
-      responses:
-        "405":
-          description: "Invalid input"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-    put:
-      tags:
-      - "pet"
-      summary: "Update an existing pet"
-      description: ""
-      operationId: "updatePet"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Pet object that needs to be added to the store"
-        required: true
-        schema:
-          $ref: "#/definitions/Pet"
-      responses:
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Pet not found"
-        "405":
-          description: "Validation exception"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/findByStatus:
-    get:
-      tags:
-      - "pet"
-      summary: "Finds Pets by status"
-      description: "Multiple status values can be provided with comma separated strings"
-      operationId: "findPetsByStatus"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "status"
-        in: "query"
-        description: "Status values that need to be considered for filter"
-        required: true
-        type: "array"
-        items:
-          type: "string"
-          enum:
-          - "available"
-          - "pending"
-          - "sold"
-          default: "available"
-        collectionFormat: "multi"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Pet"
-        "400":
-          description: "Invalid status value"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/findByTags:
-    get:
-      tags:
-      - "pet"
-      summary: "Finds Pets by tags"
-      description: "Muliple tags can be provided with comma separated strings. Use         tag1, tag2, tag3 for testing."
-      operationId: "findPetsByTags"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "tags"
-        in: "query"
-        description: "Tags to filter by"
-        required: true
-        type: "array"
-        items:
-          type: "string"
-        collectionFormat: "multi"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Pet"
-        "400":
-          description: "Invalid tag value"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-      deprecated: true
-  /pet/{petId}:
-    get:
-      tags:
-      - "pet"
-      summary: "Find pet by ID"
-      description: "Returns a single pet"
-      operationId: "getPetById"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "petId"
-        in: "path"
-        description: "ID of pet to return"
-        required: true
-        type: "integer"
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Pet"
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Pet not found"
-      security:
-      - api_key: []
-    post:
-      tags:
-      - "pet"
-      summary: "Updates a pet in the store with form data"
-      description: ""
-      operationId: "updatePetWithForm"
-      consumes:
-      - "application/x-www-form-urlencoded"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "petId"
-        in: "path"
-        description: "ID of pet that needs to be updated"
-        required: true
-        type: "integer"
-        format: "int64"
-      - name: "name"
-        in: "formData"
-        description: "Updated name of the pet"
-        required: false
-        type: "string"
-      - name: "status"
-        in: "formData"
-        description: "Updated status of the pet"
-        required: false
-        type: "string"
-      responses:
-        "405":
-          description: "Invalid input"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-    delete:
-      tags:
-      - "pet"
-      summary: "Deletes a pet"
-      description: ""
-      operationId: "deletePet"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "api_key"
-        in: "header"
-        required: false
-        type: "string"
-      - name: "petId"
-        in: "path"
-        description: "Pet id to delete"
-        required: true
-        type: "integer"
-        format: "int64"
-      responses:
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Pet not found"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/{petId}/uploadImage:
-    post:
-      tags:
-      - "pet"
-      summary: "uploads an image"
-      description: ""
-      operationId: "uploadFile"
-      consumes:
-      - "multipart/form-data"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "petId"
-        in: "path"
-        description: "ID of pet to update"
-        required: true
-        type: "integer"
-        format: "int64"
-      - name: "additionalMetadata"
-        in: "formData"
-        description: "Additional data to pass to server"
-        required: false
-        type: "string"
-      - name: "file"
-        in: "formData"
-        description: "file to upload"
-        required: false
-        type: "file"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/ApiResponse"
-      security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /store/inventory:
-    get:
-      tags:
-      - "store"
-      summary: "Returns pet inventories by status"
-      description: "Returns a map of status codes to quantities"
-      operationId: "getInventory"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            type: "object"
-            additionalProperties:
-              type: "integer"
-              format: "int32"
-      security:
-      - api_key: []
-  /store/order:
-    post:
-      tags:
-      - "store"
-      summary: "Place an order for a pet"
-      description: ""
-      operationId: "placeOrder"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "order placed for purchasing the pet"
-        required: true
-        schema:
-          $ref: "#/definitions/Order"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Order"
-        "400":
-          description: "Invalid Order"
-  /store/order/{orderId}:
-    get:
-      tags:
-      - "store"
-      summary: "Find purchase order by ID"
-      description: "For valid response try integer IDs with value >= 1 and <= 10.         Other values will generated exceptions"
-      operationId: "getOrderById"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "orderId"
-        in: "path"
-        description: "ID of pet that needs to be fetched"
-        required: true
-        type: "integer"
-        maximum: 10.0
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Order"
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Order not found"
-    delete:
-      tags:
-      - "store"
-      summary: "Delete purchase order by ID"
-      description: "For valid response try integer IDs with positive integer value.         Negative or non-integer values will generate API errors"
-      operationId: "deleteOrder"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "orderId"
-        in: "path"
-        description: "ID of the order that needs to be deleted"
-        required: true
-        type: "integer"
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "400":
-          description: "Invalid ID supplied"
-        "404":
-          description: "Order not found"
-  /user:
-    post:
-      tags:
-      - "user"
-      summary: "Create user"
-      description: "This can only be done by the logged in user."
-      operationId: "createUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Created user object"
-        required: true
-        schema:
-          $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/createWithArray:
-    post:
-      tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithArrayInput"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/createWithList:
-    post:
-      tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithListInput"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/login:
-    get:
-      tags:
-      - "user"
-      summary: "Logs user into the system"
-      description: ""
-      operationId: "loginUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "query"
-        description: "The user name for login"
-        required: true
-        type: "string"
-      - name: "password"
-        in: "query"
-        description: "The password for login in clear text"
-        required: true
-        type: "string"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            type: "string"
-          headers:
-            X-Rate-Limit:
-              type: "integer"
-              format: "int32"
-              description: "calls per hour allowed by the user"
-            X-Expires-After:
-              type: "string"
-              format: "date-time"
-              description: "date in UTC when token expires"
-        "400":
-          description: "Invalid username/password supplied"
-  /user/logout:
-    get:
-      tags:
-      - "user"
-      summary: "Logs out current logged in user session"
-      description: ""
-      operationId: "logoutUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters: []
-      responses:
-        default:
-          description: "successful operation"
-  /user/{username}:
-    get:
-      tags:
-      - "user"
-      summary: "Get user by user name"
-      description: ""
-      operationId: "getUserByName"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "path"
-        description: "The name that needs to be fetched. Use user1 for testing. "
-        required: true
-        type: "string"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/User"
-        "400":
-          description: "Invalid username supplied"
-        "404":
-          description: "User not found"
-    put:
-      tags:
-      - "user"
-      summary: "Updated user"
-      description: "This can only be done by the logged in user."
-      operationId: "updateUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "path"
-        description: "name that need to be updated"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        description: "Updated user object"
-        required: true
-        schema:
-          $ref: "#/definitions/User"
-      responses:
-        "400":
-          description: "Invalid user supplied"
-        "404":
-          description: "User not found"
-    delete:
-      tags:
-      - "user"
-      summary: "Delete user"
-      description: "This can only be done by the logged in user."
-      operationId: "deleteUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "path"
-        description: "The name that needs to be deleted"
-        required: true
-        type: "string"
-      responses:
-        "400":
-          description: "Invalid username supplied"
-        "404":
-          description: "User not found"
-securityDefinitions:
-  petstore_auth:
-    type: "oauth2"
-    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
-    flow: "implicit"
-    scopes:
-      write:pets: "modify pets in your account"
-      read:pets: "read your pets"
-  api_key:
-    type: "apiKey"
-    name: "api_key"
-    in: "header"
-definitions:
-  Order:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      petId:
-        type: "integer"
-        format: "int64"
-      quantity:
-        type: "integer"
-        format: "int32"
-      shipDate:
-        type: "string"
-        format: "date-time"
-      status:
-        type: "string"
-        description: "Order Status"
-        enum:
-        - "placed"
-        - "approved"
-        - "delivered"
-      complete:
-        type: "boolean"
-        default: false
-    xml:
-      name: "Order"
-  Category:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      name:
-        type: "string"
-    xml:
-      name: "Category"
-  User:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      username:
-        type: "string"
-      firstName:
-        type: "string"
-      lastName:
-        type: "string"
-      email:
-        type: "string"
-      password:
-        type: "string"
-      phone:
-        type: "string"
-      userStatus:
-        type: "integer"
-        format: "int32"
-        description: "User Status"
-    xml:
-      name: "User"
-  Tag:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      name:
-        type: "string"
-    xml:
-      name: "Tag"
-  Pet:
-    type: "object"
-    required:
-    - "name"
-    - "photoUrls"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      category:
-        $ref: "#/definitions/Category"
-      name:
-        type: "string"
-        example: "doggie"
-      photoUrls:
-        type: "array"
-        xml:
-          name: "photoUrl"
-          wrapped: true
-        items:
-          type: "string"
-      tags:
-        type: "array"
-        xml:
-          name: "tag"
-          wrapped: true
-        items:
-          $ref: "#/definitions/Tag"
-      status:
-        type: "string"
-        description: "pet status in the store"
-        enum:
-        - "available"
-        - "pending"
-        - "sold"
-    xml:
-      name: "Pet"
-  ApiResponse:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-        format: "int32"
-      type:
-        type: "string"
-      message:
-        type: "string"
-externalDocs:
-  description: "Find out more about Swagger"
-  url: "http://swagger.io"
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome3",
+    "definitions": {
+        "405": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/405_Content"
+                }
+            },
+            "required": [
+                "content",
+                "description"
+            ],
+            "title": "405"
+        },
+        "Welcome3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "openapi": {
+                    "type": "string"
+                },
+                "info": {
+                    "$ref": "#/definitions/Info"
+                },
+                "externalDocs": {
+                    "$ref": "#/definitions/ExternalDocs"
+                },
+                "servers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Server"
+                    }
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Tag"
+                    }
+                },
+                "paths": {
+                    "$ref": "#/definitions/Paths"
+                },
+                "components": {
+                    "$ref": "#/definitions/Components"
+                }
+            },
+            "required": [
+                "components",
+                "externalDocs",
+                "info",
+                "openapi",
+                "paths",
+                "servers",
+                "tags"
+            ],
+            "title": "Welcome3"
+        },
+        "Components": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schemas": {
+                    "$ref": "#/definitions/Schemas"
+                },
+                "securitySchemes": {
+                    "$ref": "#/definitions/SecuritySchemes"
+                }
+            },
+            "required": [
+                "schemas",
+                "securitySchemes"
+            ],
+            "title": "Components"
+        },
+        "Schemas": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Order": {
+                    "$ref": "#/definitions/Order"
+                },
+                "Category": {
+                    "$ref": "#/definitions/CategoryClass"
+                },
+                "User": {
+                    "$ref": "#/definitions/User"
+                },
+                "Tag": {
+                    "$ref": "#/definitions/CategoryClass"
+                },
+                "Pet": {
+                    "$ref": "#/definitions/Pet"
+                },
+                "ApiResponse": {
+                    "$ref": "#/definitions/APIResponse"
+                }
+            },
+            "required": [
+                "ApiResponse",
+                "Category",
+                "Order",
+                "Pet",
+                "Tag",
+                "User"
+            ],
+            "title": "Schemas"
+        },
+        "APIResponse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "properties": {
+                    "$ref": "#/definitions/APIResponseProperties"
+                }
+            },
+            "required": [
+                "properties",
+                "type"
+            ],
+            "title": "APIResponse"
+        },
+        "APIResponseProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "code": {
+                    "$ref": "#/definitions/Code"
+                },
+                "type": {
+                    "$ref": "#/definitions/Message"
+                },
+                "message": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "required": [
+                "code",
+                "message",
+                "type"
+            ],
+            "title": "APIResponseProperties"
+        },
+        "Code": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "format": {
+                    "$ref": "#/definitions/Format"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "Code"
+        },
+        "Message": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "Message"
+        },
+        "CategoryClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "properties": {
+                    "$ref": "#/definitions/CategoryProperties"
+                },
+                "xml": {
+                    "$ref": "#/definitions/CategoryXML"
+                }
+            },
+            "required": [
+                "properties",
+                "type",
+                "xml"
+            ],
+            "title": "CategoryClass"
+        },
+        "CategoryProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/Code"
+                },
+                "name": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "CategoryProperties"
+        },
+        "CategoryXML": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "title": "CategoryXML"
+        },
+        "Order": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "properties": {
+                    "$ref": "#/definitions/OrderProperties"
+                },
+                "xml": {
+                    "$ref": "#/definitions/CategoryXML"
+                }
+            },
+            "required": [
+                "properties",
+                "type",
+                "xml"
+            ],
+            "title": "Order"
+        },
+        "OrderProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/Code"
+                },
+                "petId": {
+                    "$ref": "#/definitions/Code"
+                },
+                "quantity": {
+                    "$ref": "#/definitions/Code"
+                },
+                "shipDate": {
+                    "$ref": "#/definitions/Code"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "complete": {
+                    "$ref": "#/definitions/Complete"
+                }
+            },
+            "required": [
+                "complete",
+                "id",
+                "petId",
+                "quantity",
+                "shipDate",
+                "status"
+            ],
+            "title": "OrderProperties"
+        },
+        "Complete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "default": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "default",
+                "type"
+            ],
+            "title": "Complete"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "enum": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "enum",
+                "type"
+            ],
+            "title": "Status"
+        },
+        "Pet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "required": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "properties": {
+                    "$ref": "#/definitions/PetProperties"
+                },
+                "xml": {
+                    "$ref": "#/definitions/CategoryXML"
+                }
+            },
+            "required": [
+                "properties",
+                "required",
+                "type",
+                "xml"
+            ],
+            "title": "Pet"
+        },
+        "PetProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/Code"
+                },
+                "category": {
+                    "$ref": "#/definitions/ItemsClass"
+                },
+                "name": {
+                    "$ref": "#/definitions/PurpleName"
+                },
+                "photoUrls": {
+                    "$ref": "#/definitions/PhotoUrls"
+                },
+                "tags": {
+                    "$ref": "#/definitions/Tags"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                }
+            },
+            "required": [
+                "category",
+                "id",
+                "name",
+                "photoUrls",
+                "status",
+                "tags"
+            ],
+            "title": "PetProperties"
+        },
+        "ItemsClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "ItemsClass"
+        },
+        "PurpleName": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "example": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "example",
+                "type"
+            ],
+            "title": "PurpleName"
+        },
+        "PhotoUrls": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "xml": {
+                    "$ref": "#/definitions/PhotoUrlsXML"
+                },
+                "items": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "required": [
+                "items",
+                "type",
+                "xml"
+            ],
+            "title": "PhotoUrls"
+        },
+        "PhotoUrlsXML": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "wrapped": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "name",
+                "wrapped"
+            ],
+            "title": "PhotoUrlsXML"
+        },
+        "Tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "xml": {
+                    "$ref": "#/definitions/PhotoUrlsXML"
+                },
+                "items": {
+                    "$ref": "#/definitions/ItemsClass"
+                }
+            },
+            "required": [
+                "items",
+                "type",
+                "xml"
+            ],
+            "title": "Tags"
+        },
+        "User": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "properties": {
+                    "$ref": "#/definitions/UserProperties"
+                },
+                "xml": {
+                    "$ref": "#/definitions/CategoryXML"
+                }
+            },
+            "required": [
+                "properties",
+                "type",
+                "xml"
+            ],
+            "title": "User"
+        },
+        "UserProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/Code"
+                },
+                "username": {
+                    "$ref": "#/definitions/Message"
+                },
+                "firstName": {
+                    "$ref": "#/definitions/Message"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/Message"
+                },
+                "email": {
+                    "$ref": "#/definitions/Message"
+                },
+                "password": {
+                    "$ref": "#/definitions/Message"
+                },
+                "phone": {
+                    "$ref": "#/definitions/Message"
+                },
+                "userStatus": {
+                    "$ref": "#/definitions/UserStatus"
+                }
+            },
+            "required": [
+                "email",
+                "firstName",
+                "id",
+                "lastName",
+                "password",
+                "phone",
+                "userStatus",
+                "username"
+            ],
+            "title": "UserProperties"
+        },
+        "UserStatus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "format",
+                "type"
+            ],
+            "title": "UserStatus"
+        },
+        "SecuritySchemes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "petstore_auth": {
+                    "$ref": "#/definitions/PetstoreAuthClass"
+                },
+                "api_key": {
+                    "$ref": "#/definitions/APIKey"
+                }
+            },
+            "required": [
+                "api_key",
+                "petstore_auth"
+            ],
+            "title": "SecuritySchemes"
+        },
+        "APIKey": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "in": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "in",
+                "name",
+                "type"
+            ],
+            "title": "APIKey"
+        },
+        "PetstoreAuthClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "flows": {
+                    "$ref": "#/definitions/Flows"
+                }
+            },
+            "required": [
+                "flows",
+                "type"
+            ],
+            "title": "PetstoreAuthClass"
+        },
+        "Flows": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "implicit": {
+                    "$ref": "#/definitions/Implicit"
+                }
+            },
+            "required": [
+                "implicit"
+            ],
+            "title": "Flows"
+        },
+        "Implicit": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "authorizationUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "scopes": {
+                    "$ref": "#/definitions/Scopes"
+                }
+            },
+            "required": [
+                "authorizationUrl",
+                "scopes"
+            ],
+            "title": "Implicit"
+        },
+        "Scopes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "write:pets": {
+                    "type": "string"
+                },
+                "read:pets": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "read:pets",
+                "write:pets"
+            ],
+            "title": "Scopes"
+        },
+        "ExternalDocs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "description",
+                "url"
+            ],
+            "title": "ExternalDocs"
+        },
+        "Info": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "termsOfService": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "contact": {
+                    "$ref": "#/definitions/Contact"
+                },
+                "license": {
+                    "$ref": "#/definitions/License"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "contact",
+                "description",
+                "license",
+                "termsOfService",
+                "title",
+                "version"
+            ],
+            "title": "Info"
+        },
+        "Contact": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "email": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email"
+            ],
+            "title": "Contact"
+        },
+        "License": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ],
+                    "qt-uri-extensions": [
+                        ".html"
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "url"
+            ],
+            "title": "License"
+        },
+        "Paths": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "/pet": {
+                    "$ref": "#/definitions/PetClass"
+                },
+                "/pet/findByStatus": {
+                    "$ref": "#/definitions/PetFindByStatus"
+                },
+                "/pet/findByTags": {
+                    "$ref": "#/definitions/PetFindByTags"
+                },
+                "/pet/{petId}": {
+                    "$ref": "#/definitions/PetPetID"
+                },
+                "/pet/{petId}/uploadImage": {
+                    "$ref": "#/definitions/PetPetIDUploadImage"
+                },
+                "/store/inventory": {
+                    "$ref": "#/definitions/StoreInventory"
+                },
+                "/store/order": {
+                    "$ref": "#/definitions/StoreOrder"
+                },
+                "/store/order/{orderId}": {
+                    "$ref": "#/definitions/StoreOrderOrderID"
+                },
+                "/user": {
+                    "$ref": "#/definitions/UserClass"
+                },
+                "/user/createWithArray": {
+                    "$ref": "#/definitions/UserCreateWith"
+                },
+                "/user/createWithList": {
+                    "$ref": "#/definitions/UserCreateWith"
+                },
+                "/user/login": {
+                    "$ref": "#/definitions/UserLogin"
+                },
+                "/user/logout": {
+                    "$ref": "#/definitions/UserLogout"
+                },
+                "/user/{username}": {
+                    "$ref": "#/definitions/UserUsername"
+                }
+            },
+            "required": [
+                "/pet",
+                "/pet/findByStatus",
+                "/pet/findByTags",
+                "/pet/{petId}",
+                "/pet/{petId}/uploadImage",
+                "/store/inventory",
+                "/store/order",
+                "/store/order/{orderId}",
+                "/user",
+                "/user/createWithArray",
+                "/user/createWithList",
+                "/user/login",
+                "/user/logout",
+                "/user/{username}"
+            ],
+            "title": "Paths"
+        },
+        "PetClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "put": {
+                    "$ref": "#/definitions/Put"
+                },
+                "post": {
+                    "$ref": "#/definitions/PetPost"
+                }
+            },
+            "required": [
+                "post",
+                "put"
+            ],
+            "title": "PetClass"
+        },
+        "PetPost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/PurpleRequestBody"
+                },
+                "responses": {
+                    "$ref": "#/definitions/PurpleResponses"
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                },
+                "x-codegen-request-body-name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "operationId",
+                "requestBody",
+                "responses",
+                "security",
+                "summary",
+                "tags",
+                "x-codegen-request-body-name"
+            ],
+            "title": "PetPost"
+        },
+        "PurpleRequestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/PurpleContent"
+                },
+                "required": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "content",
+                "description",
+                "required"
+            ],
+            "title": "PurpleRequestBody"
+        },
+        "PurpleContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/json": {
+                    "$ref": "#/definitions/ApplicationJSON"
+                },
+                "application/xml": {
+                    "$ref": "#/definitions/ApplicationJSON"
+                }
+            },
+            "required": [
+                "application/json",
+                "application/xml"
+            ],
+            "title": "PurpleContent"
+        },
+        "ApplicationJSON": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/ItemsClass"
+                }
+            },
+            "required": [
+                "schema"
+            ],
+            "title": "ApplicationJSON"
+        },
+        "PurpleResponses": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "405": {
+                    "$ref": "#/definitions/405"
+                }
+            },
+            "required": [
+                "405"
+            ],
+            "title": "PurpleResponses"
+        },
+        "405_Content": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "405_Content"
+        },
+        "PostSecurity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "petstore_auth": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PetstoreAuthElement"
+                    }
+                }
+            },
+            "required": [
+                "petstore_auth"
+            ],
+            "title": "PostSecurity"
+        },
+        "Put": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/PurpleRequestBody"
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/405"
+                    }
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                },
+                "x-codegen-request-body-name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "operationId",
+                "requestBody",
+                "responses",
+                "security",
+                "summary",
+                "tags",
+                "x-codegen-request-body-name"
+            ],
+            "title": "Put"
+        },
+        "PetFindByStatus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/PetFindByStatusGet"
+                }
+            },
+            "required": [
+                "get"
+            ],
+            "title": "PetFindByStatus"
+        },
+        "PetFindByStatusGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PurpleParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PurpleResponse"
+                    }
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "parameters",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "PetFindByStatusGet"
+        },
+        "PurpleParameter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "in": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "style": {
+                    "type": "string"
+                },
+                "explode": {
+                    "type": "boolean"
+                },
+                "schema": {
+                    "$ref": "#/definitions/PurpleSchema"
+                }
+            },
+            "required": [
+                "description",
+                "explode",
+                "in",
+                "name",
+                "required",
+                "schema",
+                "style"
+            ],
+            "title": "PurpleParameter"
+        },
+        "PurpleSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "items": {
+                    "$ref": "#/definitions/Items"
+                }
+            },
+            "required": [
+                "items",
+                "type"
+            ],
+            "title": "PurpleSchema"
+        },
+        "Items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "enum": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "default",
+                "enum",
+                "type"
+            ],
+            "title": "Items"
+        },
+        "PurpleResponse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/FluffyContent"
+                }
+            },
+            "required": [
+                "content",
+                "description"
+            ],
+            "title": "PurpleResponse"
+        },
+        "FluffyContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/xml": {
+                    "$ref": "#/definitions/Empty"
+                },
+                "application/json": {
+                    "$ref": "#/definitions/Empty"
+                }
+            },
+            "required": [],
+            "title": "FluffyContent"
+        },
+        "Empty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/Schema"
+                }
+            },
+            "required": [
+                "schema"
+            ],
+            "title": "Empty"
+        },
+        "Schema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "items": {
+                    "$ref": "#/definitions/ItemsClass"
+                }
+            },
+            "required": [
+                "items",
+                "type"
+            ],
+            "title": "Schema"
+        },
+        "PetFindByTags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/PetFindByTagsGet"
+                }
+            },
+            "required": [
+                "get"
+            ],
+            "title": "PetFindByTags"
+        },
+        "PetFindByTagsGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FluffyParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PurpleResponse"
+                    }
+                },
+                "deprecated": {
+                    "type": "boolean"
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                }
+            },
+            "required": [
+                "deprecated",
+                "description",
+                "operationId",
+                "parameters",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "PetFindByTagsGet"
+        },
+        "FluffyParameter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "in": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "style": {
+                    "type": "string"
+                },
+                "explode": {
+                    "type": "boolean"
+                },
+                "schema": {
+                    "$ref": "#/definitions/FluffySchema"
+                }
+            },
+            "required": [
+                "description",
+                "explode",
+                "in",
+                "name",
+                "required",
+                "schema",
+                "style"
+            ],
+            "title": "FluffyParameter"
+        },
+        "FluffySchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "items": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "required": [
+                "items",
+                "type"
+            ],
+            "title": "FluffySchema"
+        },
+        "PetPetID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/PetPetIDGet"
+                },
+                "post": {
+                    "$ref": "#/definitions/PetPetIDPost"
+                },
+                "delete": {
+                    "$ref": "#/definitions/PetPetIDDelete"
+                }
+            },
+            "required": [
+                "delete",
+                "get",
+                "post"
+            ],
+            "title": "PetPetID"
+        },
+        "PetPetIDDelete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/405"
+                    }
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                }
+            },
+            "required": [
+                "operationId",
+                "parameters",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "PetPetIDDelete"
+        },
+        "PostParameter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "in": {
+                    "type": "string"
+                },
+                "schema": {
+                    "$ref": "#/definitions/Code"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "in",
+                "name",
+                "schema"
+            ],
+            "title": "PostParameter"
+        },
+        "PetPetIDGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PostResponse"
+                    }
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PurpleSecurity"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "parameters",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "PetPetIDGet"
+        },
+        "PostResponse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/TentacledContent"
+                }
+            },
+            "required": [
+                "content",
+                "description"
+            ],
+            "title": "PostResponse"
+        },
+        "TentacledContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/json": {
+                    "$ref": "#/definitions/ApplicationJSON"
+                },
+                "application/xml": {
+                    "$ref": "#/definitions/ApplicationJSON"
+                }
+            },
+            "required": [],
+            "title": "TentacledContent"
+        },
+        "PurpleSecurity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "api_key": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "api_key"
+            ],
+            "title": "PurpleSecurity"
+        },
+        "PetPetIDPost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostParameter"
+                    }
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/FluffyRequestBody"
+                },
+                "responses": {
+                    "$ref": "#/definitions/PurpleResponses"
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                }
+            },
+            "required": [
+                "operationId",
+                "parameters",
+                "requestBody",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "PetPetIDPost"
+        },
+        "FluffyRequestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "content": {
+                    "$ref": "#/definitions/StickyContent"
+                }
+            },
+            "required": [
+                "content"
+            ],
+            "title": "FluffyRequestBody"
+        },
+        "StickyContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/x-www-form-urlencoded": {
+                    "$ref": "#/definitions/ApplicationXWWWFormUrlencoded"
+                }
+            },
+            "required": [
+                "application/x-www-form-urlencoded"
+            ],
+            "title": "StickyContent"
+        },
+        "ApplicationXWWWFormUrlencoded": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/ApplicationXWWWFormUrlencodedSchema"
+                }
+            },
+            "required": [
+                "schema"
+            ],
+            "title": "ApplicationXWWWFormUrlencoded"
+        },
+        "ApplicationXWWWFormUrlencodedSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/PurpleProperties"
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "title": "ApplicationXWWWFormUrlencodedSchema"
+        },
+        "PurpleProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/StatusClass"
+                },
+                "status": {
+                    "$ref": "#/definitions/StatusClass"
+                }
+            },
+            "required": [
+                "name",
+                "status"
+            ],
+            "title": "PurpleProperties"
+        },
+        "StatusClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "type"
+            ],
+            "title": "StatusClass"
+        },
+        "PetPetIDUploadImage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/PetPetIDUploadImagePost"
+                }
+            },
+            "required": [
+                "post"
+            ],
+            "title": "PetPetIDUploadImage"
+        },
+        "PetPetIDUploadImagePost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostParameter"
+                    }
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/TentacledRequestBody"
+                },
+                "responses": {
+                    "$ref": "#/definitions/FluffyResponses"
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PostSecurity"
+                    }
+                }
+            },
+            "required": [
+                "operationId",
+                "parameters",
+                "requestBody",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "PetPetIDUploadImagePost"
+        },
+        "TentacledRequestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "content": {
+                    "$ref": "#/definitions/IndigoContent"
+                }
+            },
+            "required": [
+                "content"
+            ],
+            "title": "TentacledRequestBody"
+        },
+        "IndigoContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "multipart/form-data": {
+                    "$ref": "#/definitions/MultipartFormData"
+                }
+            },
+            "required": [
+                "multipart/form-data"
+            ],
+            "title": "IndigoContent"
+        },
+        "MultipartFormData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/MultipartFormDataSchema"
+                }
+            },
+            "required": [
+                "schema"
+            ],
+            "title": "MultipartFormData"
+        },
+        "MultipartFormDataSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/FluffyProperties"
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "title": "MultipartFormDataSchema"
+        },
+        "FluffyProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "additionalMetadata": {
+                    "$ref": "#/definitions/StatusClass"
+                },
+                "file": {
+                    "$ref": "#/definitions/UserStatus"
+                }
+            },
+            "required": [
+                "additionalMetadata",
+                "file"
+            ],
+            "title": "FluffyProperties"
+        },
+        "FluffyResponses": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "200": {
+                    "$ref": "#/definitions/Purple200"
+                }
+            },
+            "required": [
+                "200"
+            ],
+            "title": "FluffyResponses"
+        },
+        "Purple200": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/IndecentContent"
+                }
+            },
+            "required": [
+                "content",
+                "description"
+            ],
+            "title": "Purple200"
+        },
+        "IndecentContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/json": {
+                    "$ref": "#/definitions/ApplicationJSON"
+                }
+            },
+            "required": [
+                "application/json"
+            ],
+            "title": "IndecentContent"
+        },
+        "StoreInventory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/StoreInventoryGet"
+                }
+            },
+            "required": [
+                "get"
+            ],
+            "title": "StoreInventory"
+        },
+        "StoreInventoryGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "responses": {
+                    "$ref": "#/definitions/TentacledResponses"
+                },
+                "security": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PurpleSecurity"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "responses",
+                "security",
+                "summary",
+                "tags"
+            ],
+            "title": "StoreInventoryGet"
+        },
+        "TentacledResponses": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "200": {
+                    "$ref": "#/definitions/Fluffy200"
+                }
+            },
+            "required": [
+                "200"
+            ],
+            "title": "TentacledResponses"
+        },
+        "Fluffy200": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/HilariousContent"
+                }
+            },
+            "required": [
+                "content",
+                "description"
+            ],
+            "title": "Fluffy200"
+        },
+        "HilariousContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/json": {
+                    "$ref": "#/definitions/PurpleApplicationJSON"
+                }
+            },
+            "required": [
+                "application/json"
+            ],
+            "title": "HilariousContent"
+        },
+        "PurpleApplicationJSON": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/TentacledSchema"
+                }
+            },
+            "required": [
+                "schema"
+            ],
+            "title": "PurpleApplicationJSON"
+        },
+        "TentacledSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "additionalProperties": {
+                    "$ref": "#/definitions/Code"
+                }
+            },
+            "required": [
+                "additionalProperties",
+                "type"
+            ],
+            "title": "TentacledSchema"
+        },
+        "StoreOrder": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/StoreOrderPost"
+                }
+            },
+            "required": [
+                "post"
+            ],
+            "title": "StoreOrder"
+        },
+        "StoreOrderPost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/DeleteRequestBody"
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PostResponse"
+                    }
+                },
+                "x-codegen-request-body-name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "operationId",
+                "requestBody",
+                "responses",
+                "summary",
+                "tags",
+                "x-codegen-request-body-name"
+            ],
+            "title": "StoreOrderPost"
+        },
+        "DeleteRequestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/AmbitiousContent"
+                },
+                "required": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "content",
+                "description",
+                "required"
+            ],
+            "title": "DeleteRequestBody"
+        },
+        "AmbitiousContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "*/*": {
+                    "$ref": "#/definitions/ApplicationJSON"
+                }
+            },
+            "required": [
+                "*/*"
+            ],
+            "title": "AmbitiousContent"
+        },
+        "StoreOrderOrderID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/StoreOrderOrderIDGet"
+                },
+                "delete": {
+                    "$ref": "#/definitions/StoreOrderOrderIDDelete"
+                }
+            },
+            "required": [
+                "delete",
+                "get"
+            ],
+            "title": "StoreOrderOrderID"
+        },
+        "StoreOrderOrderIDDelete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TentacledParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/405"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "parameters",
+                "responses",
+                "summary",
+                "tags"
+            ],
+            "title": "StoreOrderOrderIDDelete"
+        },
+        "TentacledParameter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "in": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "schema": {
+                    "$ref": "#/definitions/StickySchema"
+                }
+            },
+            "required": [
+                "description",
+                "in",
+                "name",
+                "required",
+                "schema"
+            ],
+            "title": "TentacledParameter"
+        },
+        "StickySchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "minimum": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "format": {
+                    "$ref": "#/definitions/Format"
+                },
+                "maximum": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "format",
+                "minimum",
+                "type"
+            ],
+            "title": "StickySchema"
+        },
+        "StoreOrderOrderIDGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TentacledParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PostResponse"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "parameters",
+                "responses",
+                "summary",
+                "tags"
+            ],
+            "title": "StoreOrderOrderIDGet"
+        },
+        "UserClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/UserPost"
+                }
+            },
+            "required": [
+                "post"
+            ],
+            "title": "UserClass"
+        },
+        "UserPost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/DeleteRequestBody"
+                },
+                "responses": {
+                    "$ref": "#/definitions/StickyResponses"
+                },
+                "x-codegen-request-body-name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "requestBody",
+                "responses",
+                "summary",
+                "tags",
+                "x-codegen-request-body-name"
+            ],
+            "title": "UserPost"
+        },
+        "StickyResponses": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "default": {
+                    "$ref": "#/definitions/405"
+                }
+            },
+            "required": [
+                "default"
+            ],
+            "title": "StickyResponses"
+        },
+        "UserCreateWith": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/UserCreateWithArrayPost"
+                }
+            },
+            "required": [
+                "post"
+            ],
+            "title": "UserCreateWith"
+        },
+        "UserCreateWithArrayPost": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/StickyRequestBody"
+                },
+                "responses": {
+                    "$ref": "#/definitions/StickyResponses"
+                },
+                "x-codegen-request-body-name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "operationId",
+                "requestBody",
+                "responses",
+                "summary",
+                "tags",
+                "x-codegen-request-body-name"
+            ],
+            "title": "UserCreateWithArrayPost"
+        },
+        "StickyRequestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/CunningContent"
+                },
+                "required": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "content",
+                "description",
+                "required"
+            ],
+            "title": "StickyRequestBody"
+        },
+        "CunningContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "*/*": {
+                    "$ref": "#/definitions/Empty"
+                }
+            },
+            "required": [
+                "*/*"
+            ],
+            "title": "CunningContent"
+        },
+        "UserLogin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/UserLoginGet"
+                }
+            },
+            "required": [
+                "get"
+            ],
+            "title": "UserLogin"
+        },
+        "UserLoginGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PutParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/FluffyResponse"
+                    }
+                }
+            },
+            "required": [
+                "operationId",
+                "parameters",
+                "responses",
+                "summary",
+                "tags"
+            ],
+            "title": "UserLoginGet"
+        },
+        "PutParameter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "in": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "schema": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "required": [
+                "description",
+                "in",
+                "name",
+                "required",
+                "schema"
+            ],
+            "title": "PutParameter"
+        },
+        "FluffyResponse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "headers": {
+                    "$ref": "#/definitions/Headers"
+                },
+                "content": {
+                    "$ref": "#/definitions/MagentaContent"
+                }
+            },
+            "required": [
+                "content",
+                "description"
+            ],
+            "title": "FluffyResponse"
+        },
+        "MagentaContent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "application/xml": {
+                    "$ref": "#/definitions/Application"
+                },
+                "application/json": {
+                    "$ref": "#/definitions/Application"
+                }
+            },
+            "required": [],
+            "title": "MagentaContent"
+        },
+        "Application": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "required": [
+                "schema"
+            ],
+            "title": "Application"
+        },
+        "Headers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "X-Rate-Limit": {
+                    "$ref": "#/definitions/XExpiresAfter"
+                },
+                "X-Expires-After": {
+                    "$ref": "#/definitions/XExpiresAfter"
+                }
+            },
+            "required": [
+                "X-Expires-After",
+                "X-Rate-Limit"
+            ],
+            "title": "Headers"
+        },
+        "XExpiresAfter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "schema": {
+                    "$ref": "#/definitions/Code"
+                }
+            },
+            "required": [
+                "description",
+                "schema"
+            ],
+            "title": "XExpiresAfter"
+        },
+        "UserLogout": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/UserLogoutGet"
+                }
+            },
+            "required": [
+                "get"
+            ],
+            "title": "UserLogout"
+        },
+        "UserLogoutGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "responses": {
+                    "$ref": "#/definitions/StickyResponses"
+                }
+            },
+            "required": [
+                "operationId",
+                "responses",
+                "summary",
+                "tags"
+            ],
+            "title": "UserLogoutGet"
+        },
+        "UserUsername": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "get": {
+                    "$ref": "#/definitions/UserUsernameGet"
+                },
+                "put": {
+                    "$ref": "#/definitions/PutClass"
+                },
+                "delete": {
+                    "$ref": "#/definitions/PutClass"
+                }
+            },
+            "required": [
+                "delete",
+                "get",
+                "put"
+            ],
+            "title": "UserUsername"
+        },
+        "PutClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PutParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/405"
+                    }
+                },
+                "requestBody": {
+                    "$ref": "#/definitions/DeleteRequestBody"
+                },
+                "x-codegen-request-body-name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "operationId",
+                "parameters",
+                "responses",
+                "summary",
+                "tags"
+            ],
+            "title": "PutClass"
+        },
+        "UserUsernameGet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "operationId": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PutParameter"
+                    }
+                },
+                "responses": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PostResponse"
+                    }
+                }
+            },
+            "required": [
+                "operationId",
+                "parameters",
+                "responses",
+                "summary",
+                "tags"
+            ],
+            "title": "UserUsernameGet"
+        },
+        "Server": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "url"
+            ],
+            "title": "Server"
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "externalDocs": {
+                    "$ref": "#/definitions/ExternalDocs"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ],
+            "title": "Tag"
+        },
+        "Format": {
+            "type": "string",
+            "enum": [
+                "int32",
+                "int64",
+                "date-time"
+            ],
+            "title": "Format"
+        },
+        "Type": {
+            "type": "string",
+            "enum": [
+                "integer",
+                "string"
+            ],
+            "title": "Type"
+        },
+        "PetstoreAuthElement": {
+            "type": "string",
+            "enum": [
+                "write:pets",
+                "read:pets"
+            ],
+            "title": "PetstoreAuthElement"
+        }
+    }
+}
