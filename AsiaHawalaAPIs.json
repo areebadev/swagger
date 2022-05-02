@@ -1189,12 +1189,13 @@
 "AccessTokenRequestDTO": {
 "type": "object",
 "properties": {
+"username": {
+"type": "string",
+"description": "Username is provided by areeba"
+},
 "password": {
 "type": "string",
-"description": "bla bla"
-},
-"username": {
-"type": "string"
+"description": "Password is provided by areeba"
 }
 },
 "title": "AccessTokenRequestDTO"
